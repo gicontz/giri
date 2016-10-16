@@ -2,10 +2,10 @@
 A Smart-Mirror Weather Forecaster in Silang Cavite
 
 #OS Compatibility
-Windows XP to latest
-Mac-OS
-Linux
-Raspbian
+1. Windows XP to latest
+2. Mac-OS
+3. Linux
+4. Raspbian
 
 #Software Requirements
 1. PHP 5.5 or later
@@ -29,4 +29,4 @@ sudo nano /etc/apache2/mods-enabled/dir.conf
 For more info about debian, https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu
 
 ### Author
-[Gimel Contillo](https://www.facebook.com/Bijuumode | https://github.com/ghilo17/)
+[Gimel Contillo](https://www.facebook.com/Bijuumode)
