@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "HelveticaNeue-UltraLight";
+    src: url("../fonts/HelveticaNeue-UltraLight.ttf"); /* EOT file for IE */
+}
+
+body {
+    background-color: black;
+    color: #fff;
+    font-family: 'HelveticaNeue-UltraLight', 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 120px;
+}
+
+/* Colors */
+.light-grey {
+    color: #ccc;
+}
+
+.grey {
+    color: #999;
+}
+
+/*Custom CSS*/
+.top-right.done-loading {
+    position: absolute;
+    right: 0;
+    text-align: right;
+    z-index: 999;
+    max-width: 500px;
+    right: 25px;
+}
+span#weather.tempreture {
+    font-size: 57px;
+}
+.weather-today .icon {
+    font-size: 70px;
+    margin-right: 15px;
+}
+.weather-week-descriptor span.daily {
+    padding-left: 200px;
+}
+.weather-week-day {
+    margin-top: 17px;
+    font-size: 25px;
+}

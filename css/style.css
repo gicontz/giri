@@ -1,0 +1,72 @@
+*{
+    font-family: "HelveticaNeue-UltraLight";
+	color: #fff;
+}
+body{
+	overflow: hidden;
+	background: #000000;
+}
+.main-content {
+    position: relative;
+    height: 100%;
+}
+.content{
+	z-index: 99;
+}
+.container {
+	width: 100%;
+	max-width: 1500px;
+}
+#giri-map {
+    width: 100%;
+    height: 112.5%;
+    border: none;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    top: -30px;
+}
+.giri-earth{
+	padding: 0;
+}
+#giri-boot-loader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #000;
+}
+#giri-boot-loader .loading {
+    width: 100%;
+    margin: 13% auto;
+    text-align: center;
+    top: 155px;
+    /*animation: fadeIn 1s ease;*/
+}
+.giri-load{
+	animation: fadeIn 2s ease;
+	/*animation: rotate 0.2s infinite;*/
+}
+#giri-boot-loader .loading img {
+    max-width: 350px;
+}
+.wink {
+    margin: 0 auto;
+}
+@keyframes fadeIn{
+	0%{
+	 opacity: 0;
+	}
+	100%{
+	 opacity: 1;
+	}
+}
+
+@keyframes rotate{
+	0%{
+	  transform: rotateY(0deg);
+	}
+	100%{
+	  transform: rotateY(180deg);
+	}
+}
