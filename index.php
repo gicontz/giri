@@ -42,9 +42,9 @@
 <script type="text/javascript" src="js/loader.js"></script>
 <div class="main-content">
 
-<div id="giri-boot-loader">
+<!--<div id="giri-boot-loader">
   <video src="loading.mp4" autoplay width="100%" height="100%" id="giri-vid"></video>
-</div>
+</div>-->
 
 <div class="giri-info-content">
   <div class="giri-earth">
