@@ -9,8 +9,8 @@ A Smart-Mirror Weather Forecaster in Silang Cavite
 
 #Software Requirements
 1. PHP 5.5 or later
-2. Any Browser
-3. Apache
+2. Google Web Browser
+3. Apache 2.0
 
 #How to Install?
 1. Copy or pull this repo
