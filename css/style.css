@@ -19,7 +19,7 @@ body{
 }
 #giri-map {
     width: 100%;
-    height: 112.5%;
+    height: 116.5%;
     border: none;
     overflow: hidden;
     position: absolute;
@@ -35,24 +35,9 @@ body{
     height: 100%;
     position: absolute;
     background: #000;
+    z-index: 9999;
 }
-#giri-boot-loader .loading {
-    width: 100%;
-    margin: 13% auto;
-    text-align: center;
-    top: 155px;
-    /*animation: fadeIn 1s ease;*/
-}
-.giri-load{
-	animation: fadeIn 2s ease;
-	/*animation: rotate 0.2s infinite;*/
-}
-#giri-boot-loader .loading img {
-    max-width: 350px;
-}
-.wink {
-    margin: 0 auto;
-}
+
 @keyframes fadeIn{
 	0%{
 	 opacity: 0;
@@ -62,6 +47,15 @@ body{
 	}
 }
 
+@keyframes fadeOut{
+    0%{
+     opacity: 1;
+    }
+    100%{
+     opacity: 0;
+    }
+}
+
 @keyframes rotate{
 	0%{
 	  transform: rotateY(0deg);
@@ -69,4 +63,549 @@ body{
 	100%{
 	  transform: rotateY(180deg);
 	}
+}
+
+
+/*Pop Up Modal For Weather Status*/
+.caption-modal {
+    display: none;
+}
+
+.caption-modal.show .close:before {
+    content: 'x';
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    font-size: 18px;
+}
+.caption-modal.show .submit-weather-status {
+    padding: 4px 40px;
+    border-radius: 30px;
+    background: #8b8b8b;
+    font-size: 16px;
+    border: none;
+    right: 0;
+    left: 0;
+    position: absolute;
+    margin: 17px auto;
+    width: 55%;
+}
+.caption-modal.show .weather-status {
+    width: 300px;
+    height: 300px;
+    color: #000;
+    font-family: sans-serif;
+    margin-left: -37px;
+    margin-top: 0;
+}
+.caption-modal.show {
+    display: block;
+    position: absolute;
+    width: 100%;
+    max-width: 356px;
+    top: 100px;
+    right: 55px;
+    background: #fff;
+    padding: 35px 52px;
+    border-radius: 20px;
+    z-index: 999;
+    max-height: 480px;
+    height: 100%;
+}
+div#giri-bottom-face{
+    display: none;
+    opacity: 0;
+}
+div#giri-bottom-face.show {
+    transition: opacity 1s linear;
+    opacity: 1;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    z-index: 1;
+}
+div#giri-face {
+    position: absolute;
+    top: 200px;
+    left: -10px;
+    right: 0;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+div#date_time .time {
+    font-size: 60px;    
+    z-index: 1;
+}
+div#date_time .date {
+    font-size: 20px;
+    z-index: 1;
+}
+div#date_time {
+    position: absolute;
+    top: 36px;
+    left: 33px;
+    line-height: 1;
+    z-index: 1;
+}
+footer.giri-license {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1;
+}
+#giri-face div#listen{    
+    transition: all ease 1s;
+}
+#giri-face div#listen.downme {
+    margin-top: 210px;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+span#timeS {
+    font-size: 60px;
+    margin-left: 10px;
+    position: absolute;
+    right: -250px;
+    z-index: 1;
+}
+.top_part {
+    position: relative;
+    background: #54aaa6;
+    left: -52px;
+    top: -36px;
+    width: 141.4%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.top_container {
+    padding: 10px 30px;
+}
+.caption-modal {
+    position: relative;
+}
+p.post_capt {
+    font-size: 13px;
+    margin-top: -10px;
+    font-weight: 600;
+}
+.top_part p.pop_title {
+    font-size: 22px;
+    font-weight: 600;
+}
+.caption-modal.show:after {
+    content: '';
+    bottom: -19px;
+    right: 30px;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-top: 20px solid #fff;
+    position: absolute;
+    z-index: 1;
+}
+.caption-modal.show .submit-weather-status {
+    padding: 4px 40px;
+    border-radius: 30px;
+    background: #8b8b8b;
+    font-size: 16px;
+    border: none;
+    right: 0;
+    left: 0;
+    position: absolute;
+    margin: 17px auto;
+    width: 55%;
+}
+div#giri-bottom-face:hover, div#giri-bottom-face:focus {
+    opacity: 0.7;
+}
+
+div#giri-bottom-face:active {
+    opacity: 1;
+    transition: opacity 0.1s linear;
+}
+.main-content.hideme, footer.hideme {
+    opacity: 0;
+    transition: all 1s ease;
+}
+.main-content, footer {
+    opacity: 1;
+    transition: all 1s ease;
+}
+.shutter{    
+    background: #ffffff;
+}
+.shutter.flash {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+    animation: shutter 0.5s linear;
+}
+.uploading.load{
+    z-index: 999;
+}
+.uploading{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0,0,0,0.7);
+    z-index: -1;
+}
+.network-err.show{
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1000;
+}
+.network-err{
+    display: none;
+}
+.network-err.show p {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    font-size: 50px;
+    margin-left: -118.5px;
+}
+span.motionload {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+@keyframes shutter{
+    0%{
+     opacity: 0;
+    }
+    50%{
+     opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.cmd-list dt {
+    font-size: medium;
+}
+.cmd-list {
+    margin-top: 150px;
+}
+.cmd-list.up{
+    display: block;
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+    transition: all 0.2s linear;
+} 
+.uploading img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    margin-top: -25px;
+    margin-left: -25px;
+    display: none;
+}
+.middle-left {
+    top: 30%;
+    position: absolute;
+    max-width: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 300px;
+    left: 30px;
+}
+::-webkit-scrollbar {
+    background: #111;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 1399px){
+#giri-map {
+    height: 114.4%;
+}
+}
+div#brgy_drag {
+    background: #000;
+    z-index: 999;
+    padding: 10px 25px;
+    border: 1px solid #fff;
+    border-right: none;
+}
+.brgy-forecast p {
+    display: inline-block;
+    padding: 5px 7px 0 0;
+    vertical-align: middle;
+    width: 100px;
+    text-align: right;
+}
+.brgy-forecast p:after {
+    content: ' - ';
+    font-weight: 600;
+}
+#brgy_drag i{
+    color: #000;
+}
+.scr_btn{
+    display: none;
+}
+.on_ts .scr_btn {
+    display: block;
+    position: absolute;
+    right: -25px;
+    top: -10px;
+    margin-top: -20px;
+}
+.brgy-forecast{
+    position: relative;
+}
+.scr_btn button {
+    display: block;
+    padding: 65px 0px;
+}
+.main-content{
+    overflow: hidden;
+}
+.giri_place_getter input {
+    padding: 5px 10px;
+    color: #333333;
+    font-weight: 600 !important;
+}
+.giri_place_getter input[type="submit"] {
+    background: rgb(98, 199, 194);
+    border: none;
+    border-radius: 7px;
+    text-shadow: 2px 2px 5px #000;
+    color: #ffffff;
+}
+.giri_place_getter .form-group {
+    display: inline;
+}
+.giri_place_getter {
+    position: absolute;
+    bottom: -70px;
+    right: 170px;
+    padding: 20px 7px 15px;
+    background: rgba(0,0,0,0.7);
+    z-index: 9;
+    transition: all 1s ease;
+}
+.place_name_popup {
+    position: absolute;
+    top: 20%;
+    left: 24%;
+    margin-left: -300px;
+    margin-top: -20px;
+    width: 255px;
+    height: 40px;
+    padding: 10px 0;
+    z-index: 9;
+    text-align: center;
+    font-size: 15px;
+}
+span.fio-credits a {
+    color: #fff;
+}
+span.fio-credits {
+    font-size: 12px;
+}
+span.glyphicon.glyphicon-trash {
+    margin-left: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.trash {
+    background: rgba(255, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+.removing:after {
+    position: absolute;
+    content: '';
+    background: rgba(250,250,250,0.7);
+    width: 100%;
+    top: 0;
+    height: 100%;
+    left: 0;
+    transition: all 1s ease;
+}
+.giri_place_getter .upndown {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    background: rgba(0,0,0,0.7);
+    width: 70px;
+    text-align: center;
+    padding-top: 5px;
+    font-family: 'Glyphicons Halflings';
+    margin-left: -35px;
+    height: 30px;
+}
+.giri_place_getter .upndown.up:before {
+    content: '\e113';
+}
+.giri_place_getter .upndown.dwn:before {
+    content: '\e114';
+}
+.giri_place_getter .upndown:hover{
+    background: rgba(250,250,250,0.7);
+    color: #333333;
+}
+
+.notif_bar {
+    position: absolute;
+    z-index: 2;
+    width: 325px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-left: -162.5px;
+    margin-top: -112px;
+    background: #62c7c2;
+    border-radius: 12px;
+    box-shadow: 2px 6px 20px #111111;
+    font-weight: 900;
+}
+.upper-notif {
+    background: #fff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 10px 0;
+    position: relative;
+}
+.upper-notif:after {
+    content: '';
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ffffff;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -10px;
+}
+.upper-notif p {
+    color: #333333;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.upper-notif i {
+    background: #62c7c2;
+    padding: 10px 20px;
+    border-radius: 50%;
+    font-size: 25px;
+    font-family: sans-serif;
+    font-style: normal;
+}
+.bottom-notif {
+    padding: 20px 10px;
+}
+.bottom-notif .msg {
+    padding: 0 50px;
+}
+.bottom-notif .ok-btn {
+    color: #333333;
+    background: #ffffff;
+    border: none;
+    padding: 1px 15px;
+    border-radius: 35px;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+p.forecast_date {
+    position: absolute;
+    left: 2%;
+    font-size: 20px;
+    z-index: 2;
+    bottom: 15%;
+}
+
+/*MAP*/
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        transition: all 1s ease;
+        height: 60%;
+        position: absolute !important;
+        bottom: -60%;    
+        width: 100%;
+      }
+      #map.showmap{
+        bottom: 0;
+        z-index: 0;
+      }
+      #map img{
+        width: 100%;
+      }
+      #map:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-box-shadow: inset 0 0 10px 10px #000;
+        -moz-box-shadow: inset 0 0 10px 10px #000;
+        box-shadow: inset 0 0 10px 10px #000;
+        overflow: hidden;
+      }
+      .gmnoprint {
+        display: none;
+      }
+      #map a{
+        display: none !important;
+      }
+
+
+/*UI CSS*/
+.hide {
+    display: none;
+} 
+
+.invisible{
+    animate: fadeOut 1s ease;
+} 
+
+.visibility-on{
+    animate: fadeIn 1s ease;
+}
+
+.send-to-back{
+    position: relative;
+    z-index: -1;
+}
+
+.visible{
+    display: block !important;
+    opacity: 1;
+}
+
+/*Cursors*/
+#brgy_drag ,#brgy_drag *, .drag-m{
+    cursor: url(../images/drag.png), auto;
+}
+::-webkit-scrollbar-thumb, div#giri-bottom-face, .giri_place_getter .upndown, .hand-m, button, a{
+    cursor: url(../images/clicker.png), auto;
+}
+.pointer-m{
+    cursor: url(../images/pointer.png), auto;
 }

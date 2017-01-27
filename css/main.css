@@ -37,20 +37,23 @@ h1 {
     right: 0;
     text-align: right;
     z-index: 999;
-    max-width: 500px;
+    max-width: 325px;
     right: 25px;
 }
 span#weather.tempreture {
-    font-size: 57px;
+    font-size: 60px;
 }
 .weather-today .icon {
-    font-size: 70px;
+    font-size: 60px;
     margin-right: 15px;
 }
 .weather-week-descriptor span.daily {
-    padding-left: 200px;
+    padding-left: 30px;
 }
 .weather-week-day {
     margin-top: 17px;
-    font-size: 25px;
+    font-size: 24px;
+}
+.weather .weather-week-descriptor1 {
+    margin-top: 20px;
 }
