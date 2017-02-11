@@ -1,25 +1,29 @@
-# GIRI
+### GIRI
 A Smart-Mirror Weather Forecaster in Silang Cavite
 
-#OS Compatibility
-1. Windows XP to latest
-2. Mac-OS
-3. Linux
-4. Raspbian
+### OS Compatibility
+<ol>
+<li>Windows XP to latest</li>
+<li>Mac-OS</li>
+<li>Linux</li>
+<li>Raspbian</li>
+<ol>
+### Software Requirements
+<ol>
+<li>PHP 5.5 or later</li>
+<li>Google Web Browser</li>
+<li>Apache 2.0</li>
+<ol>
+### How to Install?
+<ol>
+<li>Copy or pull this repo</li>
+<li>Setup your Apache and PHP (for Windows, Mac and Linux use XAMPP)</li>
+<li>Paste the source code to the htdocs folder of your apache server</li>
+<li>Run Apache</li>
+<li>Put the localhost link on your browser, and its done!</li>
+<ol>
 
-#Software Requirements
-1. PHP 5.5 or later
-2. Google Web Browser
-3. Apache 2.0
-
-#How to Install?
-1. Copy or pull this repo
-2. Setup your Apache and PHP (for Windows, Mac and Linux use XAMPP)
-3. Paste the source code to the htdocs folder of your apache server
-4. Run Apache
-5. Put the localhost link on your browser, and its done!
-
-#For Raspbian
+### For Raspbian
 ```
 sudo apt-get update
 sudo apt-get install apache2
