@@ -1,3 +1,4 @@
+<h1 align="center">GIRI</h1>
 ### GIRI
 A Smart-Mirror Weather Forecaster in Silang Cavite
 
