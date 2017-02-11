@@ -1,0 +1,107 @@
+@font-face {
+    font-family: "HelveticaNeue-UltraLight";
+    src: url("../../fonts/HelveticaNeue-UltraLight.ttf"); /* EOT file for IE */
+}
+
+.giri-menus {
+    min-height: 100%;
+}
+.giri-menus {
+    padding: 0;
+    background-color: #2A3F54;
+}
+.navigation a {
+    font-size: 15px;
+}
+i.glyphicon {
+    padding-right: 7px;
+}
+.navigation li:hover {
+    background: rgba(250,250,250,0.2);
+}
+.navigation li {
+    width: 100%;
+}
+.giri-menus ul.dropdown-menu {
+    width: 100%;
+    left: 100%;
+    top: 0;
+    border-radius: 0;
+}
+.form-group input {
+    width: 270px;
+}
+.form-group label {
+    width: 120px;
+}
+button, input[type="submit"] {
+    width: 100px;
+    background: #2A62FF;
+    border-style: hidden;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 5px 0;
+    border-radius: 2px;
+}
+.navbar-header {
+    width: 100%;
+    position: relative;
+}
+.navbar-header .prof-pic-conteiner img {
+    max-width: 50px;
+    border-radius: 50%;
+}
+.bg-header {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    filter: blur(2px);
+    background: url(../../images/giri.png);
+    padding: 52px 0;
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position: -60px -120px;
+}
+.bg-header:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    top: 0;
+    left: 0;
+}
+.admin-info-container p, .admin-info-container a, .admin-info-container div {
+    padding: 5px 20px 0;
+    color: #ffffff !important;
+}
+.navbar-brand {
+    float: none;
+    font-family: "HelveticaNeue-UltraLight", Helvetica, Arial, sans-serif;
+    letter-spacing: 5px;
+    font-size: 24px;
+}
+.admin-info-container p {
+    margin: 0;
+}
+.settings {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #efefef;
+    box-shadow: 0px 1px 2px 1px #eeeeee;
+}
+.title h1 {
+    font-size: 32px;
+    font-family: sans-serif;
+}
+.title {
+    background: linear-gradient(to bottom right, #ffffff, #eeeeee);
+    background: -webkit-linear-gradient(to bottom right, #ffffff, #eeeeee);
+    background: -oz-linear-gradient(to bottom right, #ffffff, #eeeeee);
+    margin-bottom: 20px;
+}
+button.edit_btn {
+    float: right;
+    margin-top: -10px;
+}
