@@ -1,46 +1,11 @@
-<h1 align="center">GIRI</h1>
+# Smart Mirror
+This project is inspired by [HomeMirror](https://github.com/HannahMitt/HomeMirror) and Michael Teeuw's [Magic Mirror](http://michaelteeuw.nl/tagged/magicmirror). It uses [annyang](https://github.com/TalAter/annyang) for voice interactivity and is my own take on what a "smart mirror" really can be.
 
-<p align="center">
-A voice controlled smart-mirror for personal and community use especially for Silang, Cavite,Philippines
-</p>
+##### Why start from scratch?
+Starting from scratch was less about other projects not being good enough and more about my own learning experience. While I did get a lot of insperation from other projects I really wanted this to be my own!
 
-### GIRI
-A Smart-Mirror Weather Forecaster in Silang Cavite
+##### Try it before you buy it:
+Not really, it's totally free. Check it out: [https://evancohen.github.io/smart-mirror/](https://evancohen.github.io/smart-mirror/).
+Note that there is some missing config information on the GitHub. I have hesitations about checking in an API key... So until I decide to *asdf* and check it in, weather wont work. 
 
-### OS Compatibility
-<ol>
-<li>Windows XP to latest</li>
-<li>Mac-OS</li>
-<li>Linux</li>
-<li>Raspbian</li>
-</ol>
-
-### Software Requirements
-<ol>
-<li>PHP 5.5 or later</li>
-<li>Google Web Browser</li>
-<li>Apache 2.0</li>
-</ol>
-
-### How to Install?
-<ol>
-<li>Copy or pull this repository</li>
-<li>Setup your Apache and PHP (for Windows, Mac and Linux use XAMPP)</li>
-<li>Paste the source code to the htdocs folder of your apache server</li>
-<li>Run Apache</li>
-<li>Put the localhost link on your browser, and its done!</li>
-</ol>
-
-### [Documentation](https://ghilo17.github.io/giri/)
-
-### For Raspbian
-```
-sudo apt-get update
-sudo apt-get install apache2
-sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt
-sudo nano /etc/apache2/mods-enabled/dir.conf
-```
-For more info about debian, [Debian](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu)
-
-### Author
-[Gimel Contillo](https://www.facebook.com/Bijuumode)
+##### More info to come soon! 
