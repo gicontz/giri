@@ -1,8 +1,8 @@
 var daten = new Date();
 		var nMonth = daten.getMonth();
 		function getCrop(month){
-			var cropName = "Temperature or Windspeed or Precipitable Water is above/below expected rate! Please Call the Developer to adjust Measurements";
-			switch(month) {
+			var cropName = "Temperature or Windspeed or Precipitable Water is above/below expected rate! Please Call the Developer to adjust Measurements";						
+			switch(nMonth) {
 				case 0:
 						cropName = giri_crop.January[0].crop;
 						break;		
@@ -45,6 +45,4 @@ var daten = new Date();
 			return cropName;			
 		}
 
-
-
-		var current_crop = getCrop(nMonth);
+		var current_crop = getCrop(nMonth+1);
