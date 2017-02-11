@@ -1,4 +1,9 @@
 <h1 align="center">GIRI</h1>
+
+<p align="center">
+A voice controlled smart-mirror for personal and community use especially for Silang, Cavite,Philippines
+</p>
+
 ### GIRI
 A Smart-Mirror Weather Forecaster in Silang Cavite
 
