@@ -16,7 +16,7 @@ A Smart-Mirror Weather Forecaster in Silang Cavite
 </ol>
 ### How to Install?
 <ol>
-<li>Copy or pull this repo</li>
+<li>Copy or pull this repository</li>
 <li>Setup your Apache and PHP (for Windows, Mac and Linux use XAMPP)</li>
 <li>Paste the source code to the htdocs folder of your apache server</li>
 <li>Run Apache</li>
@@ -30,7 +30,7 @@ sudo apt-get install apache2
 sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt
 sudo nano /etc/apache2/mods-enabled/dir.conf
 ```
-For more info about debian, https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu
+For more info about debian, [Debian](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu)
 
 ### Author
 [Gimel Contillo](https://www.facebook.com/Bijuumode)
