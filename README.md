@@ -7,13 +7,13 @@ A Smart-Mirror Weather Forecaster in Silang Cavite
 <li>Mac-OS</li>
 <li>Linux</li>
 <li>Raspbian</li>
-<ol>
+</ol>
 ### Software Requirements
 <ol>
 <li>PHP 5.5 or later</li>
 <li>Google Web Browser</li>
 <li>Apache 2.0</li>
-<ol>
+</ol>
 ### How to Install?
 <ol>
 <li>Copy or pull this repo</li>
@@ -21,7 +21,7 @@ A Smart-Mirror Weather Forecaster in Silang Cavite
 <li>Paste the source code to the htdocs folder of your apache server</li>
 <li>Run Apache</li>
 <li>Put the localhost link on your browser, and its done!</li>
-<ol>
+</ol>
 
 ### For Raspbian
 ```
