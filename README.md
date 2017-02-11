@@ -8,12 +8,14 @@ A Smart-Mirror Weather Forecaster in Silang Cavite
 <li>Linux</li>
 <li>Raspbian</li>
 </ol>
+
 ### Software Requirements
 <ol>
 <li>PHP 5.5 or later</li>
 <li>Google Web Browser</li>
 <li>Apache 2.0</li>
 </ol>
+
 ### How to Install?
 <ol>
 <li>Copy or pull this repository</li>
@@ -22,6 +24,8 @@ A Smart-Mirror Weather Forecaster in Silang Cavite
 <li>Run Apache</li>
 <li>Put the localhost link on your browser, and its done!</li>
 </ol>
+
+### [Documentation](https://ghilo17.github.io/giri/)
 
 ### For Raspbian
 ```
