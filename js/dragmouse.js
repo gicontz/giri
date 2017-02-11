@@ -69,7 +69,7 @@ $("body").bind("mouseup", function(event){
     if (is_clicked($("#brgy_drag"))) {
     remove_element($("#brgy_drag"));        
     }
-});
+}); 
 
 	if ($("body").hasClass("on_ts")) {
 		$("head").append("<style> ::-webkit-scrollbar { display: none; } </style>");

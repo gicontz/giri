@@ -1,7 +1,6 @@
 // $(document).ready(function(){
 	//ForeCast.IO
 
-
   $("#giri-map").click(function(){
     alert($("#giri-map").attr("src"));
   });
@@ -18,6 +17,7 @@
     }
   });
 
+  getweather();
 
   function getweather(){
             $.getJSON("https://api.forecast.io/forecast/" + config.forcast.key + "/" + weath_latitude + "," + weath_longitude + "?callback=?", function(data) {

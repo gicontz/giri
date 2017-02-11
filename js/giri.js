@@ -1,10 +1,10 @@
 class giri{
 	constructor() {
 		this.monthnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
- 	 	this.daynames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]; 
+ 	 	this.daynames = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
 	}
 
-	getDayname(newdname){	 
+	getDayname_abr(newdname){	 
      switch(newdname){
         case 'Mon':
         newdname = this.daynames[0];
@@ -34,7 +34,11 @@ class giri{
      return newdname;
 	}
 
-	getMonthname(newmonth){
+    getDayname_num(daynum){
+        return this.daynames[daynum];
+    }
+
+	getMonthname_txt(newmonth){
 
      switch(newmonth){
         case '01' || '1':
@@ -91,6 +95,10 @@ class giri{
         }   
         return newmonth;
 	}
+
+    getMonthname_num(monthnum){
+        return this.monthnames[monthnum];
+    }
 
 	incrDayName(newdname){
      switch(newdname){
@@ -167,4 +175,8 @@ class giri{
      }
      return newdname;
 	}
+
+    isLeapYear(){
+          
+    }
 }

@@ -33,9 +33,6 @@ function exitFullScreen()
 
 function toggleFullScreen(element)
 {
-    if (isFullScreen())
-        element.cancelFullScreen();
-    else
         requestFullScreen(element || document.documentElement);
 }
 
@@ -50,8 +47,9 @@ $(document).ready(function(){
     }
     document.getElementById('giri-vid').addEventListener('ended',myHandler,false);
     function myHandler(e) {
-  is_end_of_the_month();
+        is_end_of_the_month();
         stop_loader();
+        getLocation_forWeather();
     }
 });
 

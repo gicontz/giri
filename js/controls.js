@@ -1,19 +1,36 @@
 
+// Time and Date
+var forecast_date = new Date();
+var forecast_month = forecast_date.getMonth();
+var forecast_day = forecast_date.getDate();
+var forecast_year = forecast_date.getFullYear();
+var today = moment();
+var tomorrow;
+var newdate;
+
+ // function increment_forecast_date(){        
+ //        var the_full_date;
+ //        if (forecast_day==31 && ()) {
+          
+ //        }
+ //        the_full_date = month 
+ //        $(".forecast_date").html("<span>Forecast Date: </span>" + the_full_date);
+ // }
+
 var mylocation = "loc="+  config.geo_position.longitude + "," + config.geo_position.latitude;
-// var weather_animation = "https://earth.nullschool.net/#current/wind/surface/level/overlay=wind/orthographic=-236.70,12.37,2494/" + mylocation;
 var weather_animation;
 function getLocation_forWeather(){
     navigator.geolocation.getCurrentPosition(successFunction, errorFunction); 
 
-    var lati;
-    var longi;
+    var latii;
+    var longii;
 
   function successFunction(position) 
   {
-      lati = position.coords.latitude;
-      longi = position.coords.longitude;   
+      latii = position.coords.latitude;
+      longii = position.coords.longitude;   
           //display the new place name upon geting the geo position of current location     
-      mylocation = "loc=" + longi + ","  + lati;
+      mylocation = "loc=" + longii + ","  + latii;
       weather_animation = "https://earth.nullschool.net/#current/wind/surface/level/overlay=wind/orthographic=-236.70,12.37,2494/" + mylocation;
   }
 
@@ -21,34 +38,24 @@ function getLocation_forWeather(){
   {    
               $(".notif_bar").removeClass("hide");
               $(".notif_bar .head-msg").text("CANNOT GET YOUR LOCATION!");
-              $(".notif_bar .msg").text("Your Weather Animation locations is based in the configuration");
+              $(".notif_bar .msg").text("Your Weather Animation locations is now based in the configuration");
               $(".notif_bar .notif-icon").addClass("fa-exclamation");
+              weather_animation = "https://earth.nullschool.net/#current/wind/surface/level/overlay=wind/orthographic=-236.70,12.37,2494/" + mylocation;
+              getmyPlace();
   }
 
 }
-getLocation_forWeather();
 
 var onhome = true;
 var onsleep = false;
-setTimeout(get_forecast_date, 10000);
  function getmyPlace(){
             $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?latlng="+ config.geo_position.latitude + "," + config.geo_position.longitude + "&sensor=true", function(data) {
         $(".placeName").html(data.results[0].formatted_address);
             });
         }
- function get_forecast_date(){
-        var theday_num = parseInt($(".date .dayNum").text()); 
-        var theday_name = $(".date .dayName").text();
-        theday_name = theday_name.slice(0, 3);        
-        
-        theday_name = giriapp.incrDayName(theday_name);  
-
-        $(".forecast_date").html("<span>Forecast Date: </span>" + theday_name);
- }
 
 var show_weather = function(){
-  if(!onsleep){    
-    getmyPlace();
+  if(!onsleep){   
   onhome = false;
   close_list();
   if(!onsleep){
@@ -69,20 +76,24 @@ var hide_weather = function() {
   if(!onsleep){    
   onhome = true;    
   close_list();
+      gs.go_home();
     $("#listen").text('Go Home');
+      $(".forecast_date").addClass("hidden");
       $("#giri-weather #giri-map").animate({"opacity": "0", "z-index": "-1"});
       $("#giri-weather #giri-map").attr('src', "");
       $("#giri-face img, #giri-face .greet").css("opacity", "1");
       $("#giri-face #listen").removeClass("downme"); 
       $("#giri-bottom-face ").removeClass("show");
-      $(".giri_place_getter").addClass("hide");            
+      $(".giri_place_getter").addClass("hide");     
     }
 }
 
 var sleep = function(){
   onsleep = true;
   close_list;
+  gs.go_sleep();
   $(".place_name_popup").css("opacity", "0");
+  $(".slider-caption").css("opacity", "0");
   $("#listen").text('Go to Sleep');
   $(".main-content").addClass("hideme");
   $("footer").addClass("hideme");
@@ -92,6 +103,7 @@ var wakeup = function(){
   onsleep = false;
   close_list;
   $(".place_name_popup").css("opacity", "1");
+  $(".slider-caption").css("opacity", "1");
     $("#listen").text('Wake Up');
   $(".main-content").removeClass("hideme");
   $("footer").removeClass("hideme");
@@ -122,7 +134,6 @@ var hello = function(){
 
 var show_prec = function(){
   if(!onsleep){    
-    getmyPlace();
   close_list();
     $("#listen").text('Show Precipitation');
   if(!onhome && !onsleep){
@@ -137,7 +148,6 @@ var show_prec = function(){
 
 var show_temp = function(){
   if(!onsleep){     
-    getmyPlace(); 
   close_list();
     $("#listen").text('Show Temperature');
   if(!onhome && !onsleep){    
@@ -152,10 +162,14 @@ var show_temp = function(){
 
 var nxt_day = function(){
   if(!onsleep){      
-    getmyPlace();
   close_list();
     $("#listen").text('Next Day Forecast');
   if(!onhome && !onsleep){    
+        tomorrow = moment(today).add(1, 'day');
+        tomorrow = tomorrow.toString();
+        newdate = tomorrow.slice(0, 15);
+        $(".forecast_date").removeClass("hidden");
+        $(".forecast_date").text("Forecast Date: " + newdate);
         curdayofM+=1;
         $("#giri-map").attr("src", "https://earth.nullschool.net/#"+curyear+"/"+curmonth+"/"+curdayofM+"/0900Z/wind/surface/level/overlay="+currentMode+"/orthographic=-236.70,12.37,2494/" + mylocation); 
         gs.nextdayf();
@@ -167,10 +181,14 @@ var nxt_day = function(){
 
 var curr_wthr = function(){
   if(!onsleep){     
-    getmyPlace(); 
   close_list();
     $("#listen").text('Show Current Weather');
   if(!onhome && !onsleep){    
+        tomorrow = moment(today);
+        tomorrow = tomorrow.toString();
+        newdate = tomorrow.slice(0, 15);
+        $(".forecast_date").removeClass("hidden");
+        $(".forecast_date").text("Forecast Date: " + newdate);
         curdayofM = dateNow.getDate();
         $("#giri-map").attr("src", "https://earth.nullschool.net/#current/wind/surface/level/overlay="+currentMode+"/orthographic=-236.70,12.37,2494/" + mylocation);    
         gs.current_weather();
@@ -181,8 +199,7 @@ var curr_wthr = function(){
   }
 
 var show_wnds = function(){
-  if(!onsleep){    
-    getmyPlace();  
+  if(!onsleep){     
   close_list();
     $("#listen").text('Show Wind Speed');
   if(!onhome && !onsleep){    
@@ -196,8 +213,7 @@ var show_wnds = function(){
   }
 
 var next_day_num = function(dnum){
-  if(!onsleep){   
-    getmyPlace();   
+  if(!onsleep){     
   close_list();
     $("#listen").text('Next '+ dnum +' days');
   if(!onhome && !onsleep){    
@@ -213,7 +229,14 @@ var next_day_num = function(dnum){
         dnum = 1;
       }else if(dnum=='two'){
         dnum = 2;
+      }else if(dnum>8){
+        gs.Max_FDate();
       }      
+        tomorrow = moment(today).add(dnum, 'day');
+        tomorrow = tomorrow.toString();
+        newdate = tomorrow.slice(0, 15);
+        $(".forecast_date").removeClass("hidden");
+        $(".forecast_date").text("Forecast Date: " + newdate);
         dnum = dateNow.getDate() + parseInt(dnum);
         $("#giri-map").attr("src", "https://earth.nullschool.net/#"+curyear+"/"+curmonth+"/"+dnum+"/0900Z/wind/surface/level/overlay="+currentMode+"/orthographic=-236.70,12.37,2494/" + mylocation);    
     }else if(onhome && !onsleep){
@@ -229,6 +252,7 @@ var what_say = function(){
     $(".cmd-list").removeClass("hide");
     $(".greet").addClass("hide");
     $("#giri-face img").addClass("hide");
+    gs.show_commands();
   }
 }
 
@@ -278,18 +302,18 @@ if (annyang) {
     '(Hello) (Hi) (Hey) (Jerry)': hello,
     'Introduce yourself': intro,
     'What Can I Say': what_say,
-    'Go Home': hide_weather,
-    'Go to Sleep': sleep,
+    '(Go) Home': hide_weather,
+    '(Go) (to) Sleep': sleep,
     'Wake Up': wakeup,
-    'Show Weather': show_weather,
-    'Show Precipitation': show_prec,
-    'Show Temperature': show_temp,
+    '(Show) Weather': show_weather,
+    '(Show) Precipitation': show_prec,
+    '(Show) Temperature': show_temp,
     'Next Day Forecast': nxt_day,
-    'Show Current Weather': curr_wthr,
-    'Show Wind Speed': show_wnds,
-    'Next :dnum days': next_day_num,
-    'Show (Silang) (All) Forecast': show_brgyweath,
-    'Show Map': show_map,
+    '(Show) Current Weather': curr_wthr,
+    '(Show) Wind Speed': show_wnds,
+    '(Next) :dnum days': next_day_num,
+    '(Show) (Silang) (All) Forecast': show_brgyweath,
+    '(Show) Map': show_map,
     'Show (me) (the) map (of) *place': imgmap.show_req_map,
     'Zoom In': imgmap.zoomIn,
     'Zoom': imgmap.zoom_by,

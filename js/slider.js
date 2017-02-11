@@ -1,0 +1,13 @@
+$(document).ready(function(){      
+     $(".slider-caption").click(function(){
+        if($(".slider").hasClass("show")){
+          $(".slider").removeClass("show");
+          $(this).removeClass("show");
+        }
+        else{
+          $(".slider").addClass("show");
+          $(this).addClass("show");
+          gs.show_crops();
+        }
+     }); 
+     })
