@@ -68,7 +68,19 @@ body{
 
 /*Pop Up Modal For Weather Status*/
 .caption-modal {
-    display: none;
+    height: 0;
+    max-width: 356px !important;
+    transition: all 0.5s ease;
+    opacity: 0;
+    position: absolute !important;
+    max-width: 356px !important;
+    max-height: 480px;
+    top: 500px;
+    right: 55px;
+    background: #fff;
+    padding: 35px 52px;
+    border-radius: 20px;
+    z-index: 999;
 }
 
 .caption-modal.show .close:before {
@@ -101,18 +113,9 @@ body{
     margin-top: 0;
 }
 .caption-modal.show {
-    display: block;
-    position: absolute;
-    width: 100%;
-    max-width: 356px;
-    top: 100px;
-    right: 55px;
-    background: #fff;
-    padding: 35px 52px;
-    border-radius: 20px;
-    z-index: 999;
-    max-height: 480px;
     height: 100%;
+    opacity: 1;
+    top: 100px;
 }
 div#giri-bottom-face{
     display: none;
@@ -124,7 +127,7 @@ div#giri-bottom-face.show {
     position: absolute;
     right: 50px;
     bottom: 50px;
-    z-index: 1;
+    z-index: 9999;
 }
 div#giri-face {
     position: absolute;
@@ -331,7 +334,7 @@ span.motionload {
     width: 7px;
 }
 ::-webkit-scrollbar-thumb {
-    background: #222;
+    background: #54aaa6;
     border-radius: 10px;
 }
 
