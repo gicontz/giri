@@ -36,6 +36,7 @@
 <!-- <script type="text/javascript" src="js/weather-service.js"></script>  -->
 
  <!--Settings-->
+<script type="text/javascript" src="js/reader.js"></script>
 <script type="text/javascript" src="js/geo-position.js"></script>
 <script type="text/javascript" src="config.js"></script>
 <script type="text/javascript" src="js/place.js"></script>
@@ -50,8 +51,11 @@
 <script type="text/javascript" src="crops/data/crops.js"></script>
 <script type="text/javascript" src="crops/js/getcrop.js"></script>
 <script type="text/javascript" src="crops/js/crop-data.js"></script>
+<link rel="stylesheet" type="text/css" href="crops/css/slick.css">
+<link rel="stylesheet" type="text/css" href="crops/css/slick-theme.css">
 <link type="text/css" href="css/jquery-ui.min.css" rel="Stylesheet" />  
 <script type="text/javascript" src="js/dragmouse.js"></script>
+<link rel="stylesheet" type="text/css" href="crops/css/crop-slider.css">
 </head>
 <body class="pointer-m">
 
@@ -60,6 +64,14 @@
 <div id="map" width="100%" height="100%">
   <img>
 </div>
+
+<!-- Crops of the Month -->
+<script type="text/javascript" src="js/slider.js"></script>
+<p class="slider-caption">Crops of the Month</p>
+<section class="center slider" id="crop-slider">
+
+</section>
+<!-- End of Crops of the Month -->
 <!--Deprecated-->
 <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvyDGw_-JMrFWQec19qV5my9JpctAhtas&callback=initMap"></script>-->
 <!--Map-->
@@ -92,7 +104,8 @@
   <!--Place Name-->
 <div class="place_name_popup">
   <span class="close"></span>
-    <p class="placeName">Bulihan</p>
+    <p class="placeName"></p>    
+    <p class="accuracy"></p>
 </div>
   <!--End Place Name-->
 
@@ -121,7 +134,7 @@
 <div class="giri-info-content">
   <div class="giri-earth">
     <div id="giri-weather">
-      <p class="forecast_date hidden"><span>Forecast Date: </span>Tuesday, January 03, 2017</p>
+      <p class="forecast_date hidden"><span>Forecast Date: </span></p>
       <iframe id="giri-map"></iframe>
     </div>
   </div>
@@ -594,5 +607,8 @@
   <p>&copy; Copyright 2016 GIRI</p>
 </footer>
 <script type="text/javascript" src="js/controls.js"></script>
+<script type="text/javascript" src="crops/js/slick.js"></script>
+<script type="text/javascript" src="crops/js/crop-slider-images.js"></script>
+<script type="text/javascript" src="crops/js/crop-slider.js"></script>
 </body>
 </html>

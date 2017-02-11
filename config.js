@@ -1,10 +1,13 @@
+//36da509268d347e6997fcb8983ced0a4
+var forcast_key = readTextFile('api_configs/forecast-api.giri');
+
 var config = {
     // Lenguage for the mirror (currently not implemented)
 
     greets : {
         early:[
         "It so early Master",
-        "You are in a hurry?"
+        "Are You in a hurry?"
         ],
         day: [
         "Hello Master!",
@@ -27,7 +30,7 @@ var config = {
     lenguage : "en",
     // forcast.io
     forcast : {
-        key : "36da509268d347e6997fcb8983ced0a4", // Your forcast.io api key
+        key : forcast_key, // Your forcast.io api key
         units : "uk2" // See forcast.io documentation if you are getting the wrong units
     },
     // Facebook API Integration
