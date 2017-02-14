@@ -1,0 +1,12 @@
+{
+  "name": "GIRI",
+  "description": "Your Smart Mirror Weather Forecast Companion",
+  "version": "0.1",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "icons": { "16": "images/giri.png", "128": "images/giri.png" }
+}
