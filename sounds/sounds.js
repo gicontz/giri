@@ -56,6 +56,10 @@ constructor() {
 	 		new Audio("sounds/max-zo.wav");
 	 this.max_days = 
 	 		new Audio("sounds/max-days.wav");
+	 this.sd = 
+	 		new Audio("sounds/shutdown.wav");
+	 this.abort = 
+	 		new Audio("sounds/abort.wav");
   }
 
 	shutter(){			 		
@@ -142,5 +146,11 @@ constructor() {
 	}
 	Max_FDate(){
 		this.max_days.play();
+	}
+	Shutdown(){
+		this.sd.play();
+	}
+	Abort_sd(){
+		this.abort.play();
 	}
 }
