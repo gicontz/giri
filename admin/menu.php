@@ -11,7 +11,7 @@
                 </div>
 			</div>
 			<ul class="navigation nav navbar-nav">
-				<li><a href="index.php"><i class="glyphicon glyphicon-dashboard"></i>Dashboard</a></li>	
+				<li><a href="http://localhost/giri/admin"><i class="glyphicon glyphicon-dashboard"></i>Dashboard</a></li>
 				<li><a href="forecast.php"><i class="glyphicon glyphicon-cloud"></i>Forecast IO</a></li>	
 				<li><a href="facebook.php"><i class="glyphicon glyphicon-globe"></i>Facebook API</a></li>	
 				<li><a href="googlemap.php"><i class="glyphicon glyphicon-map-marker"></i>Google Maps API</a></li>
@@ -26,4 +26,8 @@
 					</ul>
 				</li>	
 			</ul>
+    <div class="system-link">
+        <a href="../" class="">
+            <img src="../images/giri.png"> GIRI</a>
+    </div>
 </nav>

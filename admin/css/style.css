@@ -105,3 +105,19 @@ button.edit_btn {
     float: right;
     margin-top: -10px;
 }
+.system-link a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.system-link {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #ffffff;
+}
+.system-link img {
+    max-width: 15px;
+    vertical-align: text-top;
+}

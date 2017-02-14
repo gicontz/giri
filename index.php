@@ -606,7 +606,9 @@
 <footer class="giri-license">
   <p>&copy; Copyright 2016 GIRI</p>
 </footer>
+<!--Voice Controls-->
 <script type="text/javascript" src="js/controls.js"></script>
+<!--Crop Slider-->
 <script type="text/javascript" src="crops/js/slick.js"></script>
 <script type="text/javascript" src="crops/js/crop-slider-images.js"></script>
 <script type="text/javascript" src="crops/js/crop-slider.js"></script>
