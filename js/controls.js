@@ -54,6 +54,29 @@ var onsleep = false;
             });
         }
 
+var go_admin =  function(){
+  if(!onsleep){ 
+    window.location.assign("http://localhost/giri/admin");
+  }
+}
+
+var giri_shutdown = function(){
+$.ajax({
+  url: "http://localhost/giri/js/shutdown.php",
+  success: function(){
+    gs.Shutdown();
+   }
+  });
+}
+
+var abort_sd = function(){
+$.ajax({
+  url: "http://localhost/giri/js/abort.php",
+  success: function(){
+    gs.Abort_sd();
+   }
+  });
+}
 var show_weather = function(){
   if(!onsleep){   
   onhome = false;
@@ -90,7 +113,7 @@ var hide_weather = function() {
 
 var sleep = function(){
   onsleep = true;
-  close_list;
+  close_list();
   gs.go_sleep();
   $(".place_name_popup").css("opacity", "0");
   $(".slider-caption").css("opacity", "0");
@@ -101,7 +124,7 @@ var sleep = function(){
 
 var wakeup = function(){
   onsleep = false;
-  close_list;
+  close_list();
   $(".place_name_popup").css("opacity", "1");
   $(".slider-caption").css("opacity", "1");
     $("#listen").text('Wake Up');
@@ -300,7 +323,7 @@ if (annyang) {
   var currentMode = "wind";
   var commands = {
     '(Hello) (Hi) (Hey) (Jerry)': hello,
-    'Introduce yourself': intro,
+    'Introduce (yourself)': intro,
     'What Can I Say': what_say,
     '(Go) Home': hide_weather,
     '(Go) (to) Sleep': sleep,
@@ -320,6 +343,9 @@ if (annyang) {
     'Zoom Out': imgmap.zoomOut,
     'Maximum Zoom Out': imgmap.zoom_out_by,
     'Hide Map': hide_map,
+    '(Go) (to) Admin': go_admin,
+    '(Shutdown) (Shut down) (Turn Off)': giri_shutdown,
+    '(Abort) (Cancel) (Wait) (Stop) (a boy) (cancer) (white) (stuff) (Wheat)': abort_sd,
     '*whatihear': whatihear
   };    
   // Add our commands to annyang
