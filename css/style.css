@@ -614,16 +614,16 @@ p.forecast_date {
 }
 /*For Thesis Device*/
 div#date_time{
-    margin-top: 10px;
+    margin-top: 0px;
 }
 .top-right.done-loading{
-    top: 30px;
+    top: 20px;
 }
 .trash span.glyphicon {
     font-size: 25px;
     text-align: center;
     width: 100%;
-    padding: 35px;
+    padding: 10px;
     margin-top: 20px;
     margin-left: 0;
 }
