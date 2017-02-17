@@ -67,10 +67,10 @@
 
 <!-- Crops of the Month -->
 <script type="text/javascript" src="js/slider.js"></script>
-<p class="slider-caption">Crops of the Month</p>
-<section class="center slider" id="crop-slider">
-
-</section>
+    <p class="slider-caption">Crops of the Month</p>
+  <div id="cropslide">
+   <!--  <section class="center slider" id="crop-slider"></section> -->
+  </div>
 <!-- End of Crops of the Month -->
 <!--Deprecated-->
 <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvyDGw_-JMrFWQec19qV5my9JpctAhtas&callback=initMap"></script>-->
@@ -536,7 +536,7 @@
       </div>
 
   <div id="giri-face">
-    <img src="images/giri.png">
+      <img src="images/giri.png" class="trigger">
     <h1 class="greet"></h1>
     <div class="cmd_container">
       <div class="cmd-list hide">

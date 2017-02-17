@@ -1,11 +1,11 @@
 $(document).ready(function(){      
      $(".slider-caption").click(function(){
-        if($(".slider").hasClass("show")){
-          $(".slider").removeClass("show");
+        if($("#cropslide").hasClass("show")){
+          $("#cropslide").removeClass("show");
           $(this).removeClass("show");
         }
         else{
-          $(".slider").addClass("show");
+          $("#cropslide").addClass("show");
           $(this).addClass("show");
           gs.show_crops();
         }
