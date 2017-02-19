@@ -65,6 +65,11 @@
   <img>
 </div>
 
+<!-- Trigger Button-->
+<giri id="trigger">
+    <img src="images/giri.png">    
+  </giri>
+  
 <!-- Crops of the Month -->
 <script type="text/javascript" src="js/slider.js"></script>
     <p class="slider-caption">Crops of the Month</p>

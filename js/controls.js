@@ -322,16 +322,16 @@ if (annyang) {
   var curmonth = dateNow.getMonth() + 1;
   var currentMode = "wind";
   var commands = {
-    '(Hello) (Hi) (Hey) (Jerry)': hello,
+    'Hello (Hi) (Hey) (Jerry)': hello,
     'Introduce (yourself)': intro,
-    'What Can I Say': what_say,
+    'what can i say': what_say,
     '(Go) Home': hide_weather,
     '(Go) (to) Sleep': sleep,
     'Wake Up': wakeup,
     '(Show) Weather': show_weather,
     '(Show) Precipitation': show_prec,
     '(Show) Temperature': show_temp,
-    'Next Day Forecast': nxt_day,
+    'Next Day (Forecast)': nxt_day,
     '(Show) Current Weather': curr_wthr,
     '(Show) Wind Speed': show_wnds,
     '(Next) :dnum days': next_day_num,
@@ -344,8 +344,8 @@ if (annyang) {
     'Maximum Zoom Out': imgmap.zoom_out_by,
     'Hide Map': hide_map,
     '(Go) (to) Admin': go_admin,
-    '(Shutdown) (Shut down) (Turn Off)': giri_shutdown,
-    '(Abort) (Cancel) (Wait) (Stop) (a boy) (cancer) (white) (stuff) (Wheat)': abort_sd,
+    '(turn) system off': giri_shutdown,
+    '(abort) (a boy) system': abort_sd,
     '*whatihear': whatihear
   };    
   // Add our commands to annyang
@@ -356,9 +356,11 @@ if (annyang) {
 
   var speech_recog = {};
   speech_recog.deftxt = 'Say "What can I say?" to display the list of commands';
-
-  function restCommand(){
+  var is_change = false; 
+  function restCommand(){    
     $('#listen').text(speech_recog.deftxt);    
+    is_change = false;
+    annyang.start({ pause: false });  
   }
    
 
@@ -367,19 +369,33 @@ if (annyang) {
     var final_span = $("#listen");
     recognition.interimResults = true;
 
+    $("giri#trigger").click(function(event){
+      if(is_change){
+        annyang.trigger($("#listen").text());
+        setTimeout(restCommand, 2000);
+        annyang.start({ pause: true });  
+        console.log("trigger");
+      }
+    });
       recognition.onresult = function(event) {
         var interim_transcript = '';
-        final_transcript = '';
+        final_transcript = '';        
         for (var i = event.resultIndex; i < event.results.length; ++i) {
+              //trigger_now = false;
             if (event.results[i].isFinal) {
+                //alert(event.results[i].isFinal);
                 final_transcript += event.results[i][0].transcript;
                 annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
-                setTimeout(restCommand, 2000);
-            } else {
-                interim_transcript += event.results[i][0].transcript;                
+                annyang.start({ pause: true });
+                setTimeout(restCommand, 2000);   
+            } 
+            else {                
+                event.results[i][0].transcript = '';                
+                interim_transcript += event.results[i][0].transcript;            
                 final_span.text(interim_transcript);
+                is_change = true;            
             }
-        }
+        }    
       };
 
 
