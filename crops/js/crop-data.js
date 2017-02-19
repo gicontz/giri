@@ -5,10 +5,12 @@ Images and Description
 
 
 /*Import JS needed*/
+var hostName = window.location.hostname;
+hostName = hostName.toString();
 
 function is_end_of_the_month(){
 	$.ajax({
-	url: "http://localhost/giri/crops/monthday.php",
+	url: "http://"+ hostName +"/giri/crops/monthday.php",
 	success: function(data){
 		if(data==="YES"){
 			$(".notif_bar").removeClass("hide");
@@ -34,8 +36,9 @@ function weather_image(){
 
 	 	setTimeout(function(){
 $.ajax({
-	url: "http://localhost/giri/facebook/screenshot.php",
+	url: "http://"+ hostName +"/giri/facebook/screenshot.php",
 	success: function(){
+	 	$(".uploading img").addClass("visible");
 		postFB();
 	 }
 	}, 500);
@@ -46,17 +49,16 @@ $.ajax({
 
 function postFB(){
 
-	 $(".uploading img").addClass("visible");
      var st = current_crop;
 		 var crops = st.split(",");
 		 var cropdesc = Array(crops.length);
 		 var cropphoto = Array(crops.length);
 		 for (var i = 0; i < crops.length; i++) {
 		 	cropdesc[i]= $.ajax({
-                    url: "http://localhost/giri/crops/data/" + crops[i].trim() + ".txt",
+                    url: "http://"+ hostName +"/giri/crops/data/" + crops[i].trim() + ".txt",
                     async: false
                  }).responseText;
-		 	cropphoto[i] = "http://localhost/giri/crops/images/" + crops[i].trim() + ".jpg";
+		 	cropphoto[i] = "http://"+ hostName +"/giri/crops/images/" + crops[i].trim() + ".jpg";
 		 }
 crops = crops.join(",");
 cropdesc = cropdesc.join("@");
@@ -64,7 +66,7 @@ cropphoto = cropphoto.join(",");
 
 $.ajax({
 	type: "post",
-	url: "http://localhost/giri/facebook/fb.php",
+	url: "http://"+ hostName +"/giri/facebook/fb.php",
 	data: { 
 		cropnames: crops,
 		cropdescr: cropdesc,

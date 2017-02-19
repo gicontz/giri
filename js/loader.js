@@ -36,9 +36,9 @@ function toggleFullScreen(element)
         requestFullScreen(element || document.documentElement);
 }
 
-/*addEventListener("click", function() {
-toggleFullScreen();
-});*/
+// addEventListener("click", function() {
+// toggleFullScreen();
+// });
 
 $(document).ready(function(){   
     function stop_loader(){        
