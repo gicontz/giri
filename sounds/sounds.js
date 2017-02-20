@@ -60,6 +60,10 @@ constructor() {
 	 		new Audio("sounds/shutdown.wav");
 	 this.abort = 
 	 		new Audio("sounds/abort.wav");
+	 this.listen = 
+	 		new Audio("sounds/listen.wav");
+	 this.silence = 
+	 		new Audio("sounds/silence.wav");
   }
 
 	shutter(){			 		
@@ -152,5 +156,11 @@ constructor() {
 	}
 	Abort_sd(){
 		this.abort.play();
+	}
+	silence_mode(){
+		this.silence.play();
+	}
+	listen_mode(){
+		this.listen.play();
 	}
 }

@@ -60,8 +60,9 @@
 <body class="pointer-m">
 
 <!-- Trigger Button-->
-<giri id="trigger">
-    <img src="images/giri.png">    
+<giri id="trigger" class="withtool-tip">
+    <img src="images/giri.png"> 
+    <span class="tip">Click to trigger command / start listening again</span>   
 </giri>
 
   <!--Google MAP API-->
@@ -72,7 +73,10 @@
   
 <!-- Crops of the Month -->
 <script type="text/javascript" src="js/slider.js"></script>
-    <p class="slider-caption">Crops of the Month</p>
+    <div class="slider-caption withtool-tip" >
+      <p>Crops of the Month</p>
+      <span class="tip">Click to show the crops of the month</span>
+    </div>
   <div id="cropslide">
    <!--  <section class="center slider" id="crop-slider"></section> -->
   </div>
@@ -589,8 +593,9 @@
   </div>
   </div>
 
-  <div id="giri-bottom-face">
+  <div id="giri-bottom-face" class="withtool-tip">
         <img src="images/giri.png" class="fb-post">
+        <span class="tip">Click to Create caption for the post</span>
   </div>
 
 </div>

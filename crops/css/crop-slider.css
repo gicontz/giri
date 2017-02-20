@@ -44,7 +44,6 @@ div#cropslide.show{
 }
 .slider-caption {
     position: absolute;
-    transform: rotateZ(90deg);
     cursor: pointer;
     transition: all 0.5s ease-in;
     bottom: 70px;

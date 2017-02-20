@@ -312,10 +312,11 @@ function show_brgyweath(){
     console.log('Show All Barangay');
   }
 }
-
+var isSilent = false;
 var silent = function(){
   annyang.removeCommands();
-  console.log("silent");
+  gs.silence_mode();
+  isSilent = true;
 };
 
 
@@ -357,11 +358,6 @@ if (annyang) {
   // Add our commands to annyang
   annyang.addCommands(commands);  
 
-  annyang.addCommands('listen to me', function() {    
-    annyang.addCommands(commands);
-    console.log("listen");
-  });
-
    //Start Listen
   var done_load_vid = document.getElementById('giri-vid').addEventListener('ended', annyang_start,false);
 
@@ -381,12 +377,20 @@ if (annyang) {
     recognition.interimResults = true;
 
     $("giri#trigger").click(function(event){        
-      annyang.addCommands(commands);
-      if(is_change){
-        annyang.trigger($("#listen").text());
-        setTimeout(restCommand, 2000);
-        annyang.start({ pause: true });  
-        console.log("trigger");
+      if(isSilent){
+        annyang.addCommands(commands);
+        gs.listen_mode();
+        setTimeout(function(){
+          isSilent = false
+        }, 2000);
+      }
+      else{
+        if(is_change){
+          annyang.trigger($("#listen").text());
+          setTimeout(restCommand, 2000);
+          annyang.start({ pause: true });  
+          console.log("trigger");
+        }
       }
     });
       recognition.onresult = function(event) {
