@@ -1,24 +1,4 @@
-<h1>CUCUMBER</h1>
-Cucumber Nutrition Facts
-<br>
-Ever wonder how to beat the scorching summer heat? Just remember your backyard, humble crunchy cucumber! Nonetheless, this wonderful low calorie vegetable indeed has more nutrients to offer than just water and electrolytes.It is one of the oldest cultivated crops, and believed to be originating in the northern sub-Himalayan plains of India. The plant is a creeper (vine) akin to other members of Cucurbita family such as gourds, squashes, melons, zucchini, etc.Botanically; it belongs to the Cucurbitaceae family; and is known scientifically as Cucumis sativus.
-<br>
-<br>
-
-
-Cucumber is easy to grow. Varieties, varying in size, shape, and color, are cultivated all around the world under different climatic zones. In general, the fruit features dark-green skin, crispy, moisture rich flesh, and small edible seeds concentrated near its core.As in other squash members, cucumbers too are best-harvested young, tender and just short of reaching maturity; at the stage when they taste sweet, have crunchy texture, and almost neutral flavor. If left uninterrupted, the fruit continues to grow in size, its skin becomes tougher and turns yellow, and seeds become hard and inedible. Fresh cucumbers are available throughout the season and can be eaten raw, in vegetable salads or juicing.
-
-<br>
-<br>
-Health Benefits of Cucumber
-<br>
-<br>
-1. It is one of the very low calorie vegetables; provide just 15 calories per 100 g. It contains no saturated fats or cholesterol. Cucumber peel is a good source of dietary fiber that helps reduce constipation, and offers some protection against colon cancers by eliminating toxic compounds from the gut.
-<br>
-2. It is a very good source of potassium, an important intracellular electrolyte. 100 g of cucumber provides 147 mg of potassium but only 2 mg of sodium. Potassium is a heart friendly electrolyte helps bring a reduction in total blood pressure and heart rates by countering effects of sodium.
-<br>
-3. Cucumbers contains unique anti-oxidants in moderate ratios such as ß-carotene and a-carotene, vitamin-C, vitamin-A, zea-xanthin and lutein. These compounds help act as protective scavengers against oxygen-derived free radicals and reactive oxygen species (ROS) that play a role in aging and various disease processes. Their total antioxidant strength, measured in terms of oxygen radical absorbance capacity (ORAC value), is 214 µmol TE/100 g.
-<br>
-4. Cucumbers have mild diuretic property, which perhaps attributed to their free-water, and potassium and low sodium content. This helps in checking weight gain and high blood pressure.
-<br>
-5. They surprisingly have a high amount of vitamin K, provides about 17 µg of this vitamin per 100 g. Vitamin-K has been found to have a potential role in bone strength by promoting osteotrophic (bone mass building) activity. It also has established role in the treatment of Alzheimer's disease patients by limiting neuronal damage in their brain.
+ï»¿Common Name: Cucumber
+Local Name: Pipino
+Scientific Name: Cucumis sativus
+Planting Period: May-June

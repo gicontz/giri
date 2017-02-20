@@ -1,38 +1,38 @@
-var giri_crop = 
+ var giri_crop =legit
 {
 	January: 
 	[
 		{
 			
-			crop: " corn, broccoli,lettuce, polesitao, squash, cabbage,mustard,blackpepper, radish, celery"
+			crop: "bittergourd,bottlegourd, broccoli,celery,lettuce, mustard,polesitao,tomato"
 		}
 	],
 
 	February: 
 	[
 		{
-			crop: "broccoli, polesitao, celery"
+			crop: "broccoli,celery,polesitao"
 		}
 		],
 
 	March: 
 	[
 		{
-			crop: "polesitao"
+			crop: ""
 		}
 	],
 
 	April: 
 	[
 		{
-			crop: "rice, polesitao,squash"
+			crop: "rice"
 		}
 	],
 
 	May: 
 	[
 		{
-			crop: "bittergourd,carrot, cassava, corn,cucumber,eggplant,ladyfinger, papaya,  rice,  squash, polesitao, mustard, blackpepper, radish, snapbeans, chayote"
+			crop: "bittergourd, cassava, chayote, corn, cucumber,eggplant, ginger, hotpepper, ladyfinger,polesitao,rice,spongegourd, squash,taro,yampurple"
 		}
 		
 	],
@@ -40,14 +40,14 @@ var giri_crop =
 	June: 
 	[
 		{
-			crop: "bittergourd,carrot, cassava, corn,cucumber,eggplant,ladyfinger, papaya,  rice,  squash, polesitao,cabbage, mustard, blackpepper, radish, snapbeans, chayote"
+			crop: "bittergourd, cassava,chayote,corn, cucumber, eggplant,ginger,hotpepper,ladyfinger,polesitao,rice,spongegourd,squash, taro, yampurple"
 		}
 		],
 
 	July: 
 	[
 		{
-			crop: "bittergourd, polesitao, mustard, cabbage, blackpepper"
+			crop: "bittergourd"
 		}
 		
 	],
@@ -56,21 +56,21 @@ var giri_crop =
 	[
 		{
 
-			crop: "lettuce, polesitao"
+			crop: "lettuce,mustard"
 		}
 	],
 
 	September: 
 	[
 		{
-			crop: "lettuce, squash, polesitao, blackpepper"
+			crop: "lettuce,mustard"
 		}
 		],
 
 	October: 
 	[
 		{
-			crop: "broccoli"
+			crop: "bittergourd, bottlegourd, broccoli, cabbage, celery,chayote, corn,lettuce,mustard, petsay,radish,snapbeans,squash, tomato"
 		}
 
 	],
@@ -78,7 +78,7 @@ var giri_crop =
 	November: 
 	[
 		{
-			crop: " corn, broccoli, lettuce, pechay, squash,polesitao, tomato, cabbage,mustard, blackpepper, radish, snapbeans, celery, chayote"
+			crop: "bittergourd, bottlegourd,broccoli,cabbage,celery,chayote,corn,lettuce,mustard,petsay,polesitao,radish,snapbeans,squash,tomato"
 		}
 
 	],
@@ -86,7 +86,7 @@ var giri_crop =
 	December: 
 	[
 		{
-			crop: " corn, broccoli, lettuce,mustard,  squash,polesitao, tomato cabbage,pechay, blackpepper, radish, snapbeans, celery , chayote"
+			crop: "bittergourd, bottlegourd, broccoli,cabbage,celery,chayote,corn,lettuce,mustard,petsay,polesitao,radish,snapbeans,squash,tomato"
 		}
 	]
 };

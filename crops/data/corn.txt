@@ -1,0 +1,6 @@
+﻿Common Name: Corn
+Local Name: Mais
+Scientific Name: Zea mays
+Planting Period: 
+	*Dry Season: October-January
+	*Rainy Season: May-June

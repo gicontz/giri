@@ -1,37 +1,4 @@
-﻿<h1>CABBAGE</h1>
-Cabbage Nutrition Facts
-<br>
-Do you ever wonder what would be the secret of Chinese people's everlasting youthfulness? Yes...It is cabbage!
-<br>
-<br>
-Rich in phyto-nutrient anti-oxidants, this cool season leafy vegetable belongs to the "Brassica" family, a broad family of common vegetables that also include brussels sprouts, cauliflower, bok choy, kale, and broccoli. It is one of the widely cultivated crops around the world.
-Scientific name: Brassica oleracea (capitata group).
-<br>
-<br>
-Cabbage structurally consists of clusters of stiff leaves superimposed in compact layers, allowing it to aquire round or globular shape vegetable. Several varieties of cabbage cultivated worldwide including green, purple, red, and savoy (loose-wrinkled leaves).
-<br>
-
-Bok-choy or "Chinese-cabbage" features a long cylindrical shape, comprising of short, compact leaves. It is derived from different species of the same Brassica genus of vegetables. Bok-choy characteristically has a vigorous growth pattern.
-
-<br>
-Napa cabbage is another Chinese vegetable variety in the Brassica family. It grows to oblong shaped head consisting of tightly arranged crinkly, thick, light-green color leaves with prominent white veins.
-
-<br>
-<br>
-
-Health Benefits of Cabbage
-<br>
-<br>
-1. Fresh, dark green-leafy cabbage is incredibly nutritious; but very low in fat and calories. 100 g of leaves provide just 25 calories.
-<br>
-2. The vegetable is a storehouse of phyto-chemicals like thiocyanates, indole-3-carbinol, lutein, zea-xanthin, sulforaphane, and isothiocyanates. These compounds are powerful antioxidants and known to help protect against breast, colon, and prostate cancers and help reduce LDL or "bad cholesterol" levels in the blood.
-<br>
-3. Fresh cabbage is an excellent source of natural antioxidant, vitamin C. Provides 36.6 mg or about 61% of RDA per 100 g. Regular consumption of foods rich in vitamin C helps the body develop resistance against infectious agents and scavenge harmful, pro-inflammatory free radicals.
-<br>
-4. Total antioxidant strength measured in terms of oxygen radical absorbance capacity (ORAC value) is 508 µmol TE/100 g. Red cabbages contain more antioxidant value, 2252 µmol TE/100 g.
-<br>
-5. It is also rich in essential vitamins such as pantothenic acid (vitamin B-5), pyridoxine (vitamin B-6) and thiamin (vitamin B-1). These vitamins are essential in the sense that our body requires them from external sources to replenish.
-<br>
-6. It also contains a adequate amount of minerals like potassium, manganese, iron, and magnesium. Potassium is an important component of cell and body fluids that helps controlling heart rate and blood pressure. Manganese is used by the body as a co-factor for the antioxidant enzyme, superoxide dismutase. Iron is required for the red blood cell formation.
-<br>
-7. Cabbage is a very good source of vitamin K, provides about 63% of RDA levels. Vitamin-K has the potential role in bone metabolism through promoting osteotrophic activity. So enough of vitamin K in the diet would gives you healthy bones. In addition, vitamin-K also has established role in the cure of Alzheimer's disease patients by limiting neuronal damage inside their brain.
+﻿Common Name: Cabbage
+Local Name: Repolyo
+Scientific Name: Brassica oleracea
+Planting Period: October-December
