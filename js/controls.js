@@ -360,12 +360,11 @@ if (annyang) {
     "listen to me": listen_tome
   };
 
-  annyang.addCommands(listen);
-
-var listen_tome = function(){
-  annyang.addCommands(commands);
-  console.log("listen");
-};
+  annyang.addCommands('listen to me', function() {    
+    annyang.addCommands(commands);
+    console.log("listen");
+  });
+  
    //Start Listen
   var done_load_vid = document.getElementById('giri-vid').addEventListener('ended', annyang_start,false);
 
