@@ -547,17 +547,21 @@ p.forecast_date {
        * element that contains the map. */
       #map {
         transition: all 1s ease;
-        height: 60%;
+        height: 0;
         position: absolute !important;
-        bottom: -60%;    
+        bottom: 0;    
         width: 100%;
       }
       #map.showmap{
-        bottom: 0;
+        height: 60%;
         z-index: 0;
       }
-      #map img{
+      #map.showmap img{
+        height: 100%;       
+      }
+      #map img {
         width: 100%;
+        height: 0;
       }
       #map:before{
         content: '';

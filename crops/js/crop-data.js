@@ -32,13 +32,13 @@ function weather_image(){
 	 	setTimeout(function(){
 	 		$(".shutter").removeClass("flash");
 	 		$(".uploading").addClass("load");
+	 		$(".uploading img").addClass("visible");
 	 	}, 1500);
 
 	 	setTimeout(function(){
 $.ajax({
 	url: "http://"+ hostName +"/giri/facebook/screenshot.php",
 	success: function(){
-	 	$(".uploading img").addClass("visible");
 		postFB();
 	 }
 	}, 500);

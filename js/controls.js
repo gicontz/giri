@@ -313,6 +313,11 @@ function show_brgyweath(){
   }
 }
 
+var silent = function(){
+  annyang.removeCommands();
+  console.log("silent");
+};
+
 
 if (annyang) {
   // Let's define a command.
@@ -346,11 +351,21 @@ if (annyang) {
     '(Go) (to) Admin': go_admin,
     '(turn) system off': giri_shutdown,
     '(abort) (a boy) system': abort_sd,
+    'please (shut up) (quiet)': silent,
     '*whatihear': whatihear
   };    
   // Add our commands to annyang
   annyang.addCommands(commands);
+  var listen = {  
+    "listen to me": listen_tome
+  };
 
+  annyang.addCommands(listen);
+
+var listen_tome = function(){
+  annyang.addCommands(commands);
+  console.log("listen");
+};
    //Start Listen
   var done_load_vid = document.getElementById('giri-vid').addEventListener('ended', annyang_start,false);
 
@@ -369,7 +384,7 @@ if (annyang) {
     var final_span = $("#listen");
     recognition.interimResults = true;
 
-    $("giri#trigger").click(function(event){
+    $("giri#trigger").click(function(event){        
       if(is_change){
         annyang.trigger($("#listen").text());
         setTimeout(restCommand, 2000);

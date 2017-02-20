@@ -59,16 +59,16 @@
 </head>
 <body class="pointer-m">
 
+<!-- Trigger Button-->
+<giri id="trigger">
+    <img src="images/giri.png">    
+</giri>
+
   <!--Google MAP API-->
 <script type="text/javascript" src="js/map.js"></script>
 <div id="map" width="100%" height="100%">
   <img>
 </div>
-
-<!-- Trigger Button-->
-<giri id="trigger">
-    <img src="images/giri.png">    
-  </giri>
   
 <!-- Crops of the Month -->
 <script type="text/javascript" src="js/slider.js"></script>
@@ -534,7 +534,7 @@
     </div>
 
       <div id="date_time">
-        <?php include("time/time.php"); ?>
+        <script type="text/javascript" src="time/config.js"></script>
         <script type="text/javascript" src="time/time.js"></script>
         <p class="date"></p>
         <p class="time" id="time"></p>
