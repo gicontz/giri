@@ -355,16 +355,13 @@ if (annyang) {
     '*whatihear': whatihear
   };    
   // Add our commands to annyang
-  annyang.addCommands(commands);
-  var listen = {  
-    "listen to me": listen_tome
-  };
+  annyang.addCommands(commands);  
 
   annyang.addCommands('listen to me', function() {    
     annyang.addCommands(commands);
     console.log("listen");
   });
-  
+
    //Start Listen
   var done_load_vid = document.getElementById('giri-vid').addEventListener('ended', annyang_start,false);
 
@@ -384,6 +381,7 @@ if (annyang) {
     recognition.interimResults = true;
 
     $("giri#trigger").click(function(event){        
+      annyang.addCommands(commands);
       if(is_change){
         annyang.trigger($("#listen").text());
         setTimeout(restCommand, 2000);

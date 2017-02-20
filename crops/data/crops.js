@@ -1,4 +1,4 @@
- var giri_crop =legit
+ var giri_crop =
 {
 	January: 
 	[
