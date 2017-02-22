@@ -1,0 +1,23 @@
+/*Tool Tip*/
+.tip {
+    position: absolute;
+    width: 230px;
+    text-align: center;
+    top: -20px;
+    font-size: 10px;
+    background: #fffaf0;
+    color: #000;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    transition: all 1s ease;
+}
+.withtool-tip:hover > .tip{
+    opacity: 1;
+}
+.slider-caption .tip {
+    left: 50px;
+    width: 175px;
+}
+#giri-bottom-face .tip {
+    left: -50px;
+    width: 170px;
+}

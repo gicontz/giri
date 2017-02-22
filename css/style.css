@@ -326,7 +326,7 @@ span.motionload {
     max-width: 400px;
     overflow-y: scroll;
     overflow-x: hidden;
-    max-height: 300px;
+    max-height: 480px;
     left: 30px;
 }
 ::-webkit-scrollbar {
@@ -349,20 +349,6 @@ div#brgy_drag {
     padding: 10px 25px;
     border: 1px solid #fff;
     border-right: none;
-}
-.brgy-forecast p {
-    display: inline-block;
-    padding: 5px 7px 0 0;
-    vertical-align: middle;
-    width: 100px;
-    text-align: right;
-}
-.brgy-forecast p:after {
-    content: ' - ';
-    font-weight: 600;
-}
-#brgy_drag i{
-    color: #000;
 }
 .scr_btn{
     display: none;
@@ -635,28 +621,38 @@ giri#trigger img {
 .tip{
     opacity: 0;
 }
-.tip {
-    position: absolute;
-    width: 230px;
-    text-align: center;
-    top: -20px;
-    font-size: 10px;
-    background: #fffaf0;
-    color: #000;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
-    transition: all 1s ease;
-}
-.withtool-tip:hover > .tip{
-    opacity: 1;
-}
-.slider-caption .tip {
-    left: 50px;
-    width: 175px;
-}
+
 .slider-caption.withtool-tip p {
     transform: rotatez(90deg);
 }
-#giri-bottom-face .tip {
-    left: -50px;
-    width: 170px;
+
+/*Brgy Forecast*/
+#brgy_name, #brgy_name * {
+    color: #111111 !important;
+    font-family: 'Helvetica', sans-serif;
+}
+button {
+    background: #2A62FF;
+    border-style: hidden;
+    color: #ffffff !important;
+    text-transform: uppercase;
+    padding: 5px 5px;
+    border-radius: 2px;
+    font-family: 'Helvetica', sans-serif;
+}
+select#brgy_name {
+    padding: 3px;
+}
+.brgy-forecast .weather-week-descriptor span.daily {
+    padding-left: 0;
+}
+div#brgy-forecast-animation iframe {
+    position: absolute;
+    top: 0;
+    width: 400px;
+    height: 480px;
+    left: 0;
+}
+.brgy-forecast{
+    z-index: 99;
 }

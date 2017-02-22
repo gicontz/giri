@@ -19,6 +19,13 @@ var newdate;
 
 var mylocation = "loc="+  config.geo_position.longitude + "," + config.geo_position.latitude;
 var weather_animation;
+
+function the_specific_weather(longii, latii){
+      var thismylocation = "loc=" + longii + ","  + latii;
+      var thisweather_animation = "https://earth.nullschool.net/#current/wind/surface/level/overlay=wind/orthographic=-236.70,12.37,2494/" + thismylocation;
+      return thisweather_animation;
+}
+
 function getLocation_forWeather(){
     navigator.geolocation.getCurrentPosition(successFunction, errorFunction); 
 
@@ -56,7 +63,7 @@ var onsleep = false;
 
 var go_admin =  function(){
   if(!onsleep){ 
-    window.location.assign("http://localhost/giri/admin");
+    window.location.assign("http://"+ window.location.hostname +"/giri/admin"); 
   }
 }
 
@@ -306,12 +313,13 @@ function close_list(){
 
 function show_brgyweath(){  
   if(!onsleep){    
-    $("#brgy_drag").css({top: '452px', left: '25px'});
+    $("#brgy_drag").css({top: '239px', left: '53px'});
     $("#brgy_drag").removeClass("removing");
     $("#brgy_drag").removeClass("hidden");
     console.log('Show All Barangay');
   }
 }
+
 var isSilent = false;
 var silent = function(){
   annyang.removeCommands();
@@ -319,6 +327,9 @@ var silent = function(){
   isSilent = true;
 };
 
+var brgy_weather_forecast = function(){
+  $("#brgy-forecast-animation iframe").attr('src', weather_animation);
+};
 
 if (annyang) {
   // Let's define a command.
@@ -353,6 +364,7 @@ if (annyang) {
     '(turn) system off': giri_shutdown,
     '(abort) (a boy) system': abort_sd,
     'please (shut up) (quiet)': silent,
+    '(show) (so) its weather': brgy_weather_forecast, 
     '*whatihear': whatihear
   };    
   // Add our commands to annyang

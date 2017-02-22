@@ -59,264 +59,311 @@ var config = {
 var brgy_config = {
     brgy_name: [
         { 
-            classname: 'adlas',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Acacia',
+            lng: 120.992365,
+            lat: 14.276899
         },
+              
+       { 
+            classname: 'Adlas',
+            lng: 120.965359,
+            lat: 14.256701 
+        },
+       { 
+            classname: 'Anahaw I',
+            lng: 120.993861,
+            lat: 14.271950 
+        },
+       { 
+            classname: 'Anahaw II',
+            lng: 120.998133,
+            lat: 14.2826244
+        },        
          { 
-            classname: 'balite1',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Balite 1',
+            lng: 120.926491,
+            lat: 14.2118263
         },
         { 
-            classname: 'balite2',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Balite 2',
+            lng: 120.970881,
+            lat: 14.215241
         },
         { 
-            classname: 'balubad',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Balubad',
+            lng: 120.974998,
+            lat: 14.230556
         },
         { 
-            classname: 'brgy1',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Banaba',
+            lng: 120.9941154,
+            lat: 14.2827261
         },
         { 
-            classname: 'brgy2',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Barangay 1',
+            lng: 120.971329,
+            lat: 14.216298 
         },
         { 
-            classname: 'brgy3',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Barangay 5',
+            lng: 120.973753,
+            lat: 14.220666
         },
         { 
-            classname: 'brgy4',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Batas',
+            lng: 121.008306,
+            lat: 14.212391
         },
         { 
-            classname: 'brgy5',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Biga 1',
+            lng: 120.975545,
+            lat: 14.247502 
         },
         { 
-            classname: 'batas',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Biga 2',
+            lng: 120.973023,
+            lat: 14.246493 
         },
         { 
-            classname: 'biga1',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Biluso',
+            lng: 120.956838,
+            lat: 14.243099
         },
         { 
-            classname: 'biga2',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Bucal',
+            lng: 120.972548,
+            lat: 14.143042 
         },
         { 
-            classname: 'biluso',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Buho',
+            lng: 120.955613,
+            lat: 14.142416
         },
         { 
-            classname: 'bucal',
-            lng: 120.123454,
-            lat: 14.23454
-        },
-        { 
-            classname: 'buho',
-            lng: 120.123454,
-            lat: 14.23454
-        },
-        { 
-            classname: 'bulihan',
+            classname: 'Bulihan',
             lng: 120.996236,
-            lat: 14.275078
+            lat: 14.275078 
         },
         { 
-            classname: 'cabangaan',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Cabangaan',
+            lng: 120.996038,
+            lat: 14.232882
         },
         { 
-            classname: 'carmen',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Carmen',
+            lng: 120.992237,
+            lat: 14.167016
         },
         { 
-            classname: 'hoyo',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Hoyo',
+            lng: 120.974998,
+            lat: 14.230556
         },
         { 
-            classname: 'hukay',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Hukay',
+            lng: 121.012147,
+            lat: 14.235035 
         },
         { 
-            classname: 'iba',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Iba',
+            lng: 120.973158,
+            lat: 14.218101
         },
         { 
-            classname: 'inchikan',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Inchican',
+            lng: 121.044777,
+            lat: 14.246622 
         },
         { 
-            classname: 'kalubkob',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Ipil 1',
+            lng: 120.996836,
+            lat: 14.273276 
         },
         { 
-            classname: 'kaong',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Ipil 2',
+            lng: 120.994053,
+            lat: 14.278173  
         },
         { 
-            classname: 'lalaan1',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Kalubkob',
+            lng: 120.962927,
+            lat: 14.210827 
         },
         { 
-            classname: 'lalaan2',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Kaong',
+            lng: 120.971983,
+            lat: 14.221533 
         },
         { 
-            classname: 'litlit',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Lalaan 1',
+            lng: 120.95651,
+            lat: 14.152754 
         },
         { 
-            classname: 'lucsuhin',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Lalaan 2',
+            lng: 120.955364,
+            lat: 14.149995
         },
         { 
-            classname: 'lumil',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Litlit',
+            lng: 120.946237,
+            lat: 14.207385 
         },
         { 
-            classname: 'maguyam',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Lucsuhin',
+            lng: 120.959775,
+            lat: 14.211265
         },
         { 
-            classname: 'malabag',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Lumil',
+            lng: 120.971435,
+            lat: 14.22452 
         },
         { 
-            classname: 'malakit',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Maguyam',
+            lng: 121.006268,
+            lat: 14.264713
         },
         { 
-            classname: 'mataasnab',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Malabag',
+            lng: 120.961545,
+            lat: 14.237947
         },
         { 
-            classname: 'muntingi',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Malaking Tatiao',
+            lng: 120.987475,
+            lat: 14.223065
         },
         { 
-            classname: 'paligawan',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Mataas Na Burol',
+            lng: 120.974998,
+            lat: 14.230556
         },
         { 
-            classname: 'pasonglangka',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Munting Ilog',
+            lng: 120.996521,
+            lat: 14.21899 
         },
         { 
-            classname: 'pooc1',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Narra 1',
+            lng: 120.995048,
+            lat: 14.278939   
         },
         { 
-            classname: 'pooc2',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Narra 2',
+            lng: 120.994219,
+            lat: 14.276053 
         },
         { 
-            classname: 'pulongsaging',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Narra 3',
+            lng: 120.993323,
+            lat: 14.278279 
+        },
+        
+        { 
+            classname: 'Paligawan',
+            lng: 120.96563,
+            lat: 14.243993 
         },
         { 
-            classname: 'pulongbunga',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Pasong Langka',
+            lng: 121.006268,
+            lat: 14.264713 
         },
         { 
-            classname: 'putingkahoy',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Pooc 1',
+            lng: 120.99418,
+            lat: 14.189981 
         },
         { 
-            classname: 'sabutan',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Pooc 2',
+            lng: 120.991285,
+            lat: 14.198667 
         },
         { 
-            classname: 'santol',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Pulong Saging',
+            lng: 120.977814,
+            lat: 14.208568 
         },
         { 
-            classname: 'sanvic1',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Pulong Bunga',
+            lng: 120.972078,
+            lat: 14.229493 
         },
         { 
-            classname: 'adlsanvic2as',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Puting Kahoy',
+            lng: 121.031287,
+            lat: 14.216585 
         },
         { 
-            classname: 'tartaria',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Sabutan',
+            lng: 120.977417,
+            lat: 14.2254 
         },
         { 
-            classname: 'tibig',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Santol',
+            lng: 120.96328,
+            lat: 14.285329 
         },
         { 
-            classname: 'toledo',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'San Miguel 1',
+            lng: 120.972854,
+            lat: 14.218309
+        },      
+        { 
+            classname: 'San Miguel 2',
+            lng: 120.970425,
+            lat: 14.22333 
+        },      
+        { 
+            classname: 'San Vicente 1',
+            lng: 120.976,
+            lat: 14.2289 
         },
         { 
-            classname: 'tubuan1',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'San Vicente 2',
+            lng: 120.973026,
+            lat: 14.224095
         },
         { 
-            classname: 'tubuan2',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Tartaria',
+            lng: 120.972261,
+            lat: 14.219335 
         },
         { 
-            classname: 'tubuan3',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Tibig',
+            lng: 121.001173,
+            lat: 14.22682
         },
         { 
-            classname: 'ulat',
-            lng: 120.123454,
-            lat: 14.23454
+            classname: 'Toledo',
+            lng: 120.978379,
+            lat: 14.150201
+        },
+        { 
+            classname: 'Tubuan 1',
+            lng: 120.971041,
+            lat: 14.214419
+        },
+        { 
+            classname: 'Tubuan 2',
+            lng: 120.969667,
+            lat: 14.214833
+        },
+        { 
+            classname: 'Tubuan 3',
+            lng: 120.975603,
+            lat: 14.215038
+        },
+        { 
+            classname: 'Ulat',
+            lng: 120.984078,
+            lat: 14.176831
+        },          
+        { 
+            classname: 'Yakal',
+            lng: 120.968278,
+            lat: 14.223902 
         }          
-    ]
+        ]
 };
