@@ -22,7 +22,7 @@
 div#cropslide{    
     width: 40%;
     background: #000000;
-    padding: 20px;
+    padding: 0 20px 20px;
     position: absolute;
     z-index: 9;
     margin: 0 auto;

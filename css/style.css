@@ -621,17 +621,20 @@ giri#trigger img {
 .tip{
     opacity: 0;
 }
-
 .slider-caption.withtool-tip p {
     transform: rotatez(90deg);
+    transition: all 0.5s ease;
+    margin-bottom: 0;
 }
-
+.slider-caption.withtool-tip.show p {
+    transform: rotateZ(0deg);
+}
 /*Brgy Forecast*/
 #brgy_name, #brgy_name * {
     color: #111111 !important;
     font-family: 'Helvetica', sans-serif;
 }
-button {
+.brgy-forecast button {
     background: #2A62FF;
     border-style: hidden;
     color: #ffffff !important;

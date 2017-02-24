@@ -376,6 +376,7 @@ if (annyang) {
   var speech_recog = {};
   speech_recog.deftxt = 'Say "What can I say?" to display the list of commands';
   var is_change = false; 
+  var is_triggered = false;
   function restCommand(){    
     $('#listen').text(speech_recog.deftxt);    
     is_change = false;
@@ -388,22 +389,24 @@ if (annyang) {
     var final_span = $("#listen");
     recognition.interimResults = true;
 
-    $("giri#trigger").click(function(event){        
-      if(isSilent){
-        annyang.addCommands(commands);
-        gs.listen_mode();
-        setTimeout(function(){
-          isSilent = false
-        }, 2000);
-      }
-      else{
-        if(is_change){
-          annyang.trigger($("#listen").text());
-          setTimeout(restCommand, 2000);
-          annyang.start({ pause: true });  
-          console.log("trigger");
+    $("giri#trigger").click(function(event){  
+      is_triggered = true;   
+      recognition.stop();  
+        if(isSilent){
+          annyang.addCommands(commands);
+          gs.listen_mode();
+          setTimeout(function(){
+            isSilent = false;
+          }, 2000);
         }
-      }
+        // else{
+        //   if(is_change){
+        //     annyang.trigger($("#listen").text());
+        //     setTimeout(restCommand, 2000);
+        //     annyang.start({ pause: true });  
+        //     console.log("trigger");
+        //   }
+        // }
     });
       recognition.onresult = function(event) {
         var interim_transcript = '';
@@ -411,14 +414,15 @@ if (annyang) {
         for (var i = event.resultIndex; i < event.results.length; ++i) {
               //trigger_now = false;
             if (event.results[i].isFinal) {
-                //alert(event.results[i].isFinal);
-                final_transcript += event.results[i][0].transcript;
-                annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
-                annyang.start({ pause: true });
-                setTimeout(restCommand, 2000);   
+                  final_transcript += event.results[i][0].transcript;
+                  // if(!is_triggered){
+                  //   final_transcript = "";
+                  // }
+                  annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
+                  annyang.start({ pause: true });
+                  setTimeout(restCommand, 2000);
             } 
-            else {                
-                event.results[i][0].transcript = '';                
+            else {                         
                 interim_transcript += event.results[i][0].transcript;            
                 final_span.text(interim_transcript);
                 is_change = true;            

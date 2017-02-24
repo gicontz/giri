@@ -4,6 +4,41 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 
+
+// how many milliseconds is a long press?
+var longpress = 1000;
+var ondown = false;
+// holds the start time
+var start;
+var incrstart;
+var dragging = false;
+
+$( "#brgy_drag" ).on( 'mousedown', function(e) {
+  ondown = true;
+  start = new Date().getTime();
+  setInterval(function(){
+  if (ondown && !dragging) {
+    incrstart = new Date().getTime();
+        console.log(incrstart);
+    if (incrstart >= (start + longpress)) {
+      $(".trash").addClass("visible");
+      $(".trash").removeClass("hidden");
+    }
+  }
+}, 100);
+});
+
+$( "#brgy_drag" ).on( 'mouseleave', function( e ) {
+  start = 0;
+} );
+
+$( "#brgy_drag" ).on( 'mouseup', function( e ) {
+  ondown = false;
+  $(".trash").addClass("hidden");
+  $(".trash").removeClass("visible");
+});
+
+
 $("button.ok-btn").click(function(){
     $("#notif_drag").addClass("hidden");
 });
@@ -24,10 +59,12 @@ function remove_element(el){
         $(".trash").addClass("hidden");
         $(".trash").removeClass("visible");
         el.addClass("hidden");
+        dragging = false;
     }
 }
 
 function elment_drag(el){
+    dragging = true;
     getstyle = el.attr("style");
     getstyle = getstyle.slice(getstyle.indexOf('top')+4);
     getstyle = getstyle.slice(0, getstyle.indexOf('px'));
@@ -78,37 +115,6 @@ $("body").bind("mouseup", function(event){
     //Allow dragging element
 	$("#brgy_drag").draggable();
     $("#notif_drag").draggable();
-
-$("#brgy_drag .up").on("click" ,function(){
-     scrolled -= 50; 
-     if(the_top <= 0){
-     	scrolled = 0;
-     }
-        $("#brgy_drag").animate({
-          scrollTop:  scrolled
-     });
-        $(".scr_btn").css({
-        	"top": "calc(-10px + "+ scrolled +"px)"
-        });
-   });
-$("#brgy_drag .down").on("click" ,function(){
-     scrolled += 50;
-     if(the_top >= 300){
-     	scrolled = 300;
-     }
-        $("#brgy_drag").animate({
-          scrollTop:  scrolled
-     });
-    	if (scrolled < 400) {
-        $(".scr_btn").css({
-        	"top": "calc(-10px + "+ scrolled +"px)"
-        });
-    	}else{
-        $(".scr_btn").css({
-        	"top": "418px"
-        });
-    	}
-     });
 
 });
 });
