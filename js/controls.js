@@ -53,6 +53,7 @@ function getLocation_forWeather(){
 
 }
 
+var is_occ = false;
 var onhome = true;
 var onsleep = false;
  function getmyPlace(){
@@ -187,6 +188,7 @@ var show_prec = function(){
 }
 
 var show_occ = function(){
+  is_occ = true;
   if(!onsleep){    
     close_list();
       $("#listen").text('Show Ocean Current');
@@ -251,7 +253,7 @@ var curr_wthr = function(){
         $(".forecast_date").removeClass("hidden");
         $(".forecast_date > span").text("Forecast Date: " + newdate);
         curdayofM = dateNow.getDate();
-        $("#giri-map").attr("src", "https://earth.nullschool.net/#current/wind/surface/level/overlay="+currentMode+"/orthographic=-236.70,12.37,2494/" + mylocation);    
+        is_occ ? show_occ : $("#giri-map").attr("src", "https://earth.nullschool.net/#current/wind/surface/level/overlay="+currentMode+"/orthographic=-236.70,12.37,2494/" + mylocation);        
         gs.current_weather();
       }else if(onhome && !onsleep){
         gs.notif_sw();

@@ -66,6 +66,16 @@ constructor() {
 	 		new Audio("sounds/silence.wav");
 	 this.occ = 
 	 		new Audio("sounds/oceanCur.wav");
+	 this.sig1 = 
+	 		new Audio("sounds/sig1.wav");
+	 this.sig2 = 
+	 		new Audio("sounds/sig2.wav");
+	 this.sig3 = 
+	 		new Audio("sounds/sig3.wav");
+	 this.sig4 = 
+	 		new Audio("sounds/sig4.wav");
+	 this.sig5 = 
+	 		new Audio("sounds/sig5.wav");
   }
 
 	shutter(){			 		
@@ -167,5 +177,20 @@ constructor() {
 	}
 	oceanCur(){
 		this.occ.play();
+	}
+	signal_1(){
+		this.sig1.play();
+	}	
+	signal_2(){
+		this.sig2.play();
+	}
+	signal_3(){
+		this.sig3.play();
+	}
+	signal_4(){
+		this.sig4.play();
+	}
+	signal_5(){
+		this.sig5.play();
 	}
 }

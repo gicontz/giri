@@ -25,13 +25,117 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
   }
   });
 
+                   
+  var the_signal = 0;
+
 //Initialize weather forecast
   getweather();
 
   function getweather(){
-            $.getJSON("https://api.forecast.io/forecast/" + config.forcast.key + "/" + weath_latitude + "," + weath_longitude + "?callback=?", function(data) {
-              // console.log(data);
-              //Data in the current weather
+            $.getJSON("https://api.forecast.io/forecast/" + config.forcast.key + "/" + weath_latitude + "," + weath_longitude + "?callback=?", function(data) {              
+
+              //Data in the current weather    
+              var getHourlyWindSpeed = function(maxhour, target_sig, datum){
+                var mpkm = 1.60934;
+                  for (var hr_index = 0; hr_index <= maxhour - 1; hr_index++){
+                    var ws = datum.hourly.data[hr_index].windSpeed * mpkm;
+                    switch(target_sig){
+                      case 1:                      
+                        if (ws >= 30 && ws <=60){
+                          return true;
+                        }
+                        break;
+                      case 2:                      
+                        if (ws >= 61 && ws <=120){
+                          return true;
+                        }
+                        break;
+                      case 3:                      
+                        if (ws >= 121 && ws <= 170){
+                          return true;
+                        }
+                        break;
+                      case 4:                      
+                        if (ws >= 171 && ws <= 220){
+                          return true;
+                        }
+                        break;
+                      case 5:
+                        if(ws > 220){
+                          return true;                          
+                        }
+                        break;
+                    }
+                  }
+                return false;
+              }
+              var signal_indicator = $("#giri-face img");         
+              //The Signal Warning Assessment
+              if (getHourlyWindSpeed(36, 1, data)) {
+                the_signal = 1;
+                gs.signal_1();
+              }
+              else if(getHourlyWindSpeed(24, 2, data)){
+                the_signal = 2;
+                gs.signal_2();
+              }
+              else if(getHourlyWindSpeed(18, 3, data)){
+                the_signal = 3;
+                gs.signal_3();
+              }
+              else if(getHourlyWindSpeed(12, 4, data)){
+                the_signal = 4;
+                gs.signal_4();
+              }
+              else if(getHourlyWindSpeed(12, 5, data)){
+                the_signal = 5;
+                gs.signal_5();
+              }
+
+              //Testing for development
+              var info_hourly = "";
+              var getHourlyWindSpeed_test = function (maxhour, datum){
+                var mpkm = 1.60934;
+                  for (var hr_index = 0; hr_index <= maxhour - 1; hr_index++){
+                    var ws = datum.hourly.data[hr_index].windSpeed * mpkm;
+                    info_hourly += hr_index + " " + ws + "km/hr\n";
+                  }
+              }
+
+              getHourlyWindSpeed_test(36, data);
+                //Report
+              console.log(info_hourly);
+
+    //Test
+    //the_signal = 1;
+
+              //Signal Warning Colors
+              switch(the_signal){
+                case 1:
+                  signal_indicator.attr('class', "");
+                  signal_indicator.addClass("signal1");
+                  break;
+                case 2:
+                  signal_indicator.attr('class', "");
+                  signal_indicator.addClass("signal2");
+                  break;
+                case 3:
+                  signal_indicator.attr('class', "");
+                  signal_indicator.addClass("signal3");
+                  break;
+                case 4:
+                  signal_indicator.attr('class', "");
+                  signal_indicator.addClass("signal4");
+                  break;
+                case 5:
+                  signal_indicator.attr('class', "");
+                  signal_indicator.addClass("signal5");
+                  break;
+                default:
+                  signal_indicator.attr('class', "");                 
+                  break;
+              }
+
               var far_temp = parseFloat(data.currently.temperature);
               var cel = ((far_temp - 32) * 5) / 9;              
               $('#weather').html(cel.toFixed(2) + '&deg;C');
@@ -167,7 +271,8 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
 
     //Earth       
         }
-        
+
+        //Signal Warnings
 
   setInterval(getweather, 300000);
 

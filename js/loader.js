@@ -50,6 +50,25 @@ $(document).ready(function(){
         is_end_of_the_month();
         stop_loader();
         getLocation_forWeather();
+
+    switch(the_signal){
+      case 1:
+        gs.signal_1();
+        break;
+      case 2:
+        gs.signal_2();
+        break;
+      case 3:
+        gs.signal_3();
+        break;
+      case 4:
+        gs.signal_4();
+        break;
+      case 5:
+        gs.signal_5();
+         break;
+    }
+    
 // Update the online status icon based on connectivity
   window.addEventListener('online',  OnlineMode);
   window.addEventListener('offline', OfflineMode);

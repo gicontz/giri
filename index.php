@@ -14,9 +14,6 @@
   <script src="js/annyang.js"></script>
   <script src="js/moment.js"></script>
   <link rel="shortcut icon" href="favicon.png" />
-  <!-- <script src="js/speechkitt.min.js"></script> -->
-  <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.min.js"></script> -->
 
   <!--Bootstrap-->
   <!-- Latest compiled and minified CSS -->
@@ -29,33 +26,37 @@
   <script type="text/javascript" src="js/jquery-ui.min.js"></script>
   <script type="text/javascript" src="js/jquery-tp.js"></script>
 
-<!-- Application-->
+  <!-- Application-->
 
-<!-- <script type="text/javascript" src="js/app.js"></script> -->
-<!-- <script type="text/javascript" src="js/annyang-service.js"></script> -->
-<!-- <script type="text/javascript" src="js/weather-service.js"></script>  -->
+   <!--Settings-->
+  <script type="text/javascript" src="js/reader.js"></script>
+  <script type="text/javascript" src="js/geo-position.js"></script>
+  <script type="text/javascript" src="config.js"></script>
+  <script type="text/javascript" src="js/place.js"></script>
 
- <!--Settings-->
-<script type="text/javascript" src="js/reader.js"></script>
-<script type="text/javascript" src="js/geo-position.js"></script>
-<script type="text/javascript" src="config.js"></script>
-<script type="text/javascript" src="js/place.js"></script>
+  <!-- Weather -->
+  <script type="text/javascript" src="js/weather.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/weather-icons.css">
 
-<!-- Weather -->
-<script type="text/javascript" src="js/weather.js"></script>
-<link rel="stylesheet" type="text/css" href="css/weather-icons.css">
+  <!--Main Styles & Theme-->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
-
-<script type="text/javascript" src="crops/data/crops.js"></script>
-<script type="text/javascript" src="crops/js/getcrop.js"></script>
-<script type="text/javascript" src="crops/js/crop-data.js"></script>
-<link rel="stylesheet" type="text/css" href="crops/css/slick.css">
-<link rel="stylesheet" type="text/css" href="crops/css/slick-theme.css">
-<link type="text/css" href="css/jquery-ui.min.css" rel="Stylesheet" />  
-<script type="text/javascript" src="js/dragmouse.js"></script>
-<link rel="stylesheet" type="text/css" href="crops/css/crop-slider.css">
+  <!--Crop Data and integration-->
+  <script type="text/javascript" src="crops/data/crops.js"></script>
+  <script type="text/javascript" src="crops/js/getcrop.js"></script>
+  <script type="text/javascript" src="crops/js/crop-data.js"></script>
+  <!-- Slick slider -->
+  <link rel="stylesheet" type="text/css" href="crops/css/slick.css">
+  <link rel="stylesheet" type="text/css" href="crops/css/slick-theme.css">
+  <!--jQuery UI-->
+  <link type="text/css" href="css/jquery-ui.min.css" rel="Stylesheet" />  
+  <!--Draggable Element-->
+  <script type="text/javascript" src="js/dragmouse.js"></script>
+  <!--Crop Slider-->
+  <link rel="stylesheet" type="text/css" href="crops/css/crop-slider.css">
+  <!--Animation-->
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
 </head>
 <body class="pointer-m">
 
@@ -138,6 +139,7 @@
   <video src="loading.mp4" autoplay width="100%" height="100%" id="giri-vid"></video>
 </div>
 
+<!--Main Content-->
 <div class="giri-info-content">
   <div class="giri-earth">
     <div id="giri-weather">
@@ -145,6 +147,7 @@
         <div class="long"></div>
         <div class="lat"></div>
       </div>
+<!--Forecast Overlay Legends -->
         <div class="forecast_date hidden">
           <span>Forecast Date: </span>
           <div id="the_scale">
@@ -162,6 +165,7 @@
     </div>
   </div>
 
+<!--Sidebar Weather Data -->
   <div class="giri-forecast">
       <div class="top-right">
         <div class="weather">
@@ -228,7 +232,7 @@
       </div> 
     
 
-
+<!-- Draggable Forecast Data coming from other barangays-->
     <div class="middle-left drag-m hidden" id="brgy_drag" style="">
       <div class="brgy-forecast front">
         <div style="display:none">
@@ -313,7 +317,7 @@
         </div>
       </div>
     </div>
-
+<!-- Time Ticker -->
       <div id="date_time">
         <script type="text/javascript" src="time/config.js"></script>
         <script type="text/javascript" src="time/time.js"></script>
@@ -321,6 +325,7 @@
         <p class="time" id="time"></p>
       </div>
 
+<!--Greetings && Interim Results-->
   <div id="giri-face">
       <img src="images/giri.png" class="trigger">
     <h1 class="greet"></h1>
@@ -333,21 +338,17 @@
             <dt>Go home</dt>
             <dd>Takes you back to the home screen</dd>
             <dt>Show Weather</dt>
-            <dd>Will show you the animated weather forecast</dd>
+            <dd>Will show you the animated weather (see documentation)</dd>
             <dt>Go To Sleep</dt>
             <dd>Sleep the Screen</dd>
-            <dt>Show Precipitation</dt>
-            <dd>Show the Total Precipitable Water while Weather is visible too</dd>
-            <dt>Show Temperature</dt>
-            <dd>Shows the Temperature while Weather is visible too</dd>
             <dt>Introduce Yourself</dt>
             <dd>State a short description of his capabilities</dd>
-            <dt>Next Day Forecast</dt>
-            <dd>Shows the forecast for the next day from the current forecast Date</dd>
-            <dt>Show Current Weather</dt>
-            <dd>Shows the Current weather in the current view</dd>
-            <dt>Next (number) days</dt>
-            <dd>Shows the forecast a number of days from the current date - maximum of 5</dd>
+            <dt>Show Map</dt>
+            <dd>Display the map of your current location</dd>
+            <dt>Show me the map of *location</dt>
+            <dd>Display the map of the requested location</dd>
+            <dt>Show All Forecast</dt>
+            <dd>Display the forecast of all the barangay</dd>
           </dl>
       </div>
     </div>
