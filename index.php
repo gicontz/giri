@@ -1,7 +1,9 @@
+<?php //header("Cache-Control: no-cache, must-revalidate"); ?>
 <html>
 <head>
   <title>GIRI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="cache-control" content="no-cache">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
   <!--Resources-->

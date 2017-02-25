@@ -49,7 +49,7 @@ $.ajax({
 
 function postFB(){
 
-     var st = current_crop;
+     var st = next_crop;
 		 var crops = st.split(",");
 		 var cropdesc = Array(crops.length);
 		 var cropphoto = Array(crops.length);

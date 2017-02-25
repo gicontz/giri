@@ -71,3 +71,18 @@ div#cropslide.show{
 .slick-next:before {
     color: #ffffff;
 }
+
+#crop-slider.onti .slick-list.draggable {
+    transform: translateY(-35px);
+}
+#crop-slider.wala .slick-list.draggable {
+    transform: translateY(-75px);
+}
+#crop-slider.wala .slick-list.draggable .slick-track {
+    width: 100% !important;
+    transform: translate3d(-17px, 0, 0px) !important;
+}
+#crop-slider.wala .slick-list.draggable p {
+    width: 100% !important;
+    text-align: center;
+}
