@@ -20,9 +20,9 @@ var newdate;
 var mylocation = "loc="+  config.geo_position.longitude + "," + config.geo_position.latitude;
 var weather_animation;
 
-function the_specific_weather(longii, latii){
+function the_specific_weather(longii, latii, overlay){
       var thismylocation = "loc=" + longii + ","  + latii;
-      var thisweather_animation = "https://earth.nullschool.net/#current/wind/surface/level/overlay=wind/orthographic=-236.70,12.37,2494/" + thismylocation;
+      var thisweather_animation = "https://earth.nullschool.net/#current/wind/surface/level/overlay="+ overlay +"/orthographic=-236.70,12.37,2494/" + thismylocation;
       return thisweather_animation;
 }
 
@@ -98,6 +98,12 @@ var show_weather = function(){
       $("#giri-face #listen").addClass("downme");
       $("#giri-bottom-face ").addClass("show"); 
       $(".giri_place_getter").removeClass("hide");  
+      $(".forecast_date").removeClass("hidden");
+        tomorrow = moment(today);
+        tomorrow = tomorrow.toString();
+        newdate = tomorrow.slice(0, 15);
+        $(".forecast_date > span").text("Forecast Date: " + newdate);
+      $(".mode").text("windspeed");
   }
 }
 }
@@ -170,10 +176,31 @@ var show_prec = function(){
         currentMode = "total_precipitable_water";
         $("#giri-map").attr("src", "https://earth.nullschool.net/#current/wind/surface/level/overlay="+currentMode+"/orthographic=-236.70,12.37,2494/" + mylocation); 
         gs.precW();
+        $("#scale_ws").addClass("hidden");
+        $("#scale_occr").addClass("hidden");
+        $("#scale_prec").removeClass("hidden");
+        $(".mode").text("total precipitable water");
       }else if(onhome && !onsleep){
         gs.notif_sw();
       }
     }
+}
+
+var show_occ = function(){
+  if(!onsleep){    
+    close_list();
+      $("#listen").text('Show Ocean Current');
+    if(!onhome && !onsleep){
+          $("#giri-map").attr("src", "https://earth.nullschool.net/#current/ocean/surface/currents/orthographic=-236.70,12.37,2494/" + mylocation); 
+          $("#scale_ws").addClass("hidden");
+          $("#scale_occr").removeClass("hidden");
+          $("#scale_prec").addClass("hidden");
+          gs.oceanCur();
+        $(".mode").text("ocean current");
+        }else if(onhome && !onsleep){
+          gs.notif_sw();
+        }
+  }
 }
 
 var show_temp = function(){
@@ -184,6 +211,10 @@ var show_temp = function(){
         currentMode = "temp";
         $("#giri-map").attr("src", "https://earth.nullschool.net/#current/wind/surface/level/overlay="+currentMode+"/orthographic=-236.70,12.37,2494/" + mylocation); 
         gs.tempF();
+        $("#scale_ws").addClass("hidden");
+        $("#scale_occr").addClass("hidden");
+        $("#scale_prec").addClass("hidden");
+        $(".mode").text(currentMode);
   }else if(onhome && !onsleep){
         gs.notif_sw();
       }
@@ -199,7 +230,7 @@ var nxt_day = function(){
         tomorrow = tomorrow.toString();
         newdate = tomorrow.slice(0, 15);
         $(".forecast_date").removeClass("hidden");
-        $(".forecast_date").text("Forecast Date: " + newdate);
+        $(".forecast_date > span").text("Forecast Date: " + newdate);
         curdayofM+=1;
         $("#giri-map").attr("src", "https://earth.nullschool.net/#"+curyear+"/"+curmonth+"/"+curdayofM+"/0900Z/wind/surface/level/overlay="+currentMode+"/orthographic=-236.70,12.37,2494/" + mylocation); 
         gs.nextdayf();
@@ -218,7 +249,7 @@ var curr_wthr = function(){
         tomorrow = tomorrow.toString();
         newdate = tomorrow.slice(0, 15);
         $(".forecast_date").removeClass("hidden");
-        $(".forecast_date").text("Forecast Date: " + newdate);
+        $(".forecast_date > span").text("Forecast Date: " + newdate);
         curdayofM = dateNow.getDate();
         $("#giri-map").attr("src", "https://earth.nullschool.net/#current/wind/surface/level/overlay="+currentMode+"/orthographic=-236.70,12.37,2494/" + mylocation);    
         gs.current_weather();
@@ -236,6 +267,10 @@ var show_wnds = function(){
         currentMode = "wind";
         $("#giri-map").attr("src", "https://earth.nullschool.net/#current/wind/surface/level/overlay="+currentMode+"/orthographic=-236.70,12.37,2494/" + mylocation); 
         gs.windS();
+        $("#scale_ws").removeClass("hidden");
+        $("#scale_occr").addClass("hidden");
+        $("#scale_prec").addClass("hidden");
+        $(".mode").text("windspeed");
       }else if(onhome && !onsleep){
         gs.notif_sw();
       }
@@ -259,14 +294,14 @@ var next_day_num = function(dnum){
         dnum = 1;
       }else if(dnum=='two'){
         dnum = 2;
-      }else if(dnum>8){
+      }else if(dnum>6){
         gs.Max_FDate();
       }      
         tomorrow = moment(today).add(dnum, 'day');
         tomorrow = tomorrow.toString();
         newdate = tomorrow.slice(0, 15);
         $(".forecast_date").removeClass("hidden");
-        $(".forecast_date").text("Forecast Date: " + newdate);
+        $(".forecast_date > span").text("Forecast Date: " + newdate);
         dnum = dateNow.getDate() + parseInt(dnum);
         $("#giri-map").attr("src", "https://earth.nullschool.net/#"+curyear+"/"+curmonth+"/"+dnum+"/0900Z/wind/surface/level/overlay="+currentMode+"/orthographic=-236.70,12.37,2494/" + mylocation);    
     }else if(onhome && !onsleep){
@@ -328,7 +363,9 @@ var silent = function(){
 };
 
 var brgy_weather_forecast = function(){
-  $("#brgy-forecast-animation iframe").attr('src', weather_animation);
+  $("#brgy-forecast-animation iframe").attr('src', the_specific_weather($(".the_long").text(), $(".the_lat").text(), "wind"));
+  $("#brgy-forecast-animation").addClass("vis");
+  $("#brgy_drag .weather").removeClass("vis");
 };
 
 if (annyang) {
@@ -348,6 +385,7 @@ if (annyang) {
     '(Show) Weather': show_weather,
     '(Show) Precipitation': show_prec,
     '(Show) Temperature': show_temp,
+    '(Show) Ocean Current': show_occ,
     'Next Day (Forecast)': nxt_day,
     '(Show) Current Weather': curr_wthr,
     '(Show) Wind Speed': show_wnds,
@@ -364,7 +402,7 @@ if (annyang) {
     '(turn) system off': giri_shutdown,
     '(abort) (a boy) system': abort_sd,
     'please (shut up) (quiet)': silent,
-    '(show) (so) its weather': brgy_weather_forecast, 
+    'the weather animation': brgy_weather_forecast, 
     '*whatihear': whatihear
   };    
   // Add our commands to annyang
@@ -376,7 +414,6 @@ if (annyang) {
   var speech_recog = {};
   speech_recog.deftxt = 'Say "What can I say?" to display the list of commands';
   var is_change = false; 
-  var is_triggered = false;
   function restCommand(){    
     $('#listen').text(speech_recog.deftxt);    
     is_change = false;
@@ -390,7 +427,6 @@ if (annyang) {
     recognition.interimResults = true;
 
     $("giri#trigger").click(function(event){  
-      is_triggered = true;   
       recognition.stop();  
         if(isSilent){
           annyang.addCommands(commands);
@@ -399,25 +435,19 @@ if (annyang) {
             isSilent = false;
           }, 2000);
         }
-        // else{
-        //   if(is_change){
-        //     annyang.trigger($("#listen").text());
-        //     setTimeout(restCommand, 2000);
-        //     annyang.start({ pause: true });  
-        //     console.log("trigger");
-        //   }
-        // }
     });
+
+
+    $(".show_prec").click(function(){
+      $("#brgy-forecast-animation iframe").attr('src', the_specific_weather($(".the_long").text(), $(".the_lat").text(), "total_precipitable_water"));      
+    });
+
       recognition.onresult = function(event) {
         var interim_transcript = '';
         final_transcript = '';        
         for (var i = event.resultIndex; i < event.results.length; ++i) {
-              //trigger_now = false;
             if (event.results[i].isFinal) {
                   final_transcript += event.results[i][0].transcript;
-                  // if(!is_triggered){
-                  //   final_transcript = "";
-                  // }
                   annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
                   annyang.start({ pause: true });
                   setTimeout(restCommand, 2000);

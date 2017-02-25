@@ -19,7 +19,6 @@ $( "#brgy_drag" ).on( 'mousedown', function(e) {
   setInterval(function(){
   if (ondown && !dragging) {
     incrstart = new Date().getTime();
-        console.log(incrstart);
     if (incrstart >= (start + longpress)) {
       $(".trash").addClass("visible");
       $(".trash").removeClass("hidden");

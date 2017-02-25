@@ -50,10 +50,6 @@ $(document).ready(function(){
         is_end_of_the_month();
         stop_loader();
         getLocation_forWeather();
-    }
-});
-
-
 // Update the online status icon based on connectivity
   window.addEventListener('online',  OnlineMode);
   window.addEventListener('offline', OfflineMode);
@@ -66,3 +62,7 @@ $(document).ready(function(){
       gs.no_connection();  
       $(".network-err").addClass("show"); 
     }
+    }
+});
+document.addEventListener('contextmenu', event => event.preventDefault());
+

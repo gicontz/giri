@@ -145,7 +145,19 @@
         <div class="long"></div>
         <div class="lat"></div>
       </div>
-        <p class="forecast_date hidden"><span>Forecast Date: </span></p>
+        <div class="forecast_date hidden">
+          <span>Forecast Date: </span>
+          <div id="the_scale">
+            <span>Scale:</span>
+            <div class="scale_group">
+              <canvas id="scale_occr" width="390" height="10" class="hidden"></canvas>
+              <canvas id="scale_ws" width="390" height="10"></canvas>
+              <canvas id="scale_prec" width="390" height="10" class="hidden"></canvas>
+            </div>
+            <p>Mode: <span class="mode"></span></p>
+            <script type="text/javascript" src="js/scale.js"></script>
+          </div>
+        </div>
         <iframe id="giri-map"></iframe>      
     </div>
   </div>
@@ -214,13 +226,15 @@
           </div>
         </div>        
       </div> 
+    
+
 
     <div class="middle-left drag-m hidden" id="brgy_drag" style="">
-      <div id="brgy-forecast-animation" class="back">
-        <iframe src=""></iframe>
-      </div>
       <div class="brgy-forecast front">
-
+        <div style="display:none">
+          <p class="the_lat"></p>
+          <p class="the_long"></p>
+        </div>
         <div class="scr_btn">
           <button class="up"><i class="glyphicon glyphicon-chevron-up"></i></button>
           <button class="down"><i class="glyphicon glyphicon-chevron-down"></i></button>
@@ -230,7 +244,7 @@
           <select id="brgy_name">Select Barangay</select>
           <button id="get_brgy_weather">Show Forecast Data</button>
 
-        <div class="weather">
+        <div class="weather vis">
           <div class="weather-today" title="The current weather temperature displayed in Celsius">
             <span class="icon dimmed wi "></span>
             <span  id="weather" class="tempreture"></span>
@@ -291,6 +305,12 @@
             </div>
           </div>
         </div> 
+        <div id="brgy-forecast-animation" class="back">
+          <div class="black-coat">
+            <button class="show_preci">Show Precipitation</button>
+          </div>
+          <iframe src=""></iframe>
+        </div>
       </div>
     </div>
 

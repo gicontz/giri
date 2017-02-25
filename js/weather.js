@@ -13,6 +13,7 @@
     $(this).removeClass("dwn");
     }
   });
+
 //Auto Populate dropdown options for Brgy names
   $(function($){
 for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
@@ -23,6 +24,7 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
     $("select#brgy_name").prepend(option);
   }
   });
+
 //Initialize weather forecast
   getweather();
 
@@ -89,24 +91,21 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
               
               //Currently Weather Icon
               var currentlyicon = "wi-forecast-io-";
+              var the_lat;
+              var the_lng;
 
       var num_of_brgy = brgy_config.brgy_name.length;
       $("#get_brgy_weather").click(function(){
-        var the_lat = brgy_config.brgy_name[parseInt($('#brgy_name').val())].lat;
-        var the_lng = brgy_config.brgy_name[parseInt($('#brgy_name').val())].lng;
+        the_lat = brgy_config.brgy_name[parseInt($('#brgy_name').val())].lat;
+        the_lng = brgy_config.brgy_name[parseInt($('#brgy_name').val())].lng;
+        $(".the_lat").text(the_lat);
+        $(".the_long").text(the_lng);
         get_brgy_forecast(the_lat, the_lng);
+        $("#brgy-forecast-animation").removeClass("vis");
+        $("#brgy_drag .weather").addClass("vis");
       });
 
       function get_brgy_forecast(the_lat, the_lng){
-        // for (var i = 0; i < num_of_brgy; i++) {
-        //    $.getJSON("https://api.forecast.io/forecast/" + config.forcast.key + "/"+ brgy_config.brgy_name[i].lat + "," + brgy_config.brgy_name[i].lng + "?callback=?", function(data) {
-        //       var far_temp = parseFloat(data.currently.temperature);
-        //       var cel = ((far_temp - 32) * 5) / 9;              
-        //       $('.brgy-forecast .tempreture').html(cel.toFixed(2) + '&deg;C');
-        //       currentlyicon += data.currently.icon;
-        //    });           
-        //       $('.' + brgy_config.brgy_name[i].classname + ' .icon-small').addClass(currentlyicon);
-        // };
         $.getJSON("https://api.forecast.io/forecast/" + config.forcast.key + "/" + the_lat + "," + the_lng + "?callback=?", function(data) {
               // console.log(data);
               //Data in the current weather

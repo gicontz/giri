@@ -64,6 +64,8 @@ constructor() {
 	 		new Audio("sounds/listen.wav");
 	 this.silence = 
 	 		new Audio("sounds/silence.wav");
+	 this.occ = 
+	 		new Audio("sounds/oceanCur.wav");
   }
 
 	shutter(){			 		
@@ -162,5 +164,8 @@ constructor() {
 	}
 	listen_mode(){
 		this.listen.play();
+	}
+	oceanCur(){
+		this.occ.play();
 	}
 }
