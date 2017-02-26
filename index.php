@@ -248,7 +248,8 @@
 
           <h3>Get Weather on other Barangays</h3>
           <select id="brgy_name">Select Barangay</select>
-          <button id="get_brgy_weather">Show Forecast Data</button>
+          <button id="get_brgy_weather">Forecast</button>
+          <button id="get_brgy_map">Map</button>
 
         <div class="weather vis">
           <div class="weather-today" title="The current weather temperature displayed in Celsius">
@@ -321,7 +322,6 @@
     </div>
 <!-- Time Ticker -->
       <div id="date_time">
-        <script type="text/javascript" src="time/config.js"></script>
         <script type="text/javascript" src="time/time.js"></script>
         <p class="date"></p>
         <p class="time" id="time"></p>
@@ -329,7 +329,7 @@
 
 <!--Greetings && Interim Results-->
   <div id="giri-face">
-      <img src="images/giri.png" class="trigger">
+      <img src="images/GiRi_default.svg" class="trigger">
     <h1 class="greet"></h1>
     <div class="cmd_container">
       <div class="cmd-list hide">

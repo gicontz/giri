@@ -7,7 +7,7 @@
                   occr_canvas.addEventListener('mousemove', showdataoccr_canvas, false); 
                   function showdataoccr_canvas(e){
                     occr_canvas_x = e.pageX - 103;      
-                    $(this).attr("title", (occr_canvas_x/260).toFixed(2) + "m/s" )
+                    $(this).attr("title", (occr_canvas_x/260).toFixed(2) + "m/s" );
                   }
                   grd_occr.addColorStop(0.05, '#004CB3');   
                   grd_occr.addColorStop(0.17, '#0F78B8'); 
@@ -35,7 +35,7 @@
                   ws_canvas.addEventListener('mousemove', showdataws_canvas, false); 
                   function showdataws_canvas(e){
                     ws_canvas_x = e.pageX - 103;      
-                    $(this).attr("title", ws_canvas_x + "km/h" )
+                    $(this).attr("title", ws_canvas_x + "km/h" );
                   }
                   grd_ws.addColorStop(0.05, '#004CB3');   
                   grd_ws.addColorStop(0.1, '#15D07C');
@@ -61,7 +61,7 @@
                   prec_canvas.addEventListener('mousemove', showdataprec_canvas, false); 
                   function showdataprec_canvas(e){
                     prec_canvas_x = e.pageX - 103;      
-                    $(this).attr("title", (prec_canvas_x/5.57).toFixed(2) + "kg/m²" )
+                    $(this).attr("title", (prec_canvas_x/5.57).toFixed(2) + "kg/m²" );
                   }
                   grd_prec.addColorStop(0.05, '#E6A51E');   
                   grd_prec.addColorStop(0.2, '#B88A38');

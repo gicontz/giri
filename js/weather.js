@@ -107,29 +107,34 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
               console.log(info_hourly);
 
     //Test
-    //the_signal = 1;
+    // the_signal = 5;
 
               //Signal Warning Colors
               switch(the_signal){
                 case 1:
                   signal_indicator.attr('class', "");
                   signal_indicator.addClass("signal1");
+                  signal_indicator.attr('src', 'images/GiRi_signal 1.svg');
                   break;
                 case 2:
                   signal_indicator.attr('class', "");
                   signal_indicator.addClass("signal2");
+                  signal_indicator.attr('src', 'images/GiRi_signal 2.svg');
                   break;
                 case 3:
                   signal_indicator.attr('class', "");
                   signal_indicator.addClass("signal3");
+                  signal_indicator.attr('src', 'images/GiRi_signal 3.svg');
                   break;
                 case 4:
                   signal_indicator.attr('class', "");
                   signal_indicator.addClass("signal4");
+                  signal_indicator.attr('src', 'images/GiRi_signal 4.svg');
                   break;
                 case 5:
                   signal_indicator.attr('class', "");
                   signal_indicator.addClass("signal5");
+                  signal_indicator.attr('src', 'images/GiRi_signal 5.svg');
                   break;
                 default:
                   signal_indicator.attr('class', "");                 

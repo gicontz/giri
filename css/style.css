@@ -542,7 +542,7 @@ span.glyphicon.glyphicon-trash {
         width: 100%;
       }
       #map.showmap{
-        height: 60%;
+        height: 100%;
         z-index: 0;
       }
       #map.showmap img{
@@ -691,7 +691,7 @@ select#brgy_name {
     left: 0;
     z-index: 99;
 }
-#brgy-forecast-animation button.show_prec{
+#brgy-forecast-animation button.show_preci{
     display: none;
 }
 #brgy-forecast-animation.vis button.show_preci {
@@ -702,28 +702,31 @@ select#brgy_name {
 }
 
 /*Signals*/
+div#giri-face img {
+    width: 150px;
+}
 .signal1{
-    -webkit-filter: hue-rotate(30deg);
-    filter: hue-rotate(30deg);
+ /*   -webkit-filter: hue-rotate(30deg);
+    filter: hue-rotate(30deg);*/
     animation: pulse 0.5s infinite;
 }
 .signal2{
-    -webkit-filter: hue-rotate(-40deg);
-    filter: hue-rotate(-40deg);
+/*    -webkit-filter: hue-rotate(-40deg);
+    filter: hue-rotate(-40deg);*/
     animation: pulse 0.5s infinite;
 }
 .signal3{
-    -webkit-filter: hue-rotate(90deg);
-    filter: hue-rotate(90deg);
+/*    -webkit-filter: hue-rotate(90deg);
+    filter: hue-rotate(90deg);*/
     animation: pulse 0.5s infinite;
 }
 .signal4{
-    -webkit-filter: hue-rotate(220deg);
-    filter: hue-rotate(220deg);
+/*    -webkit-filter: hue-rotate(220deg);
+    filter: hue-rotate(220deg);*/
     animation: pulse 0.5s infinite;
 }   
 .signal5{
-    -webkit-filter: hue-rotate(180deg);
-    filter: hue-rotate(180deg);
+    /*-webkit-filter: hue-rotate(180deg);*/
+    /*filter: hue-rotate(180deg);*/
     animation: pulse 0.5s infinite;
 }
