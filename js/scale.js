@@ -25,7 +25,8 @@
                   grd_occr.addColorStop(1, '#FF120F');
 
                   context_occr.fillStyle = grd_occr;
-                  context_occr.fill();    
+                  context_occr.fill();  
+
       //Wind Speed
                   var ws_canvas = document.getElementById('scale_ws');     
                   var context_ws = ws_canvas.getContext('2d');
@@ -51,6 +52,7 @@
 
                   context_ws.fillStyle = grd_ws;
                   context_ws.fill(); 
+
       //Precipitation
 
                   var prec_canvas = document.getElementById('scale_prec');     
@@ -75,3 +77,29 @@
 
                   context_prec.fillStyle = grd_prec;
                   context_prec.fill();
+
+      //Tempreture
+
+                  var temp_canvas = document.getElementById('scale_temp');     
+                  var context_temp = temp_canvas.getContext('2d');
+                  context_temp.rect(0, 0, temp_canvas.width, temp_canvas.height);
+                  // add linear gradient
+                  var grd_temp = context_temp.createLinearGradient(0, 0, temp_canvas.width, temp_canvas.height);
+                  temp_canvas.addEventListener('mousemove', showdatatemp_canvas, false); 
+                  function showdatatemp_canvas(e){
+                    temp_canvas_x = e.pageX - 103;      
+                    $(this).attr("title", ((temp_canvas_x/2.88)-80.1).toFixed(2) + "°C" );
+                  }
+                  grd_temp.addColorStop(0.1, '#25042C');   
+                  grd_temp.addColorStop(0.2, '#280980');
+                  grd_temp.addColorStop(0.3, '#4A2336');
+                  grd_temp.addColorStop(0.4, '#AD2582');
+                  grd_temp.addColorStop(0.5, '#7394BE');
+                  grd_temp.addColorStop(0.6, '#1657BB');
+                  grd_temp.addColorStop(0.7, '#20880F');
+                  grd_temp.addColorStop(0.8, '#F6FA3A');
+                  grd_temp.addColorStop(0.9, '#BA392F');
+                  grd_temp.addColorStop(1, '#601D41');
+
+                  context_temp.fillStyle = grd_temp;
+                  context_temp.fill();

@@ -1,6 +1,11 @@
 // $(document).ready(function(){
 	//ForeCast.IO  
 
+
+var said_ws = '';
+var said_near_fw = '';
+var sid_near_loc = '';
+
 //Place getter form toggler
   $(".giri_place_getter .upndown").click(function(){
     if ($(this).hasClass("up")) {
@@ -27,9 +32,11 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
 
                    
   var the_signal = 0;
+  var info_hourly = "";
+  var the_final_sum = "";
 
 //Initialize weather forecast
-  getweather();
+//  getweather();
 
   function getweather(){
             $.getJSON("https://api.forecast.io/forecast/" + config.forcast.key + "/" + weath_latitude + "," + weath_longitude + "?callback=?", function(data) {              
@@ -93,21 +100,27 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
               }
 
               //Testing for development
-              var info_hourly = "";
               var getHourlyWindSpeed_test = function (maxhour, datum){
                 var mpkm = 1.60934;
                   for (var hr_index = 0; hr_index <= maxhour - 1; hr_index++){
                     var ws = datum.hourly.data[hr_index].windSpeed * mpkm;
-                    info_hourly += hr_index + " " + ws + "km/hr\n";
+                    info_hourly += "\n" + (++hr_index) + "hour(s) from current time: " + ws.toFixed(4) + "km/hr";
                   }
+                  the_final_sum = info_hourly;
               }
+
+              var the_final_report = function(){
+                return the_final_sum;
+              }
+
+              the_final_sum = the_final_report();
 
               getHourlyWindSpeed_test(36, data);
                 //Report
               console.log(info_hourly);
 
     //Test
-    // the_signal = 5;
+     //the_signal = 5;
 
               //Signal Warning Colors
               switch(the_signal){
@@ -204,16 +217,24 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
               var the_lng;
 
       var num_of_brgy = brgy_config.brgy_name.length;
+
       $("#get_brgy_weather").click(function(){
+        $("#brgy-forecast-animation").removeClass("vis");
+        $("#brgy_drag .weather").addClass("vis");
         the_lat = brgy_config.brgy_name[parseInt($('#brgy_name').val())].lat;
         the_lng = brgy_config.brgy_name[parseInt($('#brgy_name').val())].lng;
         $(".the_lat").text(the_lat);
         $(".the_long").text(the_lng);
         get_brgy_forecast(the_lat, the_lng);
-        $("#brgy-forecast-animation").removeClass("vis");
-        $("#brgy_drag .weather").addClass("vis");
-      });
+      });      
 
+      $("#get_brgy_map").click(function(){
+        the_lat = brgy_config.brgy_name[parseInt($('#brgy_name').val())].lat;
+        the_lng = brgy_config.brgy_name[parseInt($('#brgy_name').val())].lng;
+       var brgy_coords = the_lat + "," + the_lng;
+       var brgy_name = "Brgy. " + brgy_config.brgy_name[parseInt($('#brgy_name').val())].classname;
+       imgmap.show_req_map(brgy_coords, brgy_name);
+      });
       function get_brgy_forecast(the_lat, the_lng){
         $.getJSON("https://api.forecast.io/forecast/" + config.forcast.key + "/" + the_lat + "," + the_lng + "?callback=?", function(data) {
               // console.log(data);

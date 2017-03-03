@@ -46,14 +46,14 @@
     $("#listen").text("Zooooooom Out");    
   }
 
-  imgmap.show_req_map = function(place){
+  imgmap.show_req_map = function(place, placeName=place){
     gs.reqMap();
     imgmap.zoom = 15;
     imgmap.center = place;
     $(".greet").addClass("send-to-back");
     $("#map").addClass("showmap");
     $("#map img").attr("src", imgmap.generateMap(imgmap.center));   
-    $("#listen").text("Showing Map of "+place); 
+    $("#listen").text("Showing Map of "+ placeName); 
   }
 
   function show_current_map(){

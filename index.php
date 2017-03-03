@@ -62,6 +62,7 @@
 </head>
 <body class="pointer-m">
 
+
 <!-- Trigger Button-->
 <giri id="trigger" class="withtool-tip" title="Click to trigger command / start listening again">
     <img src="images/giri.png"> 
@@ -158,6 +159,7 @@
               <canvas id="scale_occr" width="390" height="10" class="hidden"></canvas>
               <canvas id="scale_ws" width="390" height="10"></canvas>
               <canvas id="scale_prec" width="390" height="10" class="hidden"></canvas>
+              <canvas id="scale_temp" width="390" height="10" class="hidden"></canvas>
             </div>
             <p>Mode: <span class="mode"></span></p>
             <script type="text/javascript" src="js/scale.js"></script>

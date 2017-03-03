@@ -143,7 +143,7 @@ div#date_time .time {
     z-index: 1;
 }
 div#date_time .date {
-    font-size: 20px;
+    font-size: 25px;
     z-index: 1;
 }
 div#date_time {
@@ -167,7 +167,7 @@ footer.giri-license {
     transition: all ease 1s;
 }
 #giri-face div#listen.downme {
-    margin-top: 210px;
+    margin-top: 170px;
     z-index: 1;
     position: absolute;
     left: 0;
@@ -705,28 +705,96 @@ select#brgy_name {
 div#giri-face img {
     width: 150px;
 }
-.signal1{
+.signal1, .signal2, .signal3, .signal4, .signal5{
  /*   -webkit-filter: hue-rotate(30deg);
     filter: hue-rotate(30deg);*/
-    animation: pulse 0.5s infinite;
+    animation: flash 0.5s infinite;
 }
-.signal2{
-/*    -webkit-filter: hue-rotate(-40deg);
-    filter: hue-rotate(-40deg);*/
-    animation: pulse 0.5s infinite;
+
+
+
+/*Tutorial Setup*/
+#tutorial-section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    z-index: 99999;
 }
-.signal3{
-/*    -webkit-filter: hue-rotate(90deg);
-    filter: hue-rotate(90deg);*/
-    animation: pulse 0.5s infinite;
+#tutorial-section.start{
+    background-color: rgba(0, 0, 0, 0.7);
 }
-.signal4{
-/*    -webkit-filter: hue-rotate(220deg);
-    filter: hue-rotate(220deg);*/
-    animation: pulse 0.5s infinite;
-}   
-.signal5{
-    /*-webkit-filter: hue-rotate(180deg);*/
-    /*filter: hue-rotate(180deg);*/
-    animation: pulse 0.5s infinite;
+#firstGreet {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    margin-top: -81px;
+    animation: fadeIn 4s linear;
+}
+#tutorial-section button {
+    background-color: #54aaa6;
+    border: none;
+    font-family: 'Helvetica',sans-serif;
+    padding: 7px 15px;
+    width: 100%;
+    max-width: 100px;
+}
+#tutorial-section .continue, #tutorial-section .next_tut{
+    position: relative;
+}
+#tutorial-section .continue:before, #tutorial-section .next_tut:before {
+    position: absolute;
+    content: '';
+    border: 1px solid #54aaa6;
+    animation: pulse 1.5s infinite;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 36px;
+}
+.tutorial-popup {
+    position: absolute;
+    width: 100%;
+    max-width: 350px;
+    background-color: #53d6d0;
+    height: 100px;
+    padding: 10px;
+    margin-left: -175px;
+}
+.tutorial-popup .btn_wrapper {
+    text-align: right;
+}
+.tutorial-popup:before {
+    content: '';
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid #53d6d0;
+    bottom: -12px;
+    position: absolute;
+}
+.tutorial-popup span {
+    margin: 10px;
+    display: block;
+    font-family: 'Helvetica', sans-serif;
+}
+.tutorial-popup.t1 {
+    top: 35%;
+    left: 50%;
+}
+.tutorial-popup.t2 {
+    top: 52%;
+    left: 70%;
+}
+.tutorial-popup.t3 {
+    top: 68%;
+    left: 13%;
+}
+.emphasize{
+    position: relative;
+    z-index: 99999;
+}
+.emphasize-absolute {
+    z-index: 99999 !important;
 }

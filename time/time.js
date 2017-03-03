@@ -10,17 +10,12 @@ function time_thick(){
   hour = moment().format("hh");
   min = moment().format("mm");
   mer = moment().format("A");
-  if (hour < 10) {
-  $("#time.time").text("0" + hour + ":" + min + " " + mer);
-  }else{
-  $("#time.time").text(moment().format("hh:mm A"));
-  }
-  return hour;
+    $("#time.time").text(moment().format("hh:mm A"));
 }
 
 //Date Update every hour to make sure it will display on real time :)
 function date_thick(){
-  $(".date").html(moment().format("dddd MMMM DD, YYYY"));
+  $(".date").html(moment().format("dddd, MMMM DD, YYYY"));
 }
 date_thick();
 setInterval(date_thick, 60000);
