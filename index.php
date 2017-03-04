@@ -1,4 +1,3 @@
-<?php //header("Cache-Control: no-cache, must-revalidate"); ?>
 <html>
 <head>
   <title>GIRI</title>
@@ -62,9 +61,17 @@
 </head>
 <body class="pointer-m">
 
+<!-- Configure Tutorial on Next Load -->
+<div id="restart_tut" class="hidden">
+  <span>Do you want to load the tutorial again on next load?</span>
+  <div class="button_wrapper">
+    <button class="yes_tut">Yes</button>
+    <button class="no_tut">No</button>
+  </div>
+</div>
 
 <!-- Trigger Button-->
-<giri id="trigger" class="withtool-tip" title="Click to trigger command / start listening again">
+<giri id="trigger" class="withtool-tip" title="Click to trigger command or start listening again">
     <img src="images/giri.png"> 
 </giri>
 
@@ -383,10 +390,10 @@
 <div class="giri_place_getter hide">
   <span class="upndown up"></span>
     <div class="form-group">
-  <input type="text" placeholder="longitude" class="lon_text">
+  <input type="text" placeholder="latitude" class="lat_text">
     </div>
   <div class="form-group">
-  <input type="text" placeholder="latitude" class="lat_text">
+  <input type="text" placeholder="longitude" class="lon_text">
     </div>
   <input type="submit" value="GET PLACE" id="place_btn">
 </div>

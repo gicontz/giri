@@ -733,28 +733,28 @@ div#giri-face img {
     margin-top: -81px;
     animation: fadeIn 4s linear;
 }
-#tutorial-section button {
+#tutorial-section button, .tutorial-popup button, #restart_tut button {
     background-color: #54aaa6;
     border: none;
     font-family: 'Helvetica',sans-serif;
     padding: 7px 15px;
     width: 100%;
-    max-width: 100px;
+    max-width: 110px;
 }
-#tutorial-section .continue, #tutorial-section .next_tut{
+#tutorial-section .continue, .tutorial-popup .next_tut{
     position: relative;
 }
-#tutorial-section .continue:before, #tutorial-section .next_tut:before {
+#tutorial-section .continue:before, .tutorial-popup .next_tut:before {
     position: absolute;
     content: '';
-    border: 1px solid #54aaa6;
+    border: 1px solid #ffffff;
     animation: pulse 1.5s infinite;
     top: -1px;
     left: 0;
     width: 100%;
     height: 36px;
 }
-.tutorial-popup {
+.tutorial-popup , #restart_tut{
     position: absolute;
     width: 100%;
     max-width: 350px;
@@ -762,6 +762,18 @@ div#giri-face img {
     height: 100px;
     padding: 10px;
     margin-left: -175px;
+    z-index: 999999;
+}
+#restart_tut span{
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    display: block;
+}
+#restart_tut {
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    height: 87px;
 }
 .tutorial-popup .btn_wrapper {
     text-align: right;
@@ -791,10 +803,159 @@ div#giri-face img {
     top: 68%;
     left: 13%;
 }
+.tutorial-popup.t4 {
+    top: 60%;
+    left: 13%;
+}
+.tutorial-popup.t5:before {
+    border-bottom: 20px solid #53d6d0;
+    border-top: none;
+    bottom: 100px;
+    right: 15px;
+}
+.tutorial-popup.t5 {
+    top: 54%;
+    left: 80%;
+}
+.tutorial-popup.t6 {
+    top: 30%;
+    left: 20%;
+    max-width: 450px;
+}
+.tutorial-popup.t6:before {
+    border-bottom: 20px solid #53d6d0;
+    border-top: none;
+    bottom: 100px;
+    right: auto;
+    max-width: 450px;
+    height: 130px;
+}
+.tutorial-popup.t7 {
+    top: 57%;
+    left: 75%;
+    max-width: 450px;
+    height: 130px;
+}
+.tutorial-popup.t7:before {
+    border-top: 20px solid #53d6d0;
+    border-bottom: none;
+    bottom: -20px;
+    right: 15px;
+}
+.tutorial-popup.t8 {
+    top: 53%;
+    left: 70%;
+    max-width: 450px;
+    height: 130px;
+}
+.tutorial-popup.t8:before {
+    bottom: -15px;
+    right: 15px;
+}
+.tutorial-popup.t9 {
+    top: 53%;
+    left: 20%;
+    max-width: 450px;
+    height: 130px;
+}
+.tutorial-popup.t9:before {
+    bottom: -15px;
+    right: auto;
+}
+.tutorial-popup.t10 {
+    top: 78%;
+    left: 55%;
+    max-width: 450px;
+    height: 115px;
+}
+.tutorial-popup.t10:before {
+    bottom: -15px;
+    right: 15px;
+}
+.tutorial-popup.t11, .tutorial-popup.t12, .tutorial-popup.t13, .tutorial-popup.t14, .tutorial-popup.t20 {
+    top: 73%;
+    left: 43%;
+    max-width: 450px;
+    height: 115px;
+}
+.tutorial-popup.t11:before {
+    right: 15px;
+    bottom: -15px;
+}
+
+.tutorial-popup.t12:before, .tutorial-popup.t13:before,  .tutorial-popup.t14:before {
+    right: auto;
+    bottom: 0;
+}
+.tutorial-popup.t15 {
+    top: 12%;
+    left: 35%;
+    max-width: 450px;
+    height: 130px;
+}
+.tutorial-popup.t16 {
+    top: 20%;
+    left: 24%;
+    max-width: 450px;
+    height: 130px;
+}
+.tutorial-popup.t17 {
+    top: 20%;
+    left: 30%;
+    max-width: 450px;
+    height: 130px;
+}
+.tutorial-popup.t18 {
+    top: 20%;
+    left: 35%;
+    max-width: 450px;
+    height: 130px;
+}
+.tutorial-popup.t19 {
+    top: 33%;
+    left: 35%;
+    max-width: 450px;
+    height: 130px;
+}
+.tutorial-popup.tut_end button.skip_tut {
+    margin: 0 auto;
+    display: block;
+}
+.tutorial-popup.tut_end{
+    top: 50%;
+    left: 50%;
+    max-width: 400px;
+    height: 115px;
+    margin-left: -200px;
+    text-align: center;
+}
+.tutorial-popup.tut_end:before{
+    display: none;
+}
+    
 .emphasize{
     position: relative;
     z-index: 99999;
 }
 .emphasize-absolute {
     z-index: 99999 !important;
+}
+span.point_the_lat:before, span.point_the_lng:before {
+    font-family: 'Glyphicons Halflings';
+    content: '\e114';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    margin-left: -7px;
+    animation: bounce 1s infinite;
+}
+span.point_the_lat {
+    position: absolute;
+    bottom: 100px;
+    left: 75px;
+}
+span.point_the_lng {
+    position: absolute;
+    bottom: 100px;
+    left: 200px;
 }

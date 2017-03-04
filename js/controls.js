@@ -90,7 +90,7 @@ var show_weather = function(){
   onhome = false;
   close_list();
   if(!onsleep){
-  hide_map();
+  hide_map_untold();
   gs.showweath();
   console.log('Show Weather');
     $("#listen").text('Show Weather');
@@ -116,7 +116,7 @@ var hide_weather = function() {
   onhome = true;    
   close_list();
       gs.go_home();
-      hide_map();
+      hide_map_untold();
     $("#listen").text('Go Home');
       $(".forecast_date").addClass("hidden");
       $("#giri-weather #giri-map").animate({"opacity": "0", "z-index": "-1"});
@@ -346,7 +346,7 @@ var what_say = function(){
     $(".greet").addClass("hide");
     $("#giri-face img").addClass("hide");
     gs.show_commands();
-    hide_map();
+    hide_map_untold();
   }
 }
 
@@ -367,6 +367,13 @@ function hide_map(){
     $("#map").removeClass("showmap");
   }
 };
+//hide the Map in all commands
+function hide_map_untold(){
+  if(!onsleep){    
+    $(".greet").removeClass("send-to-back");
+    $("#map").removeClass("showmap");
+  }
+};
 
 //Hide the list
 function close_list(){  
@@ -375,7 +382,7 @@ function close_list(){
     $(".cmd-list").addClass("hide");
     $(".greet").removeClass("hide");
     $("#giri-face img").removeClass("hide");
-    hide_map();
+    hide_map_untold();
   }
 }
 
@@ -395,6 +402,11 @@ var isSilent = false; // Check if the app is in quiet/silent mode
 var silent = function(){
   annyang.removeCommands();
   gs.silence_mode();
+  isSilent = true;
+};
+
+var silent_untold = function(){
+  annyang.removeCommands();
   isSilent = true;
 };
 

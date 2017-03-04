@@ -47,6 +47,11 @@
 
 $(document).ready(function(){
     $(".upndown").click(function(){
+          	$(".point_the_lat, .point_the_lng").removeClass("hidden");
+			$(".tutorial-popup span").text("Input or Type the value of the latitude and longitude that you can see on the element pointed by the bouncing arrows");
+			$(".tutorial-popup").removeClass("t10");
+			$(".tutorial-popup").addClass("t11");
+
         var el = $(this);
         var targ_el = $(".giri_place_getter");
         if(el.hasClass("up")){

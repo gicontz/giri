@@ -23,11 +23,9 @@ var sid_near_loc = '';
   $(function($){
 for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
   var option = '<option value="'+ bindex +'">' + brgy_config.brgy_name[bindex].classname + '</option>';
-  if (bindex==0) {
-    option = '<option value="'+ bindex +'" selected="selected">' + brgy_config.brgy_name[bindex].classname + '</option>';
-  }
     $("select#brgy_name").prepend(option);
-  }
+  }  
+    $("select#brgy_name").prepend('<option value="-1" selected="selected">Select Barangay</option>');
   });
 
                    
@@ -102,9 +100,10 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
               //Testing for development
               var getHourlyWindSpeed_test = function (maxhour, datum){
                 var mpkm = 1.60934;
+                var the_hour = 1;
                   for (var hr_index = 0; hr_index <= maxhour - 1; hr_index++){
                     var ws = datum.hourly.data[hr_index].windSpeed * mpkm;
-                    info_hourly += "\n" + (++hr_index) + "hour(s) from current time: " + ws.toFixed(4) + "km/hr";
+                    info_hourly += "\n" + (the_hour + hr_index) + "hour(s) from current time: " + ws.toFixed(4) + "km/hr";
                   }
                   the_final_sum = info_hourly;
               }

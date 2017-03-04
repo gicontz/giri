@@ -1,10 +1,13 @@
  var weather_status;
  $(document).ready(function(){
       $(".fb-post").click(function(){
-            // var iframe     = $('#giri-map');
-            // var contentWnd = iframe.attr('contentWindow');
-            // var url = contentWnd.window.location.href;
-            // alert(url);
+            
+
+      $(".tutorial-popup span").text("Click this to upload the weather screenshot and weather report. (You can post after this tutorial)");
+      $(".tutorial-popup").removeClass("t7");
+      $(".tutorial-popup").addClass("t8");
+      $("#giri-bottom-face").removeClass("emphasize-absolute");
+      
             var summary  = "";
             var weekly = "";  
             var print_signal; 

@@ -69,7 +69,9 @@ $(document).ready(function(){
          break;
     }
     
-    $("body").prepend('<!--Tutorials for first Use--> <script type="text/javascript" src="js/setup.js"></script> <div id="tutorial-section"> <div id="firstGreet"> <h1>Welcome</h1> <p>Preparing for First Use</p> <button class="continue hidden">Continue</button> </div> <div class="tutorial-popup hidden"> <span></span> <div class="btn_wrapper"> <button class="next_tut">Next</button> <button class="skip_tut">Skip</button> </div> </div> </div><script type="text/javascript" src="js/tutorial.js"></script>');
+    if (is_tutorial) {
+      $('body').prepend('<!--Tutorials for first Use--> <script type="text/javascript" src="js/setup.js"></script> <div id="tutorial-section"><span class="point_the_lat hidden">Latitude</span><span class="point_the_lng hidden">Longitude</span> <div id="firstGreet"> <h1>Welcome</h1> <p>Preparing for First Use</p> <button class="continue hidden">Continue</button> </div> </div><div class="tutorial-popup hidden"> <span></span> <div class="btn_wrapper"> <button class="next_tut">Next</button> <button class="skip_tut">Skip Tutorial</button> </div> </div>');
+    }
 // Update the online status icon based on connectivity
   window.addEventListener('online',  OnlineMode);
   window.addEventListener('offline', OfflineMode);

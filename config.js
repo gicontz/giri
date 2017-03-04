@@ -1,6 +1,10 @@
 //36da509268d347e6997fcb8983ced0a4
 var forcast_key = readTextFile('api_configs/forecast-api.giri');
 
+//If tutorial is on
+var is_tutorial;
+is_tutorial = readTextFile('tutorial_config.giri') == 'YES' ? true : false;
+
 var config = {
     // Lenguage for the mirror (currently not implemented)
 
