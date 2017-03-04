@@ -121,3 +121,7 @@ button.edit_btn {
     max-width: 15px;
     vertical-align: text-top;
 }
+.dashboard .form-group input {
+    width: 15px;
+    vertical-align: top;
+}

@@ -15,7 +15,7 @@
 				<li><a href="forecast.php"><i class="glyphicon glyphicon-cloud"></i>Forecast IO</a></li>	
 				<li><a href="facebook.php"><i class="glyphicon glyphicon-globe"></i>Facebook API</a></li>	
 				<li><a href="googlemap.php"><i class="glyphicon glyphicon-map-marker"></i>Google Maps API</a></li>
-				<li>
+				<!-- <li>
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-picture"></i>
 					Crops 
 					<span class="caret"></span>
@@ -24,7 +24,7 @@
 						<li><a href="cropn.php"><i class="glyphicon glyphicon-pencil"></i>Crop Names</a></a></li>
 						<li><a href="cropimg.php"><i class="glyphicon glyphicon-picture"></i>Crop Images</a></a></li>
 					</ul>
-				</li>	
+				</li>	 -->
 			</ul>
     <div class="system-link">
         <a href="../" class="">

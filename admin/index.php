@@ -5,36 +5,33 @@
 </head>
 <?php include_once('functions.php'); ?>
 <?php get_header_scripts(); ?>
-<body class="googlemap">
+<body class="dashboard">
 
 	
 <?php get_admin_menu(); ?>
 <div class="title col-md-10 col-md-offset-2">
-	<h1>Google API</h1>
+	<h1>Dashboard</h1>
 </div>
 
 	<div class="admin_content">
 		<div class="container col-md-10 col-md-offset-2">
 			<div id="dashboard" class="visible">
-                <button class="edit_btn">EDIT</button>
                 <div class="settings">
                     <form class="form" method="post">
                         <div class="form-group">
-                            <label class="control-lable" for="apikey">API Key</label>
-                            <input class="" type="text" id="apikey" name="apikey">
+                            <label class="control-lable" for="tutopt">Turn On Tutorial:</label>
+                            <input class="" type="radio" id="tutopt-yes" name="tutopt" value="YES"> YES
+                            <input class="" type="radio" id="tutopt-no" name="tutopt" value="NO"> NO
                         </div>
-                        <input type="submit" name="fapi-submit" value="UPDATE">
+                        <input type="submit" id="dash-submit" name="dash-submit" value="UPDATE">
                     </form>
-                    <?php
-                    if(isset($_POST['fapi-submit'])){
-                        if(isset($_POST['apikey'])){
-                            write_settings('../api_configs/google-map.giri', $_POST['apikey']);
+                    <?php 
+                        if(isset($_POST['dash-submit'])){
+                            if(isset($_POST['tutopt'])){
+                                write_settings("../tutorial_config.giri", $_POST['tutopt']);
+                            }
                         }
-                    }
-                    ?>
-                    <?php
-                    //AIzaSyAAgNu-JAHY_-NE2xYU-QDyQ8odUyBtIYQ
-                    ?>
+                        ?>
                 </div>
 			</div>
 		</div>
@@ -42,13 +39,24 @@
 
 <?php giri_bottom_scripts(); ?>
 <script type="text/javascript">
-    var apkey = admin_menu.readTextFile('../api_configs/google-map.giri');
-    $("#apikey").attr("value", apkey);
-    if($("#apikey").attr("value") != ''){
-        $("#apikey").attr("disabled", "disabled");
-    }
-    $(".edit_btn").click(function(){
-        $("#apikey").removeAttr("disabled");
+    var the_tut_y = $("#tutopt-yes");
+    var the_tut_n = $("#tutopt-no");
+    var __tutopt = admin_menu.readTextFile('../tutorial_config.giri');
+        if (__tutopt == 'YES') {
+            the_tut_y.attr("checked", "");
+        }else{
+            the_tut_n.attr("checked", "");
+        }
+    $("#dash-submit").click(function(){
+    if (true) {};
+        $.ajax({
+        type: "post",
+        url: "http://" + window.location.hostname.toString() + "/giri/admin/tutorial-.php",
+        success: function(){    
+                console.log("Tutorial OFF upon reboot");            
+         }
+        });
+        window.reload();
     });
 </script>
 </body>
