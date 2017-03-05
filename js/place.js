@@ -78,7 +78,9 @@ $(document).ready(function(){
   //a function to get the JSON of a geocode to get the place name (REVERSE GEOCODING)
   function get_manual_Place(){
             $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?latlng="+ lat_val + "," + long_val + "&sensor=true", function(data) {
- 				$(".placeName").html(data.results[0].formatted_address);
+            	data.status !== "ZERO_RESULTS" ? $(".placeName").html(data.results[0].formatted_address) : $(".placeName").html("No Such Place. Make sure you place the indicator in a LAND AREA");
+            }).fail(function(){
+            	$(".placeName").html("No Such Place. Make sure you place the indicator in a LAND AREA");
             });
         }
 });
