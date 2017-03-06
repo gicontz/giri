@@ -51,6 +51,7 @@
     imgmap.zoom = 15;
     imgmap.center = place;
     $(".greet").addClass("send-to-back");
+    $("div#giri-face img").addClass("send-to-back");
     $("#map").addClass("showmap");
     $("#map img").attr("src", imgmap.generateMap(imgmap.center));   
     $("#listen").text("Showing Map of "+ placeName); 
@@ -59,6 +60,7 @@
   function show_current_map(){
     gs.showMap();
     $(".greet").addClass("send-to-back");
+    $("div#giri-face img").addClass("send-to-back");
   if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {

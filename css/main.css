@@ -38,7 +38,8 @@ h1 {
     text-align: right;
     z-index: 999;
     max-width: 325px;
-    right: 25px;
+    right: 40px;
+    top: 10px;
 }
 span#weather.tempreture {
     font-size: 60px;
