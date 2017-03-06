@@ -16,9 +16,10 @@
             print_signal = the_signal > 0 ? the_signal : "None";
             report = the_signal > 0 ? the_final_sum : "N/A";
 
-            alter = "Forecast Location: "+ $(".placeName").text() + "\n" + $(".forecast_date > span").text() + "\nWindspeed: \nSignal#: " + print_signal + "\nReport: " + report +"\nNearest Fast Wind\nLocation: \nWindspeed: \n";
+            alter = "Forecast Location: "+ $(".placeName").text() + "\n" + $(".forecast_date > span").text() + "\nWindspeed: Utmost "+ $(".the_ws").text() +"km/hr \nSignal#: " + print_signal + "\nReport: " + report + "\nPrecipitation Probability: " + $(".the_precipProbability").text() + "%\nPrecipitation Type: " + $(".the_precipType").text() + "\nPrecipitation Intensity: " + $(".the_precipIntensity").text() + "\n\n";
+
             for(var i = 1; i<=6; i++){
-              weekly = weekly + $(".giri-forecast .top-right .day"+i+" .day").text() + " " + $(".giri-forecast .top-right .day"+i+" .tempreture-min").text() + " " + $(".giri-forecast .top-right .day"+i+" .tempreture-max").text() + "\n";
+              weekly = weekly + $(".giri-forecast .top-right .day"+i+" .day").text() + " " + $(".giri-forecast .top-right .day"+i+" .tempreture-min").text() + " " + $(".giri-forecast .top-right .day"+i+" .tempreture-max").text() + "\nPrecipitation Probability: " + $(".precProb" + i.toString()).text() + " Intensity: " + $(".precIntensity" + i.toString()).text() + " Type: " + $(".precType" + i.toString()).text() + "\n";
             }
             summary = alter + $(".giri-forecast .top-right .hourly").text() + "\n" + $(".giri-forecast .top-right .daily").text() + "\nWeekly Forecast: \n" + weekly +"\n" + "#GIRI";
             $(".weather-status").text(summary);

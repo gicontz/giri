@@ -39,9 +39,15 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
   function getweather(){
             $.getJSON("https://api.forecast.io/forecast/" + config.forcast.key + "/" + weath_latitude + "," + weath_longitude + "?callback=?", function(data) {              
 
+                var mpkm = 1.60934;
+                var prec_Prob = (data.currently.precipProbability * 100).toFixed();
+
+              $(".the_ws").text((data.currently.windSpeed * mpkm).toFixed(4));
+              $(".the_precipProbability").text(prec_Prob);
+              prec_Prob > 0 ? $(".the_precipType").text(data.currently.precipType) : $(".the_precipType").text("N/A");
+              prec_Prob > 0 ? $(".the_precipIntensity").html(data.currently.precipIntensity + "in&#x00B3;/h") : $(".the_precipIntensity").text("N/A");
               //Data in the current weather    
               var getHourlyWindSpeed = function(maxhour, target_sig, datum){
-                var mpkm = 1.60934;
                   for (var hr_index = 0; hr_index <= maxhour - 1; hr_index++){
                     var ws = datum.hourly.data[hr_index].windSpeed * mpkm;
                     switch(target_sig){
@@ -162,8 +168,7 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
               currentlyicon += data.currently.icon;
               $('.weather-today .icon').addClass(currentlyicon);
               $('.weather-today .icon').attr('title', currentlyicon.slice(15));
-
-              
+                 
               //Weekly and Hourly Summary
               var daily_summary = data.daily.summary;
               var daily_temp;
@@ -185,26 +190,34 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
               var dailytempMin = new Array(data.daily.data.length-1);
               var dailytempMax = new Array(data.daily.data.length-1);
               var dailyicon = new Array(data.daily.data.length-1);
+              var prec_Prob_array = new Array(data.daily.data.length - 1);
 
               var far_temp_Min = new Array(data.daily.data.length-1);
               var far_temp_Max = new Array(data.daily.data.length-1);
 
               for (var i = 0; i < data.daily.data.length; i++) {
-              day[i] = moment.unix(data.daily.data[i].time).format('ddd');
+                $(".weather-report").append('<p class="precType'+ i.toString() + '"></p>');
+                $(".weather-report").append('<p class="precIntensity'+ i.toString() + '"></p>');
+                $(".weather-report").append('<p class="precProb' + i.toString() + '"></p>');
 
+                day[i] = moment.unix(data.daily.data[i].time).format('ddd');
+                prec_Prob_array[i] = (data.daily.data[i].precipProbability * 100).toFixed();
+                $(".weather-report .precProb" + i.toString()).text(prec_Prob_array[i] + "%");
+                prec_Prob_array[i] > 0 ? $('.precType'+ i.toString()).text(data.daily.data[i].precipType) : $('.precType'+ i).text("N/A");
+                prec_Prob_array[i] > 0 ? $('.precIntensity'+ i.toString()).html(data.daily.data[i].precipIntensity + "in&#x00B3;/h") : $('.precIntensity'+ i).text("N/A");
 
-              far_temp_Min[i] = parseFloat(data.daily.data[i].temperatureMin);              
-              dailytempMin[i] = ((far_temp_Min[i] - 32) * 5) / 9;  
+                far_temp_Min[i] = parseFloat(data.daily.data[i].temperatureMin);              
+                dailytempMin[i] = ((far_temp_Min[i] - 32) * 5) / 9;  
 
-              far_temp_Max[i] = parseFloat(data.daily.data[i].temperatureMax);              
-              dailytempMax[i] = ((far_temp_Max[i] - 32) * 5) / 9;  
+                far_temp_Max[i] = parseFloat(data.daily.data[i].temperatureMax);              
+                dailytempMax[i] = ((far_temp_Max[i] - 32) * 5) / 9;  
 
-              dailyicon[i] = "wi-forecast-io-" + data.daily.data[i].icon;
-              $('.day'+i.toString()+' .icon-small').addClass(dailyicon[i]);
-              $('.day'+i.toString()+' .icon-small').attr('title', dailyicon[i].slice(15));
-              $('.day'+i.toString()+' .day').text(day[i]);
-              $('.day'+i.toString()+' .tempreture-min').html(dailytempMin[i].toFixed(2) + '&deg;C -');
-              $('.day'+i.toString()+' .tempreture-max').html(dailytempMax[i].toFixed(2) + '&deg;C');
+                dailyicon[i] = "wi-forecast-io-" + data.daily.data[i].icon;
+                $('.day'+i.toString()+' .icon-small').addClass(dailyicon[i]);
+                $('.day'+i.toString()+' .icon-small').attr('title', dailyicon[i].slice(15));
+                $('.day'+i.toString()+' .day').text(day[i]);
+                $('.day'+i.toString()+' .tempreture-min').html(dailytempMin[i].toFixed(2) + '&deg;C -');
+                $('.day'+i.toString()+' .tempreture-max').html(dailytempMax[i].toFixed(2) + '&deg;C');
               }
             });
 

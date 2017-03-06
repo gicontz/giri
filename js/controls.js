@@ -420,13 +420,19 @@ var brgy_weather_forecast = function(){
 //Get the windspeed as observed
 var the_windspeed = function (ws){
   said_ws = ws;
-}
+};
 
 //Get the nearest ws and location with fast wind as observed
 var the_nearest_fw = function(nws, nloc){
   said_near_fw = nws;
   sid_near_loc = nloc;
-}
+};
+
+var getSaidLat = function (said_lat, said_long){
+  $(".lat_text").val(said_lat);
+  $(".lon_text").val(said_long);
+  $("#place_btn").click();
+};
 
 
 if (annyang) {
@@ -464,6 +470,7 @@ if (annyang) {
     '(abort) (a boy) system': abort_sd,
     'please (shut up) (quiet)': silent,
     'the weather (animation)': brgy_weather_forecast,
+    '(the) coordinates (are) :said_lat and :said_long': getSaidLat, 
     // 'the wind speed is *ws': the_windspeed,
     // 'the nearest fast wind is located in *nloc with (windspeed) (of) *nws': the_nearest_fw,    
     '*whatihear': whatihear
