@@ -37,6 +37,7 @@ function forecast_usage(nq){
 $.ajax({
     type: "post",
     url: 'admin/forecast-dump/usage-manager.php',
+    cache: false,
     data: { 
        nq: num_req
      },
@@ -50,6 +51,7 @@ function initial_forecast_usage(){
 $.ajax({
     type: "post",
     url: 'admin/forecast-dump/create-usage-report.php',
+    cache: false,
     success: function(data){        
         console.log(data);
     }

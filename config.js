@@ -2,7 +2,6 @@
 initial_forecast_usage();
 
 var the_fd = new Date();
-console.log(the_fd);
 var theM = (the_fd.getMonth()+1) < 10 ? "0" + (the_fd.getMonth()+1) : (the_fd.getMonth()+1);
 var theD = the_fd.getDate() < 10 ? "0" + the_fd.getDate() : the_fd.getDate();
 the_fd = the_fd.getFullYear() + "-" + theM + "-" + theD;

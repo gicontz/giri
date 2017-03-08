@@ -161,3 +161,7 @@ g.highcharts-button.highcharts-contextbutton {
 div#updatereport {
     margin-top: 20px;
 }
+i.fa {
+    margin-right: 10px;
+    font-size: 18px;
+}

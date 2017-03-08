@@ -9,6 +9,7 @@ function giri_bottom_scripts(){
 }
 function get_header_scripts(){
 	?>
+	<script src="https://use.fontawesome.com/94b3e779d2.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">	
 	<link rel="stylesheet" type="text/css" href="../css/animate.css">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
