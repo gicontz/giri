@@ -1,6 +1,5 @@
 
 initial_forecast_usage();
-//test
 var the_fd = new Date();
 var theM = (the_fd.getMonth()+1) < 10 ? "0" + (the_fd.getMonth()+1) : (the_fd.getMonth()+1);
 var theD = the_fd.getDate() < 10 ? "0" + the_fd.getDate() : the_fd.getDate();
