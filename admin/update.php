@@ -23,9 +23,9 @@
 				</div>
 				<div id="updatereport">
 					<?php
-					$status = shell_exec( 'cd/ && cd xampp/htdocs/giri && git status' );
+					$status = shell_exec( 'cd/ && cd xampp/htdocs/giri && git status ' );
 					?>
-					<code><?php echo $status; ?></code>
+					<code><?php echo substr($status,22,25); ?></code>
 				</div>
 		</div>
 	</div>
