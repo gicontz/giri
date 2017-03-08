@@ -158,3 +158,6 @@ g.highcharts-button.highcharts-contextbutton {
     width: 100%;
     max-width: 150px;
 }
+div#updatereport {
+    margin-top: 20px;
+}
