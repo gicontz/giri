@@ -40,7 +40,7 @@
 
 <?php giri_bottom_scripts(); ?>
 <script type="text/javascript">
-	var apkey = admin_menu.readTextFile('../api_configs/forecast-api.giri');
+	var apkey = $.giriReader('../api_configs/forecast-api.giri');
 	$("#apikey").attr("value", apkey);
 	if($("#apikey").attr("value") != ''){
 		$("#apikey").attr("disabled", "disabled");

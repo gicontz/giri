@@ -1,7 +1,7 @@
    
 
   var imgmap = {};
-  imgmap.gmap_key = readTextFile('api_configs/google-map.giri');
+  imgmap.gmap_key = $.giriReader('api_configs/google-map.giri');
   imgmap.center = "Silang, Cavite";
   imgmap.zoom = 15;
   imgmap.generateMap = function(targetCenter, targetZoom){

@@ -37,11 +37,11 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
 //  getweather();
 
   function getweather(){
-            $.getJSON("https://api.forecast.io/forecast/" + config.forcast.key + "/" + weath_latitude + "," + weath_longitude + "?callback=?", function(data) {              
-
+            $.getJSON("https://api.forecast.io/forecast/" + config.forcast.key + "/" + weath_latitude + "," + weath_longitude + "?callback=?", function(data) {                          
                 var mpkm = 1.60934;
-                var prec_Prob = (data.currently.precipProbability * 100).toFixed();
 
+                forecast_usage(++num_req); // Forecast IO Usage Manager
+                var prec_Prob = (data.currently.precipProbability * 100).toFixed();                              
               $(".the_ws").text((data.currently.windSpeed * mpkm).toFixed(4));
               $(".the_precipProbability").text(prec_Prob);
               prec_Prob > 0 ? $(".the_precipType").text(data.currently.precipType) : $(".the_precipType").text("N/A");
@@ -249,7 +249,8 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
       });
       function get_brgy_forecast(the_lat, the_lng){
         $.getJSON("https://api.forecast.io/forecast/" + config.forcast.key + "/" + the_lat + "," + the_lng + "?callback=?", function(data) {
-              // console.log(data);
+              
+              forecast_usage(++num_req); // Forecast IO Usage Manager
               //Data in the current weather
               var far_temp = parseFloat(data.currently.temperature);
               var cel = ((far_temp - 32) * 5) / 9;              

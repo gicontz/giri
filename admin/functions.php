@@ -9,10 +9,24 @@ function giri_bottom_scripts(){
 }
 function get_header_scripts(){
 	?>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">	
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<?php
+}
+function high_chart_head(){
+	?>
+	<style type="text/css">${demo.css}</style>
+	<script type="text/javascript" src="js/forecast.js"></script>
+	<?php
+}
+function high_chart_body(){
+	?>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<?php
 }
 function write_settings($file_dir, $data){

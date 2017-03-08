@@ -49,7 +49,7 @@
 
 <?php giri_bottom_scripts(); ?>
 <script type="text/javascript">
-	var apkey = admin_menu.readTextFile('../api_configs/fbapi.giri').split("#");
+	var apkey = $.giriReader('../api_configs/fbapi.giri').split("#");
 	$("#fbapikey").attr("value", apkey[1]);
 	if($("#fbapikey").attr("value") != ''){
 		$("#fbapikey").attr("disabled", "disabled");

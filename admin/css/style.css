@@ -94,6 +94,7 @@ button, input[type="submit"] {
 .title h1 {
     font-size: 32px;
     font-family: sans-serif;
+    animation: rollIn 0.7s ease;
 }
 .title {
     background: linear-gradient(to bottom right, #ffffff, #eeeeee);
@@ -103,7 +104,6 @@ button, input[type="submit"] {
 }
 button.edit_btn {
     float: right;
-    margin-top: -10px;
 }
 .system-link a {
     color: #ffffff;
@@ -124,4 +124,37 @@ button.edit_btn {
 .dashboard .form-group input {
     width: 15px;
     vertical-align: top;
+}
+.highcharts-container {
+    margin-top: 40px;
+    display: inline-block;
+}
+.highcharts-credits {
+    display: none;
+}
+g.highcharts-button.highcharts-contextbutton {
+    display: none;
+}
+.admin_content {
+    width: 100%;
+    max-width: 1125px;
+    margin-left: auto;
+}
+.refresh_chart {
+    position: absolute;
+    margin-top: -20px;
+    width: 100%;
+    max-width: 150px;
+    right: 20px;
+    bottom: 20px;
+}
+.container{
+    margin: 0 auto;
+}
+.settings {
+    animation: flipInX 0.5s ease;
+}
+.update button {
+    width: 100%;
+    max-width: 150px;
 }

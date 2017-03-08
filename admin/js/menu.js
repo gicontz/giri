@@ -41,4 +41,20 @@
 		return the_text;
 	};
 
+	$.extend({
+	    giriReader: function(url) {
+	        var result = null;
+	        $.ajax({
+	            url: url,
+	            type: 'post',
+	            async: false,
+	            cache: false,
+	            success: function(data) {
+	                result = data;
+	            }
+	        });
+	       return result;
+	    }
+	});
+
 	admin_menu.set_active_menu();

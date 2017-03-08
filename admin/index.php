@@ -4,7 +4,10 @@
 	<title>GIRI | Admin</title>
 </head>
 <?php include_once('functions.php'); ?>
-<?php get_header_scripts(); ?>
+<?php 
+get_header_scripts(); 
+high_chart_head();
+?>
 <body class="dashboard">
 
 	
@@ -35,20 +38,27 @@
                 </div>
 			</div>
 		</div>
+<?php 
+high_chart_body();
+?>        
+<div id="container" style="height: 400px"></div>
+<button class="refresh_chart">REFRESH CHART</button>
 	</div>
 
-<?php giri_bottom_scripts(); ?>
+<?php 
+giri_bottom_scripts();
+?>
+
 <script type="text/javascript">
     var the_tut_y = $("#tutopt-yes");
     var the_tut_n = $("#tutopt-no");
-    var __tutopt = admin_menu.readTextFile('../tutorial_config.giri');
+    var __tutopt = $.giriReader('../tutorial_config.giri');
         if (__tutopt == 'YES') {
             the_tut_y.attr("checked", "");
         }else{
             the_tut_n.attr("checked", "");
         }
     $("#dash-submit").click(function(){
-    if (true) {};
         $.ajax({
         type: "post",
         url: "http://" + window.location.hostname.toString() + "/giri/admin/tutorial-.php",
@@ -57,6 +67,9 @@
          }
         });
         window.reload();
+    });
+    $(".refresh_chart").click(function(){
+        forecast_chart();
     });
 </script>
 </body>

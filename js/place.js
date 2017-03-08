@@ -4,7 +4,7 @@
   var weath_latitude;
   var weath_longitude;
 
-        navigator.geolocation.getCurrentPosition(successFunction, errorFunction, {maximumAge:600000, timeout:5000, enableHighAccuracy: true});
+        navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
 
 	//EARTH API
 	var long_val;
@@ -32,7 +32,7 @@
 				weath_latitude = lati;
 				weath_longitude = longi;
 				console.log(lati + "," + longi + " accuracy: " + accuracy);
-			getweather();
+		getweather();
 	}	
 
 	function errorFunction(position) 
@@ -41,8 +41,9 @@
 				weath_longitude = config.geo_position.longitude;
 	            $(".notif_bar").removeClass("hide");
 	            $(".notif_bar .head-msg").text("CANNOT GET YOUR LOCATION!");
-	            $(".notif_bar .msg").text("You must have an internet connection to get your current location.");
-	            $(".notif_bar .notif-icon").addClass("fa-exclamation");
+	            $(".notif_bar .msg").text("It's either Internet Connection Loss or The Geolocation service failed.");
+	            $(".notif_bar .notif-icon").addClass("fa-exclamation");	            
+	            getweather();
 	}
 
 $(document).ready(function(){
