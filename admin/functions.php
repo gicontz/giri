@@ -17,6 +17,18 @@ function get_header_scripts(){
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<?php
 }
+function forecat_table_head(){
+	?>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="js/forecastdump.js"></script>
+	<?php
+}
+function forecat_table_bottom(){
+	?>
+
+	<?php
+}
 function high_chart_head(){
 	?>
 	<style type="text/css">${demo.css}</style>

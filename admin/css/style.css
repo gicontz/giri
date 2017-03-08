@@ -171,3 +171,8 @@ i.fa {
 img.ajax-loader {
     max-width: 50px;
 }
+div#forecsatReport_wrapper {
+    margin-top: 15px;
+    box-shadow: -1px 0px 3px -1px;
+    padding: 20px;
+}

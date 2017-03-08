@@ -2,9 +2,11 @@
 <html>
 <head>
 	<title>GIRI | Admin</title>
-</head>
 <?php include_once('functions.php'); ?>
-<?php get_header_scripts(); ?>
+<?php get_header_scripts(); 
+	forecat_table_head();
+?>
+</head>
 <body class="forecast">
 
 	
@@ -34,6 +36,7 @@
 						}
 						?>
 					</div>
+					<table id="forecsatReport" class="display" width="100%"></table>
 				</div>
 		</div>
 	</div>
