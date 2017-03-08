@@ -22,7 +22,10 @@
 					</div>
 				</div>
 				<div id="updatereport">
-					<code></code>
+					<?php
+					$status = shell_exec( 'cd/ && cd xampp/htdocs/giri && git status' );
+					?>
+					<code><?php echo $status; ?></code>
 				</div>
 		</div>
 	</div>
