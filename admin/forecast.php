@@ -55,7 +55,10 @@
 	});
 
 	$("#search_date").click(function(){	
-		show_data($("input[type='search']").val());
+		$.giriWriter('../forecast-dump/date-view.giri', $("input[type='search']").val());
+		setTimeout(function(){
+			location.reload();
+		}, 1000);
 	});
 </script>
 </body>

@@ -155,10 +155,10 @@ var wakeup = function(){
 //Play the sound to speak out the info of himself
 var intro = function(){
   close_list();
-    $("#listen").text('Introduce yourself');
-  gs.introduce();
+    $("#listen").text('Introduce yourself');    
+    gs.introduce();
+    pause_listen();
 }
-
 //Intellisense
 var whatihear = function(whatihear){
   if(!onsleep){    
@@ -166,6 +166,7 @@ var whatihear = function(whatihear){
     console.log(whatihear);
     $("#listen").text(whatihear);
     gs.notgetS();
+    pause_listen();
   }
 }
 
@@ -478,6 +479,13 @@ if (annyang) {
   // Add our commands to annyang
   annyang.addCommands(commands);  
 
+
+
+  var pause_listen = function(){    
+    annyang.removeCommands();
+    console.log("silent");
+    setTimeout(function(){annyang.addCommands(commands); console.log("listen");}, 3000);
+  }
    //Start Listen
   var done_load_vid = document.getElementById('giri-vid').addEventListener('ended', annyang_start,false);
 

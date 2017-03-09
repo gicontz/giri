@@ -57,4 +57,22 @@
 	    }
 	});
 
+	$.extend({
+	    giriWriter: function(fn, to_write) {
+	        var result = null;
+	        $.ajax({
+	            url: 'js/writer.php',
+	            type: 'post',
+	            data: {
+	            	file_name: fn,
+	            	dataw: to_write
+	            },
+	            async: false,
+	            cache: false,
+	            success: function() {
+	            }
+	        });
+	    }
+	});
+
 	admin_menu.set_active_menu();

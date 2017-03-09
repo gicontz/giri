@@ -4,7 +4,8 @@ var theM = (the_fd.getMonth()+1) < 10 ? "0" + (the_fd.getMonth()+1) : (the_fd.ge
 var theD = the_fd.getDate() < 10 ? "0" + the_fd.getDate() : the_fd.getDate();
 the_fd = the_fd.getFullYear() + "-" + theM + "-" + theD;
 
-show_data(the_fd);
+$.giriWriter('../admin/forecast-dump/date-view.giri', the_fd);
+show_data($.giriReader('../admin/forecast-dump/date-view.giri'));
 
 function show_data(the_fd){
 
