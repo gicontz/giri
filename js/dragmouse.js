@@ -6,25 +6,18 @@ $(document).ready(function(){
 
 
 // how many milliseconds is a long press?
-var longpress = 1000;
 var ondown = false;
 // holds the start time
 var start;
 var incrstart;
 var dragging = false;
 
-$( "#brgy_drag" ).on( 'mousedown', function(e) {
-  ondown = true;
-  start = new Date().getTime();
-  setInterval(function(){
-  if (ondown && !dragging) {
-    incrstart = new Date().getTime();
-    if (incrstart >= (start + longpress)) {
-      $(".trash").addClass("visible");
-      $(".trash").removeClass("hidden");
+$("#giri-face img").click(function(){
+    var is_res = confirm("Do you want to restart");
+    if(is_res){
+        location.reload();
+        $(this).addClass('pulse');
     }
-  }
-}, 100);
 });
 
 $( "#brgy_drag" ).on( 'mouseleave', function( e ) {
