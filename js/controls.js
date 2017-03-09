@@ -157,7 +157,7 @@ var intro = function(){
   close_list();
     $("#listen").text('Introduce yourself');    
     gs.introduce();
-    pause_listen();
+    pause_listen(8000);
 }
 //Intellisense
 var whatihear = function(whatihear){
@@ -165,8 +165,8 @@ var whatihear = function(whatihear){
   close_list();
     console.log(whatihear);
     $("#listen").text(whatihear);
-    gs.notgetS();
-    pause_listen();
+    setTimeout(function(){$("#listen").text("Unrecognized Command");}, 1000);
+    pause_listen(3000);
   }
 }
 
@@ -174,6 +174,7 @@ var whatihear = function(whatihear){
 var hello = function(){
   if(!onsleep){    
   close_list();
+  pause_listen(3000);
   gs.wakeupgiri();  
 }
 }
@@ -481,10 +482,11 @@ if (annyang) {
 
 
 
-  var pause_listen = function(){    
+  var pause_listen = function(ms){    
+    annyang.getSpeechRecognizer().abort();
     annyang.removeCommands();
-    console.log("silent");
-    setTimeout(function(){annyang.addCommands(commands); console.log("listen");}, 3000);
+    annyang.pause();
+    setTimeout(function(){annyang.start(); annyang.addCommands(commands); console.log("listen");}, ms);
   }
    //Start Listen
   var done_load_vid = document.getElementById('giri-vid').addEventListener('ended', annyang_start,false);
