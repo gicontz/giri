@@ -57,3 +57,17 @@ $.ajax({
     }
 });
 }
+
+function forecast_dump(rep){
+$.ajax({
+    type: "post",    
+    url: 'admin/forecast-dump/maker.php',
+    cache: false,
+    data: {
+        dump_report: rep
+    },
+    success: function(data){        
+        console.log(data);
+    }
+});   
+}

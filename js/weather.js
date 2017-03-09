@@ -109,7 +109,7 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
                 var the_hour = 1;
                   for (var hr_index = 0; hr_index <= maxhour - 1; hr_index++){
                     var ws = datum.hourly.data[hr_index].windSpeed * mpkm;
-                    info_hourly += "\n" + (the_hour + hr_index) + "hour(s), from current time: " + ws.toFixed(4) + "km/hr,";
+                    info_hourly += "\n" + (the_hour + hr_index) + "hour(s), " + ws.toFixed(4) + "km/hr,";
                   }
                   the_final_sum = info_hourly;
               }
@@ -123,6 +123,7 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
               getHourlyWindSpeed_test(36, data);
                 //Report
               console.log(info_hourly);
+              forecast_dump(info_hourly);
 
     //Test
      //the_signal = 5;

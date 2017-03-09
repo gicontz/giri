@@ -3,7 +3,9 @@
 <head>
 	<title>GIRI | Admin</title>
 <?php include_once('functions.php'); ?>
-<?php get_header_scripts(); 
+<?php 
+	get_header_scripts();
+	giri_bottom_scripts();
 	forecat_table_head();
 ?>
 </head>
@@ -36,12 +38,12 @@
 						}
 						?>
 					</div>
-					<table id="forecsatReport" class="display" width="100%"></table>
+					<button id="search_date">Show</button>
+					<table id="forecsatReport" class="display" width="100%"></table>				
 				</div>
 		</div>
 	</div>
 
-<?php giri_bottom_scripts(); ?>
 <script type="text/javascript">
 	var apkey = $.giriReader('../api_configs/forecast-api.giri');
 	$("#apikey").attr("value", apkey);
@@ -50,6 +52,10 @@
 	}
 	$(".edit_btn").click(function(){
 		$("#apikey").removeAttr("disabled");
+	});
+
+	$("#search_date").click(function(){	
+		show_data($("input[type='search']").val());
 	});
 </script>
 </body>
