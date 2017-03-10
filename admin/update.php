@@ -14,7 +14,7 @@
 	<h1>Settings</h1>
 </div>
 	<div class="admin_content">
-		<div class="container col-md-10 col-md-offset-2">
+		<div class="container col-md-12 col-md-offset-2">
 			<div id="dashboard" class="visible">					
 				<div class="settings">
 						<button class="update_giri">SYSTEM UPDATE</button><img src="../images/loading.gif" class="ajax-loader hidden"><br/><br>

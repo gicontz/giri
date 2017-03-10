@@ -12,7 +12,7 @@ high_chart_head();
 
 	
 <?php get_admin_menu(); ?>
-<div class="title col-md-10 col-md-offset-2">
+<div class="title col-md-12 col-md-offset-2">
 	<h1>Dashboard</h1>
 </div>
 

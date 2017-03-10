@@ -14,7 +14,7 @@
 	<h1>Facebook API</h1>
 </div>
 	<div class="admin_content">
-		<div class="container col-md-10 col-md-offset-2">
+		<div class="container col-md-12 col-md-offset-2">
 			<div id="dashboard" class="visible">
 				<button class="edit_btn">EDIT</button>
 					<div class="settings">
