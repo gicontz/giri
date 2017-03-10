@@ -48,14 +48,16 @@ $.ajax({
 }
 
 function initial_forecast_usage(){
+    var status = '';
 $.ajax({
     type: "post",
     url: 'admin/forecast-dump/create-usage-report.php',
     cache: false,
     success: function(data){        
-        console.log(data);
+        status = data;
     }
 });
+    return status;
 }
 
 function forecast_dump(rep){

@@ -38,13 +38,42 @@
 						}
 						?>
 					</div>
-					<button id="search_date">Show</button>
+					<div id="forecast_form">
+						<select id="year">
+						</select>
+						<select id="month">
+						</select>
+						<select id="day">
+						</select>
+						<button id="search_date">Show</button>
+					</div>
 					<table id="forecsatReport" class="display" width="100%"></table>				
 				</div>
 		</div>
 	</div>
 
 <script type="text/javascript">
+	
+	//Year
+	for(var y = 2017; y <= 2300; y++){
+		$("#year").append('<option value="'+ y +'">'+ y +'</option>');
+	}
+		$("#year").prepend('<option value="">Year</option>');
+
+
+	//Month
+	for(var m = 1; m <= 12; m++){
+		m < 10 ? $("#month").append('<option value="0'+ m +'">0'+ m +'</option>') : $("#month").append('<option value="'+ m +'">'+ m +'</option>');
+	}
+		$("#month").prepend('<option value="">Month</option>');
+
+
+	//Day
+	for(var d = 1; d <= 31; d++){
+		d < 10 ? $("#day").append('<option value="0'+ d +'">0'+ d +'</option>') : $("#day").append('<option value="'+ d +'">'+ d +'</option>');
+	}
+		$("#day").prepend('<option value="">Day</option>');
+
 	var apkey = $.giriReader('../api_configs/forecast-api.giri');
 	$("#apikey").attr("value", apkey);
 	if($("#apikey").attr("value") != ''){
@@ -55,7 +84,8 @@
 	});
 
 	$("#search_date").click(function(){	
-		$.giriWriter('../forecast-dump/date-view.giri', $("input[type='search']").val());
+		var the_date_dd = $("#year").val() + "-" + $("#month").val() + "-" + $("#day").val();
+		$.giriWriter('../forecast-dump/date-view.giri', the_date_dd);
 		setTimeout(function(){
 			location.reload();
 		}, 1000);

@@ -20,6 +20,7 @@ function get_header_scripts(){
 function forecat_table_head(){
 	?>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/plug-ins/1.10.13/sorting/numeric-comma.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 <script type="text/javascript" src="js/forecastdump.js"></script>
 	<?php

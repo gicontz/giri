@@ -69,7 +69,11 @@ $(document).ready(function() {
             { title: "Hours from Starting Time" },
             { title: "Wind Speed" },
             { title: "Date" }
-        ]
+        ],
+        columnDefs: [
+                { type: "numeric-comma", targets: 0 },
+                { type: "numeric-comma", targets: 1 }
+            ]
     } );
 } );
 }

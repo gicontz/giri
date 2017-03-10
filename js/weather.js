@@ -40,7 +40,7 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
             $.getJSON("https://api.forecast.io/forecast/" + config.forcast.key + "/" + weath_latitude + "," + weath_longitude + "?callback=?", function(data) {                          
                 var mpkm = 1.60934;
 
-                forecast_usage(++num_req); // Forecast IO Usage Manager
+                forecast_usage(++num_req);// Forecast IO Usage Manager
                 var prec_Prob = (data.currently.precipProbability * 100).toFixed();                              
               $(".the_ws").text((data.currently.windSpeed * mpkm).toFixed(4));
               $(".the_precipProbability").text(prec_Prob);

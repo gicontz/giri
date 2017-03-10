@@ -1,11 +1,11 @@
 
-initial_forecast_usage();
 var the_fd = new Date();
 var theM = (the_fd.getMonth()+1) < 10 ? "0" + (the_fd.getMonth()+1) : (the_fd.getMonth()+1);
 var theD = the_fd.getDate() < 10 ? "0" + the_fd.getDate() : the_fd.getDate();
 the_fd = the_fd.getFullYear() + "-" + theM + "-" + theD;
-
-var num_req = $.giriReader('admin/forecast-dump/usage/' + the_fd + '-fioUsage.txt');
+var num_req;
+var usage_status = initial_forecast_usage();
+num_req = $.giriReader('admin/forecast-dump/usage/' + the_fd + '-fioUsage.txt');
 num_req = parseInt(num_req);
 //36da509268d347e6997fcb8983ced0a4
 var forcast_key = $.giriReader('api_configs/forecast-api.giri');
