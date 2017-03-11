@@ -71,6 +71,7 @@ echo showdir();
 							<select id="day">
 							</select>
 							<button id="search_date">Show</button>
+							<button id="print_table" onclick="window.print()">Print Table</button>
 						</div>
 					<table id="forecsatReport" class="display" width="100%"></table>
 					</div>				
