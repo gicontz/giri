@@ -1,4 +1,6 @@
 <?php
+
+date_default_timezone_set("Asia/Manila");
 $fileName = date("Y-m-d");
 $fulldata = $_POST['forecastURL'];
 $curl = curl_init();
