@@ -38,12 +38,14 @@ high_chart_head();
                         ?>
                 </div>
 			</div>
+        <?php 
+        high_chart_body();
+        ?>        
+        <div id="the_chart">
+            <div id="container" style="height: 400px"></div>
+        </div>
+        <button class="refresh_chart">REFRESH CHART</button>
 		</div>
-<?php 
-high_chart_body();
-?>        
-<div id="container" style="height: 400px"></div>
-<button class="refresh_chart">REFRESH CHART</button>
 	</div>
 
 <?php 

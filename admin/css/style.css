@@ -128,7 +128,7 @@ button.edit_btn {
     vertical-align: top;
 }
 .highcharts-container {
-    margin-top: 40px;
+    margin-top: 20px;
     display: inline-block;
 }
 .highcharts-credits {
@@ -147,8 +147,8 @@ g.highcharts-button.highcharts-contextbutton {
     margin-top: -20px;
     width: 100%;
     max-width: 150px;
-    right: 20px;
-    bottom: -25px;
+    right: 30px;
+    bottom: -10px;
 }
 .container{
     margin: 0 auto;
@@ -199,7 +199,7 @@ select {
 .highcharts-container:before {
     position: absolute;
     content: 'FORECAST IO USAGE';
-    background: #337AB7;
+    background: #D9534F;
     height: 65px;
     width: 100%;
     padding: 20px;
@@ -207,7 +207,7 @@ select {
     font-size: 20px;
 }
 .highcharts-container {
-    border: 1px solid #337AB7;
+    border: 1px solid #D9534F;
     width: 100%;
     max-width: 1110px !important;
     border-radius: 5px;
