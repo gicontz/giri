@@ -37,6 +37,30 @@
 						}
 						?>
 					</div>
+
+					<div class="forecast_directory">
+<?php
+function showdir(){
+
+
+            $dirname = "forecast-dump/full_bckups";
+            $dir = opendir($dirname);
+            $output = "";
+
+    while(false != ($file = readdir($dir)))
+    {
+
+        if(($file != ".") and ($file != "..") and ($file != "index.php"))
+        {
+
+            $output = "<a class='file' href='$dirname/$file' download><i class='fa fa-book'></i>$file</a>" . $output;
+        }
+    }
+    return "<div class='file-dir'>" . $output . "</div>";
+}					
+echo showdir();	
+?>
+					</div>
 					<div id="forecast_form">
 						<div id="data_form">
 							<span>Get Forecast History by Date:</span>
