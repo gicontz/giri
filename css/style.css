@@ -1018,6 +1018,7 @@ div#grid {
     display: block;
     padding: 90px 0 0;
 }
+
 .uc-final, .uc-initial, .uc-final-wrapper {
     background: #53d6d0 url(../images/noise.png) repeat top left;
 }

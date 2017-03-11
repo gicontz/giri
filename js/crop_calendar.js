@@ -35,7 +35,8 @@ function display_image_monthlycrops(crop_array, pos){
 	}
 	else{	
 		while(index <= crop_array.length-1){
-			$("#crop_calender #grid .uc-container:nth-of-type("+ pos +") .uc-final-content .img-slider").prepend('<img src="crops/images/'+ crop_array[index].trim() +'.jpg">');		
+			var crop_info = $.giriReader('crops/data/'+ crop_array[index].trim() +'.txt');
+			$("#crop_calender #grid .uc-container:nth-of-type("+ pos +") .uc-final-content .img-slider").prepend('<img src="crops/images/'+ crop_array[index].trim() +'.jpg" title="'+ crop_info +'">');		
 			index++;
 		}
 	}
