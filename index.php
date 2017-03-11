@@ -39,12 +39,18 @@
   <script type="text/javascript" src="js/weather.js"></script>
   <link rel="stylesheet" type="text/css" href="css/weather-icons.css">
 
+  <!--Crop Calendar-->
+  <script type="text/javascript" src="crops/data/crops.js"></script>
+  <script type="text/javascript" src="js/crop_calendar.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/demo.css" />
+  <link rel="stylesheet" type="text/css" href="css/pfold.css" />
+  <link rel="stylesheet" type="text/css" href="css/custom2.css" />
+  <script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
+
   <!--Main Styles & Theme-->
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
-
   <!--Crop Data and integration-->
-  <script type="text/javascript" src="crops/data/crops.js"></script>
   <script type="text/javascript" src="crops/js/getcrop.js"></script>
   <script type="text/javascript" src="crops/js/crop-data.js"></script>
   <!-- Slick slider -->
@@ -61,6 +67,9 @@
 </head>
 <body class="pointer-m">
 
+<div id="crop_calender" class="fade wth-trans">
+  <?php include_once('crop_calendar.html'); ?>
+</div>
 <!-- Configure Tutorial on Next Load -->
 <div id="restart_tut" class="hidden">
   <span>Do you want to load the tutorial again on next load?</span>

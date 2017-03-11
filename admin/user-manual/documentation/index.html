@@ -1,16 +1,46 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Using turn.js and the new zoom feature</title>
+<title>GIRI | User Manual</title>
 <meta name="viewport" content="width = 1050, user-scalable = no" />
-<link rel="icon" type="image/png" href="../../pics/favicon.png" />
+<link rel="icon" type="image/png" href="../../favicon.png" />
 <script type="text/javascript" src="../../extras/jquery.min.1.7.js"></script>
 <script type="text/javascript" src="../../extras/jquery-ui-1.8.20.custom.min.js"></script>
 <script type="text/javascript" src="../../extras/modernizr.2.5.3.min.js"></script>
 <script type="text/javascript" src="../../lib/hash.js"></script>
+<style type="text/css">
+.bread_crumbs a:hover {
+    color: #23b3f3;
+}
+.bread_crumbs {
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+}
+.bread_crumbs a:last-of-type:after {
+    content: '';
+}
+.bread_crumbs a:after {
+    content: ' /';
+}
+.bread_crumbs a {
+    text-decoration: none;
+    color: #767474;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}	
+.zoom-icon.zoom-icon-in {
+    display: none;
+}
+</style>
 </head>
 <body>
-
+<div class="bread_crumbs">
+	<a href="../../../">GIRI</a>
+	<a href="../../">Admin</a>
+	<a href="#">Documentation</a>
+</div>
 <div id="canvas">
 
 <div class="zoom-icon zoom-icon-in"></div>

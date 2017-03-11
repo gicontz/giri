@@ -618,13 +618,25 @@ giri#trigger {
     background: rgba(0,0,0,0.5);
     border: 1px solid rgba(250, 250, 250, 0.2);
     border-left: none;
-    z-index: 99;
 }
 giri#trigger img {
     max-width: 25px;
 }
 .tip{
     opacity: 0;
+}
+.wth-trans{
+    transition: all 1s ease;
+}
+.show{
+    opacity: 1;
+}
+.fadesimple{
+    opacity: 0;
+}
+.fade{
+    opacity: 0; 
+    z-index: -9 !important;   
 }
 .slider-caption.withtool-tip p {
     transform: rotatez(90deg);
@@ -942,6 +954,9 @@ div#giri-face img {
 .emphasize-absolute {
     z-index: 99999 !important;
 }
+.above-all{
+    z-index: 999999 !important;
+}
 span.point_the_lat:before, span.point_the_lng:before {
     font-family: 'Glyphicons Halflings';
     content: '\e114';
@@ -960,4 +975,49 @@ span.point_the_lng {
     position: absolute;
     bottom: 100px;
     left: 200px;
+}
+#crop_calender h1 {
+    font-size: 20px;
+}
+div#grid {
+    width: 1000px;
+}
+#crop_calender h3 {
+    text-align: center;
+    height: 100%;
+    padding: 50px;
+    font-size: 35px;
+    color: #ffffff;
+}
+#crop_calender {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 999999;
+    background:#000000;
+}
+/*SLIDER CROP CALENDAR*/
+.img-slider img {
+    width: 85px;
+    height: 85px;
+    margin: 5px;
+    border: 2px solid #e3e0e0;
+    border-radius: 2px;
+}
+.img-slider {
+    width: 400px;
+    height: 220px;
+    position: relative;
+    overflow-y: scroll;
+}
+.img-slider span {
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding: 90px 0 0;
+}
+.uc-final, .uc-initial, .uc-final-wrapper {
+    background: #53d6d0 url(../images/noise.png) repeat top left;
 }

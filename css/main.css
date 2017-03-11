@@ -10,6 +10,11 @@ body {
     font-weight: 300;
 }
 
+#crop_calender *{
+    font-family: 'Open Sans Condensed','Arial Narrow', serif;
+    font-weight: 600;
+}
+
 h1,
 h2,
 h3,

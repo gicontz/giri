@@ -373,7 +373,9 @@ function hide_map(){
 function hide_map_untold(){
   if(!onsleep){    
     $(".greet").removeClass("send-to-back");
-    $("#map").removeClass("showmap");
+    $("#map").removeClass("showmap");    
+    $("#crop_calender").addClass("fade");
+    $("#crop_calender").removeClass("show");
   }
 };
 
@@ -436,6 +438,10 @@ var getSaidLat = function (said_lat, said_long){
   $("#place_btn").click();
 };
 
+var crop_cal = function(){
+  $("#crop_calender").removeClass("fade");
+  $("#crop_calender").addClass("show");
+};
 
 if (annyang) {
   // Let's define a command.
@@ -461,6 +467,7 @@ if (annyang) {
     '(Next) :dnum days': next_day_num,
     '(Show) (Silang) (All) Forecast': show_brgyweath,
     '(Show) Map': show_map,
+    '(Show) Crop Calendar': crop_cal,
     'Show (me) (the) map (of) *place': imgmap.show_req_map,
     'Zoom In': imgmap.zoomIn,
     'Zoom': imgmap.zoom_by,

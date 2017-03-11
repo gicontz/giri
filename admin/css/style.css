@@ -277,7 +277,6 @@ select {
     max-height: 500px;
     overflow-y: scroll;
 }
-
 @media print{
 div#forecsatReport_info, .paging_simple_numbers, span, label, p, button, select, .settings, .forecast_directory {
     display: none;

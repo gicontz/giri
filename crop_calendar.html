@@ -1,0 +1,187 @@
+
+        <div class="container">
+			
+			<section class="main demo-2">
+				<div id="grid" class="grid clearfix">
+				<h1>THE CROP CALENDAR</h1>
+				
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<h3>JAN</h3>
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">							
+							<div class="title"><h4>JANUARY</h4></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<h3>FEB</h3>
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<div class="title"><h4>FEBRUARY</h4></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<h3>MAR</h3>
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<div class="title"><h4>MARCH</h4></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<h3>APR</h3>
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<div class="title"><h4>APRIL</h4></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<h3>MAY</h3>
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<div class="title"><h4>MAY</h4></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<h3>JUN</h3>
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<div class="title"><h4>JUNE</h4></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<h3>JUL</h3>
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<div class="title"><h4>JULY</h4>></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<h3>AUG</h3>
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<div class="title"><h4>AUGUST</h4>></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<h3>SEP</h3>
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<div class="title"><h4>SEPTEMBER</h4>></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<h3>OCT</h3>
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<div class="title"><h4>OCTOBER</h4>></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<h3>NOV</h3>
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<div class="title"><h4>NOVEMBER</h4>></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<h3>DEC</h3>
+							<span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<div class="title"><h4>DECEMBER</h4>></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+				</div><!-- / grid -->
+			</section>
+
+		</div>
+
+		<script type="text/javascript" src="js/jquery.pfold.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				// say we want to have only one item opened at one moment
+				var opened = false;
+
+				$( '#grid > div.uc-container' ).each( function( i ) {
+
+					var $item = $( this ), direction;
+
+					switch( i ) {
+						case 0 : direction = ['right','bottom']; break;
+						case 1 : direction = ['left','bottom']; break;
+						case 2 : direction = ['right','top']; break;
+						case 3 : direction = ['left','top']; break;
+					}
+					
+					var pfold = $item.pfold( {
+						folddirection : direction,
+						speed : 300,
+						onEndFolding : function() { opened = false; },
+						centered : true
+					} );
+
+					$item.find( 'span.icon-eye' ).on( 'click', function() {
+
+						if( !opened ) {
+							opened = true;
+							pfold.unfold();
+						}
+
+
+					} ).end().find( 'span.icon-cancel' ).on( 'click', function() {
+
+						pfold.fold();
+
+					} );
+
+				} );
+				
+			});
+		</script>
