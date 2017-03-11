@@ -6,6 +6,9 @@ the_fd = the_fd.getFullYear() + "-" + theM + "-" + theD;
 var num_req;
 var usage_status = initial_forecast_usage();
 num_req = $.giriReader('admin/forecast-dump/usage/' + the_fd + '-fioUsage.txt');
+if (num_req=="NaN") {
+    num_req = 0;
+}
 num_req = parseInt(num_req);
 //36da509268d347e6997fcb8983ced0a4
 var forcast_key = $.giriReader('api_configs/forecast-api.giri');

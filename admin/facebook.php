@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>GIRI | Admin</title>
+  <link rel="shortcut icon" href="favicon.png" />
 </head>
 <?php include_once('functions.php'); ?>
 <?php get_header_scripts(); ?>
@@ -18,7 +19,6 @@
 			<div id="dashboard" class="visible">
 				<button class="edit_btn">EDIT</button>
 					<div class="settings">
-						<h3>Settings</h3>
 						<form class="form" method="POST">
 						<div class="form-group">
 							<label class="control-lable" for="apikey">APP ID:</label>

@@ -13,13 +13,8 @@
 		else if(thepage == 'googlemap'){
 			$(".navigation li:nth-child(4)").addClass("active");
 		}
-		else if(thepage == 'cropn'){
+		else if(thepage == 'update'){
 			$(".navigation li:nth-child(5)").addClass("active");
-			$(".navigation li:nth-child(5) ul li:nth-child(1)").addClass("active");
-		}
-		else if(thepage == 'cropimg'){
-			$(".navigation li:nth-child(5)").addClass("active");
-			$(".navigation li:nth-child(5) ul li:nth-child(2)").addClass("active");
 		}
 	};
 
@@ -40,39 +35,5 @@
 		rawFile.send(null);
 		return the_text;
 	};
-
-	$.extend({
-	    giriReader: function(url) {
-	        var result = null;
-	        $.ajax({
-	            url: url,
-	            type: 'post',
-	            async: false,
-	            cache: false,
-	            success: function(data) {
-	                result = data;
-	            }
-	        });
-	       return result;
-	    }
-	});
-
-	$.extend({
-	    giriWriter: function(fn, to_write) {
-	        var result = null;
-	        $.ajax({
-	            url: 'js/writer.php',
-	            type: 'post',
-	            data: {
-	            	file_name: fn,
-	            	dataw: to_write
-	            },
-	            async: false,
-	            cache: false,
-	            success: function() {
-	            }
-	        });
-	    }
-	});
 
 	admin_menu.set_active_menu();

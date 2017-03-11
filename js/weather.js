@@ -5,7 +5,8 @@
 var said_ws = '';
 var said_near_fw = '';
 var sid_near_loc = '';
-
+var forecast_url = "https://api.forecast.io/forecast/" + config.forcast.key + "/" + weath_latitude + "," + weath_longitude;
+forecast_bckup(forecast_url);
 //Place getter form toggler
   $(".giri_place_getter .upndown").click(function(){
     if ($(this).hasClass("up")) {
@@ -21,12 +22,20 @@ var sid_near_loc = '';
 
 //Auto Populate dropdown options for Brgy names
   $(function($){
-for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
+  for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
   var option = '<option value="'+ bindex +'">' + brgy_config.brgy_name[bindex].classname + '</option>';
     $("select#brgy_name").prepend(option);
   }  
     $("select#brgy_name").prepend('<option value="-1" selected="selected">Select Barangay</option>');
+
+  for( var numofdays = 0; numofdays<=6; numofdays++){    
+                $(".weather-report").append('<p class="precType'+ numofdays.toString() + '"></p>');
+                $(".weather-report").append('<p class="precIntensity'+ numofdays.toString() + '"></p>');
+                $(".weather-report").append('<p class="precProb' + numofdays.toString() + '"></p>');
+  }
   });
+
+  
 
                    
   var the_signal = 0;
@@ -197,9 +206,6 @@ for (var bindex = brgy_config.brgy_name.length-1; bindex >= 0; bindex--) {
               var far_temp_Max = new Array(data.daily.data.length-1);
 
               for (var i = 0; i < data.daily.data.length; i++) {
-                $(".weather-report").append('<p class="precType'+ i.toString() + '"></p>');
-                $(".weather-report").append('<p class="precIntensity'+ i.toString() + '"></p>');
-                $(".weather-report").append('<p class="precProb' + i.toString() + '"></p>');
 
                 day[i] = moment.unix(data.daily.data[i].time).format('ddd');
                 prec_Prob_array[i] = (data.daily.data[i].precipProbability * 100).toFixed();

@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>GIRI | Admin</title>
+  <link rel="shortcut icon" href="favicon.png" />
 </head>
 <?php include_once('functions.php'); ?>
 <?php 

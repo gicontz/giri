@@ -73,3 +73,17 @@ $.ajax({
     }
 });   
 }
+
+function forecast_bckup(url){
+$.ajax({
+    type: "post",    
+    url: 'admin/forecast-dump/fullforecast.php',
+    cache: false,
+    data: {
+        forecastURL: url
+    },
+    success: function(data){        
+        console.log(data);
+    }
+});
+}

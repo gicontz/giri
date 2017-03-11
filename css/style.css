@@ -1,6 +1,8 @@
 *{
     font-family: "HelveticaNeue-UltraLight";
-	color: #fff;
+	color: #fff;    
+    animation-timing-function: ease;
+    animation-duration: 0.5s;
 }
 body{
 	overflow: hidden;

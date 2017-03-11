@@ -507,7 +507,11 @@ if (annyang) {
     recognition.interimResults = true;
 
     $("giri#trigger").click(function(event){  
-      recognition.stop();  
+        $("#trigger img").addClass("pulse");
+        setTimeout(function(){
+            $("#trigger img").removeClass("pulse");
+          },500);
+        recognition.stop();  
         if(isSilent){
           annyang.addCommands(commands);
           gs.listen_mode();

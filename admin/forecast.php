@@ -2,10 +2,10 @@
 <html>
 <head>
 	<title>GIRI | Admin</title>
+  <link rel="shortcut icon" href="favicon.png" />
 <?php include_once('functions.php'); ?>
 <?php 
 	get_header_scripts();
-	giri_bottom_scripts();
 	forecat_table_head();
 ?>
 </head>
@@ -22,7 +22,6 @@
 			<div id="dashboard" class="visible">
 				<button class="edit_btn">EDIT</button>
 					<div class="settings">
-						<h3>Settings</h3>
 						<form class="form" method="post">
 							<div class="form-group">
 								<label class="control-lable" for="apikey">API Key</label>
@@ -39,19 +38,24 @@
 						?>
 					</div>
 					<div id="forecast_form">
-						<select id="year">
-						</select>
-						<select id="month">
-						</select>
-						<select id="day">
-						</select>
-						<button id="search_date">Show</button>
-					</div>
-					<table id="forecsatReport" class="display" width="100%"></table>				
+						<div id="data_form">
+							<span>Get Forecast History by Date:</span>
+							<select id="year">
+							</select>
+							<select id="month">
+							</select>
+							<select id="day">
+							</select>
+							<button id="search_date">Show</button>
+						</div>
+					<table id="forecsatReport" class="display" width="100%"></table>
+					</div>				
 				</div>
 		</div>
 	</div>
-
+<?php
+	giri_bottom_scripts();
+	?>
 <script type="text/javascript">
 	
 	//Year

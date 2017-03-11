@@ -21,7 +21,7 @@
             for(var i = 1; i<=6; i++){
               weekly = weekly + $(".giri-forecast .top-right .day"+i+" .day").text() + " " + $(".giri-forecast .top-right .day"+i+" .tempreture-min").text() + " " + $(".giri-forecast .top-right .day"+i+" .tempreture-max").text() + "\nPrecipitation Probability: " + $(".precProb" + i.toString()).text() + " Intensity: " + $(".precIntensity" + i.toString()).text() + " Type: " + $(".precType" + i.toString()).text() + "\n";
             }
-            summary = alter + $(".giri-forecast .top-right .hourly").text() + "\n" + $(".giri-forecast .top-right .daily").text() + "\nWeekly Forecast: \n" + weekly +"\n" + "#GIRI";
+            summary = alter + $(".giri-forecast .top-right .hourly").text() + "\n" + $(".giri-forecast .top-right .daily").text() + "\nWeekly Forecast: \n" + weekly +"\n" + "\nCopyrights: \nForecast Data From Dark Sky\nEarth Animation develop by Cameron Beccario @cambecc\nDisclaimer: GIRI Integrated Forecast \"implies no guarantee of accuracy\"\n#GIRI";
             $(".weather-status").text(summary);
         if ($(".caption-modal").hasClass("show")) {
           $(".caption-modal").removeClass("show");

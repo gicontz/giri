@@ -36,7 +36,7 @@ i.glyphicon {
 }
 button, input[type="submit"] {
     width: 100px;
-    background: #2A62FF;
+    background: #337AB7;
     border-style: hidden;
     color: #ffffff;
     text-transform: uppercase;
@@ -97,10 +97,12 @@ button, input[type="submit"] {
     animation: rollIn 0.7s ease;
 }
 .title {
-    background: linear-gradient(to bottom right, #ffffff, #eeeeee);
+    /*background: linear-gradient(to bottom right, #ffffff, #eeeeee);
     background: -webkit-linear-gradient(to bottom right, #ffffff, #eeeeee);
-    background: -oz-linear-gradient(to bottom right, #ffffff, #eeeeee);
+    background: -oz-linear-gradient(to bottom right, #ffffff, #eeeeee);*/
     margin-bottom: 20px;
+    background: #222222;
+    color: #fff;
 }
 button.edit_btn {
     float: right;
@@ -146,7 +148,7 @@ g.highcharts-button.highcharts-contextbutton {
     width: 100%;
     max-width: 150px;
     right: 20px;
-    bottom: 20px;
+    bottom: -25px;
 }
 .container{
     margin: 0 auto;
@@ -178,6 +180,81 @@ div#forecsatReport_wrapper {
 }
 #forecast_form {
     margin-top: 20px;
-    float: right;
     margin-bottom: 20px;
+}
+body{
+    overflow-x: hidden;
+}
+select {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 29px;
+    padding: 5px;
+    width: 75px;
+    background: #337AB7;
+    color: #ffffff;
+    border-radius: 20px;
+}
+.highcharts-container:before {
+    position: absolute;
+    content: 'FORECAST IO USAGE';
+    background: #337AB7;
+    height: 65px;
+    width: 100%;
+    padding: 20px;
+    color: #ffffff;
+    font-size: 20px;
+}
+.highcharts-container {
+    border: 1px solid #337AB7;
+    width: 100%;
+    max-width: 1110px !important;
+    border-radius: 5px;
+}
+#forecast_form:before {
+    content: 'Forecast History';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background: #337AB7;
+    padding: 20px;
+    font-size: 20px;
+    color: #fff;
+}
+#forecast_form {
+    border: 1px solid #337AB7;
+    padding: 70px 20px 20px;
+    border-radius: 3px;
+    position: relative;
+}
+#data_form {
+    text-align: right;
+}
+.settings:before {
+    content: 'Settings';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    background: #337AB7;
+    width: 100%;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 20px;
+}
+.settings {
+    border: 1px solid #337AB7;
+    position: relative;
+    padding-top: 70px;
+}
+::-webkit-scrollbar {
+    background: #111;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    background: #54aaa6;
+    border-radius: 10px;
 }
