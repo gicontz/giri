@@ -153,7 +153,7 @@ g.highcharts-button.highcharts-contextbutton {
 .container{
     margin: 0 auto;
 }
-.settings {
+.settings, #forecast_form, .forecast_directory {
     animation: flipInX 0.5s ease;
 }
 .update button {
@@ -268,6 +268,14 @@ select {
     border: 1px solid #337AB7;
     position: relative;
     padding-top: 70px;
+}
+.file-dir .file {
+    display: block;
+}
+.forecast_directory {
+    max-width: 500px;
+    max-height: 500px;
+    overflow-y: scroll;
 }
 ::-webkit-scrollbar {
     background: #111;

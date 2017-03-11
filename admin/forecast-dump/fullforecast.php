@@ -24,7 +24,7 @@ if ($err) {
 
   $weather_data = ($response);
   // save $weather_data to local file
-  $file = 'full_bckups/('. $fileName .') forecastio_full.giri';
+  $file = 'full_bckups/('. $fileName .') forecastio_full.json';
 
   // Write the contents to the file
   file_put_contents($file, $weather_data);
