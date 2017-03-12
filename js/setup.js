@@ -204,10 +204,19 @@
 		}
 
 		else if(the_tut.hasClass("t20")){
-			tut_text.html("Now Your Settled Up! <br>I Hope You Can Handle Things Now.");
+			crop_cal();			
+			tut_text.text("Say \"Show Crop Calendar\", it will display the 12 names of the month, try to click each");
 			the_tut.removeClass("t20");
+			the_tut.addClass("t21");
+		}
+
+		else if(the_tut.hasClass("t21")){
+			hide_map_untold();
+			tut_text.html("Now Your Settled Up! <br>I Hope You Can Handle Things Now.");
+			the_tut.removeClass("t21");
 			the_tut.addClass("tut_end");
 			$(".tutorial-popup.tut_end button.skip_tut").text("Get Started");
 			$(".tutorial-popup.tut_end button.next_tut").remove();
+			$("#brgy_drag").addClass("hidden");
 		}
 	});

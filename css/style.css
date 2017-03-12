@@ -94,18 +94,6 @@ body{
     top: 5px;
     font-size: 18px;
 }
-.caption-modal.show .submit-weather-status {
-    padding: 4px 40px;
-    border-radius: 30px;
-    background: #8b8b8b;
-    font-size: 16px;
-    border: none;
-    right: 0;
-    left: 0;
-    position: absolute;
-    margin: 17px auto;
-    width: 55%;
-}
 .caption-modal.show .weather-status {
     width: 300px;
     height: 300px;
@@ -226,7 +214,7 @@ p.post_capt {
     left: 0;
     position: absolute;
     margin: 17px auto;
-    width: 55%;
+    width: 90%;
 }
 div#giri-bottom-face:hover, div#giri-bottom-face:focus {
     opacity: 0.7;
@@ -618,6 +606,7 @@ giri#trigger {
     background: rgba(0,0,0,0.5);
     border: 1px solid rgba(250, 250, 250, 0.2);
     border-left: none;
+    z-index: 9999;
 }
 giri#trigger img {
     max-width: 25px;
@@ -753,7 +742,7 @@ div#giri-face img {
     font-family: 'Helvetica',sans-serif;
     padding: 7px 15px;
     width: 100%;
-    max-width: 110px;
+    max-width: 115px;
 }
 #tutorial-section .continue, .tutorial-popup .next_tut{
     position: relative;
@@ -787,7 +776,9 @@ div#giri-face img {
     top: 50%;
     left: 50%;
     text-align: center;
-    height: 87px;
+    height: 110px;
+    padding: 10px 15px;
+    border-radius: 2px;
 }
 .tutorial-popup .btn_wrapper {
     text-align: right;
@@ -804,6 +795,7 @@ div#giri-face img {
     margin: 10px;
     display: block;
     font-family: 'Helvetica', sans-serif;
+    font-size: 14px;
 }
 .tutorial-popup.t1 {
     top: 35%;
@@ -886,18 +878,21 @@ div#giri-face img {
     bottom: -15px;
     right: 15px;
 }
-.tutorial-popup.t11, .tutorial-popup.t12, .tutorial-popup.t13, .tutorial-popup.t14, .tutorial-popup.t20 {
+.tutorial-popup.t11, .tutorial-popup.t12, .tutorial-popup.t13, .tutorial-popup.t14, .tutorial-popup.t20, .tutorial-popup.t21 {
     top: 73%;
     left: 43%;
     max-width: 450px;
     height: 115px;
+}
+.tutorial-popup.t21 {
+    z-index: 9999999;
 }
 .tutorial-popup.t11:before {
     right: 15px;
     bottom: -15px;
 }
 
-.tutorial-popup.t12:before, .tutorial-popup.t13:before,  .tutorial-popup.t14:before {
+.tutorial-popup.t12:before, .tutorial-popup.t13:before,  .tutorial-popup.t14:before, .tutorial-popup.t21{
     right: auto;
     bottom: 0;
 }

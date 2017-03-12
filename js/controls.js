@@ -125,6 +125,7 @@ var hide_weather = function() {
       $("#giri-face #listen").removeClass("downme"); 
       $("#giri-bottom-face ").removeClass("show");
       $(".giri_place_getter").addClass("hide");     
+      $("giri#trigger").removeClass("above-all");
     }
 }
 
@@ -138,6 +139,7 @@ var sleep = function(){
   $("#listen").text('Go to Sleep');
   $(".main-content").addClass("hideme");
   $("footer").addClass("hideme");
+  $("giri#trigger").addClass("above-all");
 }
 
 //If on sleep wake the app
@@ -376,6 +378,7 @@ function hide_map_untold(){
     $("#map").removeClass("showmap");    
     $("#crop_calender").addClass("fade");
     $("#crop_calender").removeClass("show");
+    $("giri#trigger").removeClass("above-all");
   }
 };
 
@@ -441,6 +444,7 @@ var getSaidLat = function (said_lat, said_long){
 var crop_cal = function(){
   $("#crop_calender").removeClass("fade");
   $("#crop_calender").addClass("show");
+  $("giri#trigger").addClass("above-all");  
 };
 
 if (annyang) {

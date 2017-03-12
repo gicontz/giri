@@ -50,7 +50,6 @@ $(document).ready(function(){
         is_end_of_the_month();
         stop_loader();
         getLocation_forWeather();
-        $("giri#trigger").addClass("above-all");
     switch(the_signal){
       case 1:
         gs.signal_1();
