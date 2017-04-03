@@ -1,14 +1,7 @@
  var weather_status;
- $(document).ready(function(){
-      $(".fb-post").click(function(){
-            
 
-      $(".tutorial-popup span").text("Click this to upload the weather screenshot and weather report. (You can post after this tutorial)");
-      $(".tutorial-popup").removeClass("t7");
-      $(".tutorial-popup").addClass("t8");
-      $("#giri-bottom-face").removeClass("emphasize-absolute");
-      
-            var summary  = "";
+ function createSummary(){
+   var summary  = "";
             var weekly = "";  
             var print_signal; 
             var report;
@@ -23,6 +16,16 @@
             }
             summary = alter + $(".giri-forecast .top-right .hourly").text() + "\n" + $(".giri-forecast .top-right .daily").text() + "\nWeekly Forecast: \n" + weekly +"\n" + "\nCopyrights: \nForecast Data From Dark Sky\nEarth Animation develop by Cameron Beccario @cambecc\nDisclaimer: GIRI Integrated Forecast \"implies no guarantee of accuracy\"\n#GIRI";
             $(".weather-status").text(summary);
+ }
+ $(document).ready(function(){
+      $(".fb-post").click(function(){
+            
+
+      $(".tutorial-popup span").text("Click this to upload the weather screenshot and weather report. (You can post after this tutorial)");
+      $(".tutorial-popup").removeClass("t7");
+      $(".tutorial-popup").addClass("t8");
+      $("#giri-bottom-face").removeClass("emphasize-absolute");
+            createSummary();
         if ($(".caption-modal").hasClass("show")) {
           $(".caption-modal").removeClass("show");
         }

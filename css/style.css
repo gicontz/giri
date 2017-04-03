@@ -1016,4 +1016,10 @@ div#grid {
 
 .uc-final, .uc-initial, .uc-final-wrapper {
     background: #53d6d0 url(../images/noise.png) repeat top left;
+    top: -20px;
+}
+
+.demo-2 .grid {
+    margin: 0 auto;
+    margin-top: 100px;
 }

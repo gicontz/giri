@@ -284,6 +284,19 @@ var curr_wthr = function(){
     }
   }
 
+//Speech command to post
+var post_fb = function(){
+  createSummary();
+  if(!onsleep){     
+  close_list();
+  if(!onhome && !onsleep){   
+      $('.submit-weather-status').click();
+      }
+      else if(onhome && !onsleep){
+        gs.notif_sw();
+      }
+    }
+}
 //Show the Windspeed animation
 var show_wnds = function(){
   if(!onsleep){     
@@ -471,8 +484,9 @@ if (annyang) {
     '(Next) :dnum days': next_day_num,
     '(Show) (Silang) (All) Forecast': show_brgyweath,
     '(Show) Map': show_map,
-    '(Show) Crop Calendar': crop_cal,
+    '(Show) (Crop) Calendar': crop_cal,
     'Show (me) (the) map (of) *place': imgmap.show_req_map,
+    'Post To Facebook (Now)': post_fb,
     'Zoom In': imgmap.zoomIn,
     'Zoom': imgmap.zoom_by,
     'Zoom Out': imgmap.zoomOut,
