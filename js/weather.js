@@ -135,7 +135,7 @@ forecast_bckup(forecast_url);
               forecast_dump(info_hourly);
 
     //Test
-     //the_signal = 5;
+     // the_signal = 2;
 
               //Signal Warning Colors
               switch(the_signal){
