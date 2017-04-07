@@ -10,8 +10,6 @@ constructor() {
 	 		new Audio("sounds/dontget.mp3");
 	 this.curr_weath = 
 	 		new Audio("sounds/current.mp3");
-	 // this.nextday = 
-	 // 		new Audio("sounds/nextday.mp3");
 	 this.postfb = 
 	 		new Audio("sounds/postfb.mp3");
 	 this.prec = 
@@ -94,9 +92,6 @@ constructor() {
 	current_weather(){
 			this.curr_weath.play();
 	}
-	// nextdayf(){
-	// 		this.nextday.play();
-	// }
 	postonfb(){
 			this.postfb.play();
 	}

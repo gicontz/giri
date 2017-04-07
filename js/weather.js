@@ -120,7 +120,7 @@ forecast_bckup(forecast_url);
                     var ws = datum.hourly.data[hr_index].windSpeed * mpkm;
                     info_hourly += "\n" + (the_hour + hr_index) + "hour(s), " + ws.toFixed(4) + "km/hr,";
                   }
-                  the_final_sum = info_hourly;
+                  the_final_sum = info_hourly;                  
               }
 
               var the_final_report = function(){

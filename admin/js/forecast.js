@@ -9,7 +9,7 @@ the_fd = the_fd.getFullYear() + "-" + theM + "-" + theD;
 $(function () {
 
     var usage = $.giriReader('forecast-dump/usage/'+ the_fd +'-fioUsage.txt');
-    usage = parseInt(usage);
+    usage = usage == "NaN" || usage == "" ? 0 : parseInt(usage);
     var rem = 1000 - usage;
     Highcharts.chart('container', {
         chart: {
